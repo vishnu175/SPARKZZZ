@@ -11,9 +11,8 @@ import asyncio
 import traceback
 import os
 import userbot.utils
-from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(pattern="extdl", outgoing=True))
+@command(pattern="^.extdl", outgoing=True)
 async def install(event):
     if event.fwd_from:
         return
@@ -29,6 +28,6 @@ async def install(event):
             path1 = Path(downloaded_file_name)
             shortname = path1.stem
             load_module(shortname.replace(".py", ""))
-            await borg.send_message(event.chat_id, "Installed Plugin `{}` successfully.".format(os.path.basename(downloaded_file_name)))
+            await borg.send_message(event.chat_id, "TeleBot has installed the plugin `{}` successfully.".format(os.path.basename(downloaded_file_name)))
         else:
-            await borg.send_message(event.chat_id, "Plugin `{}` has been pre-installed and cannot be installed.".format(os.path.basename(downloaded_file_name)))
+            await borg.send_message(event.chat_id, "Plugin `{}` has been pre-installed and cannot be installed again UwU.".format(os.path.basename(downloaded_file_name)))
