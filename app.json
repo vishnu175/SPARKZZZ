@@ -1,17 +1,17 @@
 {
- "name": "TeleBot - UserBot",
- "description": "An advanced Telethon Userbot, from @TeleBotSupport",
- "logo": "https://telegra.ph/file/34b810002e7a3ee86a21e.png",
+ "name": "SPARKZZZ - UserBot",
+ "description": "An advanced Telegram Userbot, from @sparkzzzbotsupport",
+ "logo": "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg",
  "keywords": [
   "telegram",
   "userbot",
-  "TeleBot",
+  "SPARKZZZ",
   "modular",
   "productivity"
  ],
  "repository": "https://github.com/vishnu175/SPARKZZZ/",
  
- "success_url": "https://t.me/TeleBotHelp/13",
+ "success_url": "https://t.me/sparkzzzbothelp",
  "stack": "container",
  "env": {
   "ENV": {
