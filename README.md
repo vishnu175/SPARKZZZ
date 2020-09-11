@@ -31,8 +31,8 @@ Do fork and star the repo
 
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github.com/vishnu175/SPARKZZZ
-cd SPARKZZ
+git clone https://github.com/xditya/TeleBot
+cd TeleBot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
