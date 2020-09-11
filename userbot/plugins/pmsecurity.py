@@ -10,6 +10,7 @@ from telethon import events, errors, functions, types
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
 from userbot.utils import admin_cmd
 from userbot.events import register
+sparkzzz = bot 
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
@@ -25,7 +26,7 @@ USER_BOT_NO_WARN = ("**Welcome to SPARKZZZ inbox security.**\n\nNice to see you 
                     "\n\n   ~ Thank You.")
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
+    @ sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -60,7 +61,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
                     
-    @sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
+    @ sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -79,7 +80,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
+    @ sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -95,7 +96,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @sparkzzz.on(admin_cmd(pattern="listapproved"))
+    @ sparkzzz.on(admin_cmd(pattern="listapproved"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
