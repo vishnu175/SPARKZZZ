@@ -1,4 +1,4 @@
-# TeleBot - Telegram UserBot
+# SPARKZZZ -Telegram userbot
 
 <p align="left">
     <a href="https://t.me/TeleBotHelpChat"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a>
@@ -18,21 +18,21 @@ Click the below button to watch the video tutorial on deploying
     
 ## The Easier Way to install
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xditya/TeleBot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vishnu175/SPARKZZZ)
 
 ## Support
 Join [TeleBot Support group](https://t.me/TeleBotSupport) for updates and new plugin suggestions.
 Do fork and star the repo 
 
 ### Session String 
-<a href="https://telebot-sessionstring-generator.xditya.repl.run/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
+<a href="https://telebot-sessionstring-generator.vishnu175.repl.run/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
 ### The Normal Way
 
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github.com/xditya/TeleBot
-cd TeleBot
+git clone https://github.com/vishnu175/SPARKZZZ
+cd SPARKZZ
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
