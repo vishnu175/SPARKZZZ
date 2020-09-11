@@ -75,7 +75,7 @@ async def telealive():
         dyno = f"{hrs}h {mins}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    info = f"TeleBot Stats\
+    info = f"SPARKZZZ Stats\
                   \n\nVersion : {telever}\
                   \nSudo : {sudo}\
 		  \nPing : {ms}\
