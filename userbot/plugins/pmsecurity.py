@@ -12,20 +12,20 @@ from userbot.utils import admin_cmd
 from userbot.events import register
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/53f707e92265562509d00.png"
+TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`TeleBot PM security! Please wait for me to approve you. 😊"
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security! Please wait for me to approve you. 😊"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-USER_BOT_NO_WARN = ("**Welcome to TeleBot's PM security.**\n\nNice to see you here, but  "
+USER_BOT_NO_WARN = ("**Welcome to SPARKZZZ inbox security.**\n\nNice to see you here, but  "
                     f"[{DEFAULTUSER}](tg://user?id={myid}) is currently unavailable.\nThis is an automated message..\n\n"
                     f"{MESAG}"
                     "\n\n   ~ Thank You.")
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @telebot.on(admin_cmd(pattern="approve ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -60,7 +60,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
                     
-    @telebot.on(admin_cmd(pattern="block ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -79,7 +79,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -95,12 +95,12 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @telebot.on(admin_cmd(pattern="listapproved"))
+    @sparkzzz.on(admin_cmd(pattern="listapproved"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "[TeleBot] Currently Approved PMs\n"
+        APPROVED_PMs = "[SPARKZZZ] Currently Approved PMs\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
@@ -117,7 +117,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[TeleBot]Current Approved PMs",
+                    caption="[SPARKZZZ]Current Approved PMs",
                     reply_to=event
                 )
                 await event.delete()
@@ -216,4 +216,4 @@ async def hehehe(event):
             pmpermit_sql.approve(chat.id, "**Dev is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
            
-# (c) TeleBot
+# (c) SPARKZZZ
