@@ -3,7 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # credits to @AvinashReddy3108
-# Rewritten for TeleBot by @xditya
+# credits to @xditya
+# Rewritten for @csv1990/SPARKZZZ
 
 """
 This module is used for updating TeleBot
@@ -26,7 +27,7 @@ requirements_path = path.join(
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "TeleBot"
-UPSTREAM_REPO_URL = "https://github.com/xditya/TeleBot"
+UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ"
 
 async def gen_chlog(repo, diff):
     ch_log = ''
