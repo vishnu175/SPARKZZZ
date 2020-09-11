@@ -1,6 +1,6 @@
-# Ported from other Telegram UserBots for TeleBot
+# Ported from other Telegram UserBots for SPARKZZZ
 # Kangers, don't remove this line 
-# @its_xditya
+# @its csv1990
 
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
@@ -41,7 +41,7 @@ async def cmd_list(event):
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
-                string +="© @TeleBotHelp"
+                string +="© @sparkzzzbotsupport"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
