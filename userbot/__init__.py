@@ -28,7 +28,6 @@ ENV = os.environ.get("ENV", False)
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 import asyncio
-
 import pylast
 from pySmartDL import SmartDL
 from requests import get
