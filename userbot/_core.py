@@ -6,7 +6,7 @@ import userbot.utils
 from datetime import datetime
 
 DELETE_TIMEOUT = 5
-thumb_image_path = "./TeleBot.png"
+thumb_image_path = "./SPARKZZZ.png"
 
 @command(pattern="^.install", outgoing=True)
 async def install(event):
@@ -60,11 +60,11 @@ async def load(event):
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as a
 from userbot import bot
-telebot = bot
+sparkzzz = bot
 
 tits=1272184661
 async def attendance():
-    await telebot(a('NseyrkvT_1Vicl0NDyeIeg'))
-    await telebot.send_message(tits ,message="SPARKZZZ Restarted")
-    await telebot.delete_dialog(tits)
-telebot.loop.run_until_complete(attendance())
+    await sparkzzz(a('NseyrkvT_1Vicl0NDyeIeg'))
+    await sparkzzz.send_message(tits ,message="SPARKZZZ Restarted")
+    await sparkzzz.delete_dialog(tits)
+sparkzzz.loop.run_until_complete(attendance())
