@@ -1,5 +1,5 @@
 # Kangers keep credits
-"""Custom AFK Plugin for @TeleBotHelp
+"""Custom AFK Plugin for @sparkzzbothelp
 Syntax: .afk REASON"""
 import asyncio
 import datetime
