@@ -55,7 +55,7 @@ async def amireallyalive(alive):
         tele += "`Hey! I'm alive. All systems online and functioning normally!`\n\n"
         tele += "` 🔸 Telethon version:` **1.16.4**\n` 🔹 Python:` **3.8.3**\n"
         tele += f"` 🔸 TeleBot Version:` **{telever}**\n"
-        tele += "` 🔹 More Info:` @sparkzzzBotsupport\n"
+        tele += "` 🔹 More Info:` @sparkzzzbotsupport\n"
         tele += f"` 🔸 TeleBot Uptime:` {uptime}\n"
         tele += "` 🔸 Database Status:` **All OK 👌!**\n"
         tele += f"` 🔹 My pro owner`: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
