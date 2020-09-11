@@ -1,6 +1,6 @@
-# Ported from other Telegram UserBots for TeleBot
+# Ported from other Telegram UserBots for SPARKZZZ
 # Kangers, don't remove this line 
-# @its_xditya
+# @its_vishnu175
 
 from math import ceil
 import asyncio
@@ -23,9 +23,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = [
                 (custom.Button.inline(
                     "Stats", data="telestatus"), Button.url(
-                    "Source", "https://github.com/xditya/TeleBot"))]
+                    "Source", "https://github.com/vishnu175/SPARKZZZ"))]
             result = builder.article(
-                title="TeleBot",
+                title="SPARKZZZ",
                 text=query,
                 buttons=buttons
             )
@@ -34,7 +34,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Telebot Help",
+                "© SPARKZZZ ",
                 text="{}\nCurrently Loaded Plugins: {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
@@ -53,7 +53,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot from @TeleBotHelp , and don't use mine!"
+            reply_pop_up_alert = "Please get your own Userbot from @sparkzzzbothelp , and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -61,7 +61,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("Help Menu Closed.")
         else:
-            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
+            reply_pop_up_alert = "Please get your own userbot from @sparkzzzbotsupport "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -79,7 +79,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot from @TeleBotSupport"
+            reply_pop_up_alert = "Please get your own Userbot from @sparkzzzbotsupport"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -127,7 +127,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format("⚡", x, "⚡"),
+        "{} {}".format("🦸", x, "🦸"),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -138,8 +138,8 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("⏮️ Previous", data="{}_prev({})".format(prefix, modulo_page)),
+            (custom.Button.inline("🔚 Previous", data="{}_prev({})".format(prefix, modulo_page)),
              custom.Button.inline("Close", data="close"),
-             custom.Button.inline("Next ⏭️", data="{}_next({})".format(prefix, modulo_page)))
+             custom.Button.inline("Next 🔜", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
