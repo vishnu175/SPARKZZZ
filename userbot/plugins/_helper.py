@@ -6,7 +6,7 @@ from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
 @telebot.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
@@ -16,7 +16,7 @@ async def cmd_list(event):
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += "⚡ " + i + "\n"
+                string += "🌀 " + i + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
