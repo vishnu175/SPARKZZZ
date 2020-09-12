@@ -79,12 +79,12 @@ async def amireallyalive(alive):
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**WELCOME TO SPARKZZZ **\n\n"
                 "`⚡SPARKZZZ⚡ IS ONLINE`\n\n"
-                "` 👉 Telethon Version:` **1.16.4**\n` 👉 Python:` **3.8.3**\n"
-                f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
-                "` 👉More Info:` @sparkzzzbotsupport\n"
-                f"` 👉 Uptime:` {uptime}\n"
-                "` 👉 Database Status:` **FUNCTIONAL 👌!**\n"
-                f"` 👉 My Boss  `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+                "`👉 Telethon Version:` **1.16.4**\n` 👉 Python:` **3.8.3**\n"
+                f"👉 SPARKKZZZ Version:` **{telever}**\n"
+                "`👉More Info:` @sparkzzzbotsupport\n"
+               f"`👉Uptime:` {uptime}\n"
+                "`👉 Database Status:` **FUNCTIONAL 👌!**\n"
+               f"`👉 My Boss  `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
                 "    [⚡ Repo ⚡](https://github.com/vishnu175/SPARKZZZ)",link_preview = False)
         await borg.send_file(alive.chat_id, file=sticker) 
 
