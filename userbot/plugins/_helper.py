@@ -25,7 +25,7 @@ async def cmd_list(event):
             if len(string) > 4095:
                 with io.BytesIO(str.encode(string)) as out_file:
                     out_file.name = "cmd.txt"
-                    await bot.send_file(
+                    await bot.send_file(u
                         event.chat_id,
                         out_file,
                         force_document=True,
@@ -47,7 +47,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[TeleBot](https://xditya.gitbook.io/telebot/)**\n\n"""
+            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[SPARKZZ BOT](https://xditya.gitbook.io/telebot/)**\n\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
