@@ -54,13 +54,14 @@ async def amireallyalive(alive):
         tele = f"**WELCOME TO SPARKZZZ **\n\n"
         tele += "` ⚡SPARKZZZ⚡ IS ONLINE`\n\n"
         tele += "`  🖥️ SYSTEM FEATURES 🖥️`\n\n"
-        tele += "`  👉 Telethon Version:` **1.16.4**\n` 👉 Python:` **3.8.3**\n"
+        tele += "`  👉 Telethon Version:` **1.16.4**\n"
+        tele += "`  👉 Python:` **3.8.3**\n"
         tele += f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
         tele += "`  👉 More Info:` @sparkzzzbotsupport\n"
         tele += f"` 👉Uptime:` {uptime}\n"
         tele += "`  👉Database Status:` **FUNCTIONAL 👌!**\n"
         tele += f"` 👉My Boss  `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-        tele += "    [⚡ Repo ⚡](https://github.com/vishnu175/SPARKZZZ)"
+        tele += "    [⚡ Repository ⚡](https://github.com/vishnu175/SPARKZZZ)"
 
         chat = await alive.get_chat()
         await alive.delete()
@@ -79,7 +80,8 @@ async def amireallyalive(alive):
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**WELCOME TO SPARKZZZ **\n\n"
                 "`⚡SPARKZZZ⚡ IS ONLINE`\n\n"
-                "`👉 Telethon Version:` **1.16.4**\n` 👉 Python:` **3.8.3**\n"
+                "`👉 Telethon Version:` **1.16.4**\n" 
+                "`👉 Python:` **3.8.3**\n"
                 f"👉 SPARKKZZZ Version:` **{telever}**\n"
                 "`👉 More Info:` @sparkzzzbotsupport\n"
                f"`👉 Uptime:` {uptime}\n"
