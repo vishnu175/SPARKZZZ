@@ -1,5 +1,5 @@
 """ Weebify a text,
-# For TeleBot
+# For SPARKZZ BOT
 By :- @PhycoNinja13b
 Modified by :- @kirito6969
 .weeb <text> """
