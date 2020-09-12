@@ -41,7 +41,7 @@
   },  
   "CUSTOM_AFK": {
    "description": "The message that appears when you go afk. Leave it as such for default.",
-   "value": "My Master is [AFK](https://telegra.ph/AFK-05-22)"
+   "value": "My Master is [AFK](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
   },
   "GITHUB_ACCESS_TOKEN": {
    "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
@@ -59,7 +59,7 @@
    "required": false
   },  
   "GIT_REPO_NAME": {
-   "description": "Your repo name Example: xditya/TeleBot, but GITHUB_ACCESS_TOKEN must be setup first.",
+   "description": "Your repo name Example: vishnu175/SPARKZZZ, but GITHUB_ACCESS_TOKEN must be setup first.",
    "value": "",
    "required": false
   },
