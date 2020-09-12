@@ -1,7 +1,7 @@
 import io
 import re
 import math
-from . import catalive
+from . import telealive
 from .. import CMD_LIST
 from telethon import Button, custom, events
 
