@@ -127,10 +127,10 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {} {}".format("🌀", x, "🌀", x, "🌀"),
+        "{} {}".format("🌀", x, "🌀"),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
-    pairs = list(zip(modules[:::number_of_cols], modules[1:::number_of_cols]))
+    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
