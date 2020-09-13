@@ -108,6 +108,11 @@ if ENV:
         MONGO_URI = os.environ.get("MONGO_URI", None)
         #Lydia API
         LYDIA_API = os.environ.get("LYDIA_API",None)
+        # Google photos ()
+        G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
+        G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
+        OAUTH_SCOPE = os.environ.get("OAUTH_SCOPE", None)
+        REDIRECT_URI = os.environ.get("REDIRECT_URI",None)
         
 else:
     class Config(object):
