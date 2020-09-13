@@ -64,7 +64,7 @@ async def amireallyalive(alive):
         tele += f"` 👉 SPARKZZZ Version:` **{telever}**\n"
         tele += "` 👉  Info:` **@sparkzzzbotsupport**\n"
         tele += f"` 👉 Sudo :` **{sudo}**\n"
-        tele += f"` 👉 TeleBot Uptime:` **{uptime}**\n"
+        tele += f"` 👉 SPARKZZZ Uptime:` **{uptime}**\n"
         tele += "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
         tele += f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
@@ -90,7 +90,7 @@ async def amireallyalive(alive):
                 f"` 👉 SPARKZZZ Version:` **{telever}**\n"
                 "` 👉 More Info:` **@sparkzzzbothelp**\n"
                 f"` 👉 Sudo :` **{sudo}**\n"
-                f"` 👉 TeleBot Uptime:` **{uptime}**\n"
+                f"` 👉 SPARKZZZ Uptime:` **{uptime}**\n"
                 "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
                 f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
                 "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
