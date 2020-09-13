@@ -159,16 +159,7 @@ if bool(ENV):
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
-   # Google Photos Module                                       
-   G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID")
-   G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET")
-   G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID")
-   if G_PHOTOS_AUTH_TOKEN_ID:
-       G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
-
-   # Download directory location
-   TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
-                    "TMP_DOWNLOAD_DIRECTORY") or "/SPARKZZZ/.bin"  
+     
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
