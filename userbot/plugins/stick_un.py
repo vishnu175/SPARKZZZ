@@ -2,6 +2,8 @@
 
 # modified by @UniBorg
 
+# modified by @SPARKZZZ
+
 
 
 import io
@@ -132,7 +134,7 @@ async def sticklet(event):
 
     # finally, reply the sticker
 
-    await event.client.send_file(event.chat_id, image_stream, caption="TeleBot Sticklet", reply_to=event.message.reply_to_msg_id)
+    await event.client.send_file(event.chat_id, image_stream, caption="SPARKZZZ Sticklet", reply_to=event.message.reply_to_msg_id)
 
 
 
