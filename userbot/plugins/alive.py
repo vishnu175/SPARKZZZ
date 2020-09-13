@@ -51,18 +51,19 @@ async def amireallyalive(alive):
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**WELCOME TO SPARKZZZ **\n\n"
-        tele += "` ⚡SPARKZZZ⚡ IS ONLINE`\n\n"
-        tele += "`  🖥️ SYSTEM FEATURES 🖥️`\n\n"
+        tele = f"**  SPARKZZZ INSIDE  **\n\n"
+        tele += "`  🌐 STATUS : ONLINE \n\n"
+        tele += "`   🖥️ SYSTEM FEATURES 🖥️`\n\n"
         tele += "`  👉 Telethon Version:` **1.16.4**\n"
-        tele += "`  👉 Python:` **3.8.3**\n"
+        tele += "`   👉 Python:` **3.8.3**\n"
         tele += f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
-        tele += "`  👉 More Info:` @sparkzzzbotsupport\n"
-        tele += f"` 👉Uptime:` {uptime}\n"
-        tele += "`  👉Database Status:` **FUNCTIONAL 👌!**\n"
-        tele += f"` 👉My Boss  `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-        tele += "    [⚡ Repository ⚡](https://github.com/vishnu175/SPARKZZZ)"
+        tele += f"`  👉 Uptime:` {uptime}\n"
+        tele += "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
+        tele += f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+        tele += "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)\n"
+        tele += "`   👉 Info :`**@sparkzzzbotsupport**\n"
 
+        
         chat = await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
@@ -78,16 +79,18 @@ async def amireallyalive(alive):
         img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
-        await borg.send_message(alive.chat_id, f"**WELCOME TO SPARKZZZ **\n\n"
-                "`⚡SPARKZZZ⚡ IS ONLINE`\n\n"
-                "`👉 Telethon Version:` **1.16.4**\n" 
-                "`👉 Python:` **3.8.3**\n"
-                f"👉 SPARKKZZZ Version:` **{telever}**\n"
-                "`👉 More Info:` @sparkzzzbotsupport\n"
-               f"`👉 Uptime:` {uptime}\n"
-                "`👉 Database Status:` **FUNCTIONAL 👌!**\n"
-               f"`👉 My Boss  `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-                "    [⚡ Repository ⚡](https://github.com/vishnu175/SPARKZZZ)",link_preview = False)
+        await borg.send_message(alive.chat_id, f"**SPARKZZZ INSIDE **\n\n"
+                 "`  🌐 STATUS : ONLINE \n\n"
+                 "`   🖥️ SYSTEM FEATURES 🖥️`\n\n"
+                 "`  👉 Telethon Version:` **1.16.4**\n"
+                 "`   👉 Python:` **3.8.3**\n"
+                 f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
+                 f"`  👉 Uptime:` {uptime}\n"
+                 "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
+                 f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+                  "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
+                  "`   👉 Info :`**@sparkzzzbotsupport**\n"
+                 
         await borg.send_file(alive.chat_id, file=sticker) 
 
         await alive.delete()
