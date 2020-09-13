@@ -4,6 +4,7 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient
 from var import Var
 import time
+from math import cell 
 
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
@@ -143,13 +144,13 @@ if bool(ENV):
     else:
         lastfm = None
         
-        #Google Photos
+   # Google Photos Module
    G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
    G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
    G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
    if G_PHOTOS_AUTH_TOKEN_ID:
-       G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
+   G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID
+   TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
     # Google Drive Module
