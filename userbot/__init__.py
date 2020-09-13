@@ -141,7 +141,7 @@ if bool(ENV):
     CUSTOM_AFK = os.environ.get("CUSTOM_AFK", None)
        
     # OWNER ID
-    OWNER_ID = os.environ.get("OWNER_ID", "719195224")
+    OWNER_ID = os.environ.get("OWNER_ID", "731591473")
    
     # PMPERMIT
     COUNT_MSG = 0
@@ -170,7 +170,7 @@ if bool(ENV):
     G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
     G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
     if G_PHOTOS_AUTH_TOKEN_ID:
-     vv G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
+        G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
 
     # Google Drive Module
