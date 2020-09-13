@@ -113,7 +113,7 @@ if ENV:
         G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
         G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
         if G_PHOTOS_AUTH_TOKEN_ID:
-        G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
+             G_PHOTOS_AUTH_TOKEN_ID = int ("G_PHOTOS_AUTH_TOKEN_ID")
 
        
     
