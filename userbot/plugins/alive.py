@@ -61,7 +61,7 @@ async def amireallyalive(alive):
         tele += "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
         tele += f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
         tele += "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)\n"
-        tele += "`   👉 Info :` **@sparkzzzbotsupport**"
+        tele += "   👉 Info : @sparkzzzbotsupport"
 
         
         chat = await alive.get_chat()
@@ -89,7 +89,7 @@ async def amireallyalive(alive):
                  "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
                  f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
                   "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
-                  "`   👉 Info :` **@sparkzzzbotsupport**"
+                  "   👉 Info : @sparkzzzbotsupport"
                  
         await borg.send_file(alive.chat_id, file=sticker) 
 
