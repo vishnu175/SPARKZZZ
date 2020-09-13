@@ -40,14 +40,14 @@ async def cmd_list(event):
             if input_str in CMD_LIST:
                 string = "Commands available in {}: \n".format(input_str)
                 for i in CMD_LIST[input_str]:
-                    string += "    " + i
+                    string += "  ℹ️  " + i
                     string += "\n"
                 string +="© @sparkzzzbotsupport"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ BOT](https://xditya.gitbook.io/telebot/)**\n\n"""
+               help_string = """⚡SPARKZZZ⚡ Modules for {DEFAULT USER} Are Listed Here !"""""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
