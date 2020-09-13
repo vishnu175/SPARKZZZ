@@ -161,8 +161,8 @@ if bool(ENV):
                                          "./downloads")
    # Google Photos Module                                       
    G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID")
-   G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
-   G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
+   G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET")
+   G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID")
    if G_PHOTOS_AUTH_TOKEN_ID:
        G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
