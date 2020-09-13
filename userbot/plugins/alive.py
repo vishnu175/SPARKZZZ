@@ -10,6 +10,7 @@ from userbot.utils import admin_cmd, sudo_cmd
 from userbot.__init__ import StartTime
 from datetime import datetime
 from userbot.uniborgConfig import Config
+sparkzzz = bot 
 
 ALV_PIC = os.environ.get("ALIVE_PIC" , None)
 
@@ -45,10 +46,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@sparkzzzbotsupport"
 
-@telebot.on(admin_cmd(outgoing=True, pattern="alive"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="alive"))
+@sparkzzz.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
 async def amireallyalive(alive):
     start = datetime.now()
     myid = bot.uid
@@ -57,10 +58,10 @@ async def amireallyalive(alive):
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**SPARKZZZ INSIDE **\n\n"
-        tele += "`🌐 SYSTEM IS ONLINE !`\n\n"
-        tele += "` 👉 Telethon version:` **1.16.4**\n` 🔹 Python:` **3.8.3**\n"
-        tele += f"` 👉 TeleBot Version:` **{telever}**\n"
+        tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n"
+        tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
+        tele += "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
+        tele += f"` 👉 SPARKZZZ Version:` **{telever}**\n"
         tele += "` 👉  Info:` **@sparkzzzbotsupport**\n"
         tele += f"` 👉 Sudo :` **{sudo}**\n"
         tele += f"` 👉 TeleBot Uptime:` **{uptime}**\n"
@@ -83,10 +84,10 @@ async def amireallyalive(alive):
         img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
-        await borg.send_message(alive.chat_id, f"**SPARKZZZ INSIDE **\n\n"
+        await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
                 "`🌐 SYSTEM IS ONLINE !`\n\n"
-                "` 👉 Telethon version:` **1.16.4**\n` 🔹 Python:` **3.8.3**\n"
-                f"` 👉 TeleBot Version:` **{telever}**\n"
+                "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
+                f"` 👉 SPARKZZZ Version:` **{telever}**\n"
                 "` 👉 More Info:` **@sparkzzzbothelp**\n"
                 f"` 👉 Sudo :` **{sudo}**\n"
                 f"` 👉 TeleBot Uptime:` **{uptime}**\n"
