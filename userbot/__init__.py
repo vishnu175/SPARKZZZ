@@ -145,7 +145,7 @@ if bool(ENV):
         lastfm = None
         
    # Google Photos Module
-   G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
+   G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID")or None 
    G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
    G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
    if G_PHOTOS_AUTH_TOKEN_ID:
@@ -155,12 +155,12 @@ if bool(ENV):
     else:
         PLACEHOLDER = None 
 
-    # Google Drive Module
-    G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
-    G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
-    G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
-    GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
+   # Google Drive Module
+   G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
+   G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
+   G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
+   GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
+   TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 else:
     # Put your ppe vars here if you are using local hosting
