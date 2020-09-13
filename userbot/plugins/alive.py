@@ -58,10 +58,11 @@ async def amireallyalive(alive):
         tele += "`   👉 Python:` **3.8.3**\n"
         tele += f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
         tele += f"`  👉 Uptime:` {uptime}\n"
-        tele += "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
+        tele += "`  👉 Database Status:` **FUNCTIONAL 🔌!!!**\n"
+        tele += "`    👉 Info:` **@sparkzzzbotsupport**\n"
         tele += f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
         tele += "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)\n"
-        tele += "   👉 Info : @sparkzzzbotsupport"
+        
 
         
         chat = await alive.get_chat()
@@ -87,9 +88,10 @@ async def amireallyalive(alive):
                  f"` 👉 SPARKKZZZ Version:` **{telever}**\n"
                  f"`  👉 Uptime:` {uptime}\n"
                  "`  👉Database Status:` **FUNCTIONAL 🔌!!!**\n"
-                 f"`  👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+                 "`   👉 Info:` **@sparkzzzbotsupport**\n"    
+                 f"` 👉My Master `: [{DEFAULTUSER}](tg://user?id={myid})\n\n"
                   "  🔧[⚡ FORK SPARKZZ ⚡](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
-                  "   👉 Info : @sparkzzzbotsupport"
+                  
                  
         await borg.send_file(alive.chat_id, file=sticker) 
 
