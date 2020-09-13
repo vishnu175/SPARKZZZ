@@ -27,7 +27,7 @@ USER_BOT_NO_WARN = ("**Welcome to SPARKZZZ inbox security.**\n\nNice to see you 
                     "\n\n   ~ Thank You.")
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @ sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
+    @ sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -71,7 +71,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 719195224:
+          if chat.id == 731591473:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
           else:
@@ -81,7 +81,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @ sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
+    @ sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -97,7 +97,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @ sparkzzz.on(admin_cmd(pattern="listapproved"))
+    @ sparkzzz.on(admin_cmd(pattern="lista"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -172,7 +172,7 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def do_pm_permit_action(chat_id, event):
         if chat_id not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
-        if PM_WARNS[chat_id] == 5:
+        if PM_WARNS[chat_id] == 3:
             r = await event.reply(USER_BOT_WARN_ZERO)
             await asyncio.sleep(3)
             await event.client(functions.contacts.BlockRequest(chat_id))
