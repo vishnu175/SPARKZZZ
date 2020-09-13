@@ -22,7 +22,7 @@ async def _(event):
     await event.edit("Thanks")
     animation_chars = [
             "**⚡SPARKZZZ ⚡**",
-            "[More Info](https://telegra.ph/TeleBot-07-08)"
+            "[More Info](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
          ]
             
 
