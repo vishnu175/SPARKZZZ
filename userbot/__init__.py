@@ -81,6 +81,9 @@ if bool(ENV):
 
     # remove.bg API key
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
+    
+    # Genius lyrics  API
+    GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 
     # Chrome Driver and Headless Google Chrome Binaries
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
@@ -88,6 +91,20 @@ if bool(ENV):
 
     # For bit.ly plugin
     BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
+    
+    # Deezloader
+    DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
+    
+    
+    # Youtube API key
+    YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
+    
+    # For MONGO based DataBase
+    MONGO_URI = os.environ.get("MONGO_URI", None)
+    
+    # Bot Name
+    TERM_ALIAS = os.environ.get("TERM_ALIAS", "SPARKZZZ-BOT")
+
 
     # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
