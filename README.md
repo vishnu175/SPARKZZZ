@@ -1,11 +1,18 @@
 # SPARKZZZ -Telegram userbot
 
 <p align="left">
-    <a href="https://t.me/sparkzzzbothelp"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a>
+    
     <a href="https://github.com/vishnu175/SPARKZZZ/stargazers"><img src="https://img.shields.io/github/stars/xditya/TeleBot?style=social"></a>
     <a href="https://github.com/vishnu175/SPARKZZZ"><img src="https://img.shields.io/github/last-commit/xditya/TeleBot?style=flat-square"></a>
 </p>
     
+    
+    
+    
+## Support
+<a href="https://t.me/sparkzzzbotsupport"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/sparkzzzbothelp"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+
 
 
 
@@ -22,9 +29,9 @@
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vishnu175/SPARKZZZ)
 
-## Support
-Join [sparkzzz support group](https://t.me/sparkzzzbotsupport) for updates and new plugin suggestions.
-Do fork and star the repo 
+
+
+
 
 ### Session String 
 <a href="https://stringsession.vishnu175.repl.run/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
