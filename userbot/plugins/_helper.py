@@ -1,7 +1,12 @@
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
-@command(pattern="^.help ?(.*)")
+sparkzzzbot = bot 
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
+
+
+@sparkzzzbot.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -34,6 +39,7 @@ async def cmd_list(event):
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
+                    string +="\n**© @sparkzzzbotsupport**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
