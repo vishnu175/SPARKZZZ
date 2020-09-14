@@ -47,10 +47,17 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-                   help_string = """SPARKZZZ Userbot Modules of my Boss  Are Listed Here !"""""
+                   help_string = f"""SPARKZZZ modules are listed here! Type .help(module name) to know about how its working \n\n"""
                    results = await bot.inline_query(  # pylint:disable=E0602
                    tgbotusername,
                    help_string
+            )
+            await results[0].click(
+                event.chat_id,
+                reply_to=event.reply_to_msg_id,
+                hide_via=True
+            )
+            await event.delete()
             )
             await results[0].click(
                 event.chat_id,
