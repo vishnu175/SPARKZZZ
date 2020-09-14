@@ -16,9 +16,9 @@ import sys
 
 import random
 
-from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(pattern="gott", outgoing=True))
+
+@borg.on(events.NewMessage(pattern=r"\.gott", outgoing=True))
 
 async def _(event):
 

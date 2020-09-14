@@ -2,10 +2,11 @@
 Syntax: .github USERNAME"""
 from telethon import events
 import requests
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 
-@borg.on(admin_cmd(pattern="github (.*)"))
+@borg.on(admin_cmd("github (.*)"))
+@borg.on(sudo_cmd("github (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -39,4 +40,4 @@ Profile Created: {}""".format(name, html_url, gh_type, company, blog, location, 
         )
         await event.delete()
     else:
-        await event.edit("`{}`: {}".format(input_str, r.text))
+        await edit_or_reply(event, "`{}`: {}".format(input_str, r.text))
