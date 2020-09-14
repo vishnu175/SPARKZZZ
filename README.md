@@ -11,6 +11,8 @@
 
 
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 
     
 
@@ -21,7 +23,7 @@
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vishnu175/SPARKZZZ)
 
 ## Support
-Join [SPARKZZZ Support group](https://t.me/sparkzzzbotsupport) for updates and new plugin suggestions.
+Join [sparkzzz support group](https://t.me/sparkzzzbotsupport) for updates and new plugin suggestions.
 Do fork and star the repo 
 
 ### Session String 
