@@ -5,11 +5,10 @@
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
-sparkzzz = bot 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
 
-@ sparkzzz .on(admin_cmd(pattern="help ?(.*)"))
+@telebot.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -17,7 +16,7 @@ async def cmd_list(event):
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += "⚡" + i + "\n"
+                string += "⚡ " + i + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
@@ -38,19 +37,19 @@ async def cmd_list(event):
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "Commands available in {}: \n".format(input_str)
+                string = "**Commands available in {}** \n\n".format(input_str)
                 for i in CMD_LIST[input_str]:
-                    string += "  ℹ️  " + i
+                    string += "    " + i
                     string += "\n"
-                string +="© @sparkzzzbotsupport"
+                string +="\n**© @TeleBotSupport**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-                   help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\n\n"""
-                   results = await bot.inline_query(  # pylint:disable=E0602
-                   tgbotusername,
-                   help_string
+            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[TeleBot](https://github.com/vishnu175/SPARKZZZ/)**\n\n"""
+            results = await bot.inline_query(  # pylint:disable=E0602
+                tgbotusername,
+                help_string
             )
             await results[0].click(
                 event.chat_id,
