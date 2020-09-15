@@ -10,6 +10,7 @@ from userbot.utils import admin_cmd, sudo_cmd
 from userbot.__init__ import StartTime
 from datetime import datetime
 from userbot.uniborgConfig import Config
+sparkzzz = bot 
 
 
 ALV_PIC = os.environ.get("ALIVE_PIC" , None)
