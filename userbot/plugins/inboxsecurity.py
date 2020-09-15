@@ -95,14 +95,14 @@ if Var.PRIVATE_GROUP_ID is not None:
           else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("[{}](tg://user?id={}) disapproved ❌ to PM.".format(firstname, chat.id))
+                await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
     @telebot.on(admin_cmd(pattern="lista"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "[⚡SPARKZZZ⚡] Currently Approved ✔️ PMs\n"
+        APPROVED_PMs = "[SPARKZZZ] Currently Approved  PMs\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
@@ -119,7 +119,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[⚡SPARKZZZ⚡]Current Approved ✔️ PMs",
+                    caption="[SPARKZZZ]Current Approved  PMs",
                     reply_to=event
                 )
                 await event.delete()
@@ -180,7 +180,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await PREV_REPLY_MESSAGE[chat_id].delete()
             PREV_REPLY_MESSAGE[chat_id] = r
             the_message = ""
-            the_message += "#BLOCKED_PMs 🚫 \n\n"
+            the_message += "#BLOCKED_PMs \n\n"
             the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
             the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
             # the_message += f"Media: {message_media}"
