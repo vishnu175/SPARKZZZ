@@ -68,7 +68,7 @@ async def amireallyalive(alive):
         tele += "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
         tele += f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
-
+        tele += "   🔖 "**License** : [GNU General Public License ](github.com/vishnu175/SPARKZZZ/blob/master/LICENSE)\n""
         chat = await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
@@ -94,5 +94,9 @@ async def amireallyalive(alive):
                 "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
                 f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
                 "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
+                "   🔖 "**License** : [GNU General Public License ](github.com/vishnu175/SPARKZZZ/blob/master/LICENSE)\n""
         await borg.send_file(alive.chat_id, file=sticker) 
         await alive.delete()
+
+        
+        
