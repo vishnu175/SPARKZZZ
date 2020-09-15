@@ -1,5 +1,5 @@
 # Fixed by @its_xditya
-#its_vishnu175
+#ported from @telebot for SPARKZZZ
 
 import time
 import asyncio
@@ -21,8 +21,8 @@ myid = bot.uid
 MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security! Please wait for me to approve you. 😊"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-USER_BOT_NO_WARN = ("**Welcome to SPARKZZZ inbox security.**\n\nNice to see you here, but  "
-                    f"[{DEFAULTUSER}](tg://user?id={myid}) is currently unavailable.\nThis is an automated message..\n\n"
+USER_BOT_NO_WARN = ("**Welcome to SPARKZZZ inbox security.**\n\nNice to see you here.unfortunately  "
+                    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.\nThis is an automated message from SPARKZZZ inbox security\n\n"
                     f"{MESAG}"
                     "\n\n   ~ Thank You.")
 
@@ -62,7 +62,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
                     
-    @ sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
+    @telebot.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -81,7 +81,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @ sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
+    @telebot.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -97,7 +97,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @ sparkzzz.on(admin_cmd(pattern="lista"))
+    @telebot.on(admin_cmd(pattern="lista"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
