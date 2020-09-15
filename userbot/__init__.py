@@ -108,6 +108,12 @@ if bool(ENV):
     # Bot Name
     TERM_ALIAS = os.environ.get("TERM_ALIAS", "SPARKZZZ-BOT")
 
+    
+    # Github Credentials for updater and Gitupload.
+    GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
+    GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
+
+
 
     # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
