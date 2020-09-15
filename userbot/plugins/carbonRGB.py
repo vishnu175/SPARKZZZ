@@ -1,7 +1,7 @@
 """Carbon Scraper Plugin for Userbot. //text in creative way.
 usage: .karb //as a reply to any text message
 
-Thanks to @TeleBotHelp for THIS PLUGIN"""
+Thanks to @SPARKZZZ for THIS PLUGIN"""
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from urllib.parse import quote_plus
@@ -95,7 +95,7 @@ async def carbon_api(e):
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="Carbonised by [TeleBot](https://t.me/TeleBotHelp)",
+         caption="Carbonised by [SPARKZZZ](https://t.me/sparkzzzbotsupport)",
          force_document=False,
          reply_to=e.message.reply_to_msg_id,
          )
