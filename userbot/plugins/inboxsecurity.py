@@ -92,10 +92,11 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
           if chat.id == 731591473:
             await event.edit("Sorry, I Can't Disapprove My Master ")
-          else:
+          else: 
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
+                
                 
     @telebot.on(admin_cmd(pattern="lista"))
     async def approve_p_m(event):
@@ -119,7 +120,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[SPARKZZZ]Current Approved  PMs",
+                    caption="[SPARKZZZ]Current Approved PMs",
                     reply_to=event
                 )
                 await event.delete()
