@@ -11,7 +11,7 @@ import asyncio
 from userbot.utils import admin_cmd
 sparkzzz = bot 
 
-@ sparkzzz.on(admin_cmd(pattern="info"))
+@sparkzzz.on(admin_cmd(pattern="info"))
 async def _(event):
     if event.fwd_from:
         return
