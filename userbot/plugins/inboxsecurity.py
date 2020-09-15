@@ -20,11 +20,11 @@ PREV_REPLY_MESSAGE = {}
 myid = bot.uid
 MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security 🔐! Please wait for me to approve you. 😊"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
-USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ⚡inbox security 🔐.**\n\nNice to see you here.unfortunately  "
+USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
+USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
                     f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
                     f"{MESAG}"
-                    "\n\n\n - Thank You.")
+                    "\n\n\n - Thank You 🙏")
 
 if Var.PRIVATE_GROUP_ID is not None:
     @ sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
@@ -57,7 +57,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "__Auto-approved coz outgoing 🚶‍♂️__"
+                    bruh = "__Auto-approved coz outgoing 🏂__🚴__🚣"
                     rko = await borg.send_message(event.chat_id, bruh)
                     await asyncio.sleep(3)
                     await rko.delete()
@@ -95,14 +95,14 @@ if Var.PRIVATE_GROUP_ID is not None:
           else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
+                await event.edit("[{}](tg://user?id={}) disapproved ❌ to PM.".format(firstname, chat.id))
                 
     @telebot.on(admin_cmd(pattern="lista"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "[SPARKZZZ] Currently Approved PMs\n"
+        APPROVED_PMs = "[⚡SPARKZZZ⚡] Currently Approved ✔️ PMs\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
@@ -119,7 +119,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[SPARKZZZ]Current Approved PMs",
+                    caption="[⚡SPARKZZZ⚡]Current Approved ✔️ PMs",
                     reply_to=event
                 )
                 await event.delete()
@@ -180,7 +180,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await PREV_REPLY_MESSAGE[chat_id].delete()
             PREV_REPLY_MESSAGE[chat_id] = r
             the_message = ""
-            the_message += "#BLOCKED_PMs\n\n"
+            the_message += "#BLOCKED_PMs 🚫 \n\n"
             the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
             the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
             # the_message += f"Media: {message_media}"
