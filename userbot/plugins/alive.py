@@ -57,7 +57,7 @@ async def amireallyalive(alive):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
-        if ALV_PIC:
+    if ALV_PIC:
         tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n"
         tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
         tele += "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
