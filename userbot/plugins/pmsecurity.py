@@ -1,4 +1,5 @@
-# Fixed by @its_xditya
+# credits @xditya
+#ported for Sparkzzz
 
 import time
 import asyncio
@@ -12,20 +13,21 @@ from userbot.utils import admin_cmd
 from userbot.events import register
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
+TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`TeleBot PM security! Please wait for me to approve you. 😊"
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
-USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-USER_BOT_NO_WARN = ("**Welcome to TeleBot's PM security.**\n\nNice to see you here, but  "
-                    f"[{DEFAULTUSER}](tg://user?id={myid}) is currently unavailable.\nThis is an automated message..\n\n"
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security 🔐! Please wait for me to approve you. 😊"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
+USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
+                    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
                     f"{MESAG}"
-                    "\n\n   ~ Thank You.")
+                    "\n\n\n - Thank You 🙏")
+
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @telebot.on(admin_cmd(pattern="approve ?(.*)"))
+    @telebot.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -69,7 +71,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 719195224:
+          if chat.id == 731591473:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
           else:
@@ -79,7 +81,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
+    @telebot.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -88,7 +90,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 719195224:
+          if chat.id == 731591473:
             await event.edit("Sorry, I Can't Disapprove My Master")
           else:
             if pmpermit_sql.is_approved(chat.id):
@@ -100,7 +102,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.fwd_from:
             return
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "[TeleBot] Currently Approved PMs\n"
+        APPROVED_PMs = "[SPARKZZZ] Currently Approved PMs\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
@@ -117,7 +119,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[TeleBot]Current Approved PMs",
+                    caption="[SPARKZZZ]Current Approved PMs",
                     reply_to=event
                 )
                 await event.delete()
@@ -206,7 +208,7 @@ from userbot.utils import admin_cmd
 import io
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telethon import events
-@bot.on(events.NewMessage(incoming=True, from_users=(719195224)))
+@bot.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
     if event.fwd_from:
         return
@@ -216,4 +218,4 @@ async def hehehe(event):
             pmpermit_sql.approve(chat.id, "**Dev is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
            
-# (c) TeleBot
+# (c) SPARKZZZ
