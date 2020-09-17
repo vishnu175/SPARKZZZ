@@ -10,7 +10,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 ALV_PIC = os.environ.get("ALIVE_PIC" , None)
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 ALV_PIC = "https://telegra.ph/file/e4d5011aa1fd76b742649.png"
-tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n
+tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n"
 tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
 tele += "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
 tele += f"` 👉 SPARKZZZ Version:` **{telever}**\n"
