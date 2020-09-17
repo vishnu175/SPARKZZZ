@@ -74,13 +74,13 @@ async def amireallyalive(alive):
         await borg.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/2fe25727349e5ec1c035c.png")
+    req = requests.get("https://telegra.ph/file/0670190de8e3bddea6d95.png")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
     img = Image.open(file)
     with BytesIO() as sticker:
-        img.save(sticker,"webp")
+        img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
