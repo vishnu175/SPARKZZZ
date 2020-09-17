@@ -80,7 +80,8 @@ async def amireallyalive(alive):
     file.seek(0)
     img = Image.open(file)
     with BytesIO() as sticker:
-        img.save(sticker, "webp")
+        img.save(sticker,"webp")
+        sticker.name = "sticker.webp"
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
                 "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
