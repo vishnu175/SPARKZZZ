@@ -89,7 +89,7 @@
    "required": false
   },
   "PRIVATE_GROUP_BOT_API_ID": {
-
+   "description": "Obtain ID by creating a group."
    "value": "",
    "required": true
   },
