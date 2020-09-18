@@ -89,7 +89,7 @@
    "required": false
   },
   "PRIVATE_GROUP_BOT_API_ID": {
-   "description": "Must read https://telegra.ph/TeleTeleBotBot-Setup-06-06 for knowing how to get the value. Required for pmpermit.",
+   "description": "Must read https://telegra.ph/SPARKZZZ-BOT-setup-09-18 for knowing how to get the value. Required for pmpermit.",
    "value": "",
    "required": true
   },
