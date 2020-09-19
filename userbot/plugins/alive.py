@@ -59,7 +59,7 @@ async def amireallyalive(alive):
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
         tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n"
-        tele += f">>>>>>>>>><<<<<<<<<<<\n"
+        tele += f"==============================\n"
         tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
         tele += "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
         tele += f"` 👉 SPARKZZZ Version:` **{telever}**\n"
@@ -67,7 +67,8 @@ async def amireallyalive(alive):
         tele += f"` 👉 Sudo :` **{sudo}**\n"
         tele += f"` 👉 Uptime:` **{uptime}**\n"
         tele += "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
-        tele += f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
+        tele += f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n"
+        tele += f"==============================\n\n"
         tele += "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
         chat = await alive.get_chat()
         await alive.delete()
@@ -85,7 +86,7 @@ async def amireallyalive(alive):
         sticker.name = "sticker.webp"
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
-                f">>>>>>>>>><<<<<<<<<<<\n"
+                f"==============================\n"
                 "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
                 "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
                 f"` 👉 SPARKZZZ Version:` **{telever}**\n"
@@ -93,7 +94,8 @@ async def amireallyalive(alive):
                 f"` 👉 Sudo :` **{sudo}**\n"
                 f"` 👉 SPARKZZZ Uptime:` **{uptime}**\n"
                 "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
-                f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
+                f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n"
+                f"==============================\n\n"       
                 "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
         await borg.send_file(alive.chat_id, file=sticker) 
         await alive.delete()     
