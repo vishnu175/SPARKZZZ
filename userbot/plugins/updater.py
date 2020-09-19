@@ -1,4 +1,4 @@
-# For TeleBot
+# For SPARKZZZ
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -7,7 +7,7 @@
 # Rewritten for @csv1990/SPARKZZZ
 
 """
-This module is used for updating TeleBot
+This module is used for updating SPARKZZZ-BOT
 """
 
 from os import remove, execle, path, makedirs, getenv, environ
@@ -26,7 +26,7 @@ requirements_path = path.join(
 
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
-GIT_REPO_NAME = "TeleBot"
+GIT_REPO_NAME = "SPARKZZZ"
 UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ"
 
 async def gen_chlog(repo, diff):
@@ -92,7 +92,7 @@ async def upstream(ups):
             f'**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). '
             'in that case, Updater is unable to identify '
              'which branch is to be merged. '
-            'Please checkout the official branch of TeleBot`')
+            'Please checkout the official branch of SPARKZZZ`')
         repo.__del__()
         return
 
@@ -108,7 +108,7 @@ async def upstream(ups):
 
     if not changelog and not force_updateme:
         await ups.edit(
-            f'\n`Your BOT is`  **up-to-date**  `with`  **[[{ac_br}]]({UPSTREAM_REPO_URL}/tree/{ac_br})**\n')
+            f'\n`Your SPARKZZZ-BOT is`  **up-to-date**  `with`  **[[{ac_br}]]({UPSTREAM_REPO_URL}/tree/{ac_br})**\n')
         repo.__del__()
         return
 
@@ -127,14 +127,14 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond(f'Do `.update now` to update')
+        await ups.respond(f'Type `.update now` to update')
         return
 
     if force_updateme:
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
-        await ups.edit('`Updating userbot, please wait....`')
+        await ups.edit('`Updating SPARKZZZ, please wait....`')
     # We're in a Heroku Dyno, handle it's memez.
     if Var.HEROKU_API_KEY is not None:
         import heroku3
@@ -142,7 +142,7 @@ async def upstream(ups):
         heroku_app = None
         heroku_applications = heroku.apps()
         if not Var.HEROKU_APP_NAME:
-            await ups.edit('`Please set up the HEROKU_APP_NAME variable to be able to update userbot.`')
+            await ups.edit('`Please set up the HEROKU_APP_NAME variable to be able to update SPARKZZZ.`')
             repo.__del__()
             return
         for app in heroku_applications:
@@ -151,11 +151,11 @@ async def upstream(ups):
                 break
         if heroku_app is None:
             await ups.edit(
-                f'{txt}\n`Invalid Heroku credentials for updating userbot dyno.`'
+                f'{txt}\n`Invalid Heroku credentials for updating SPARKZZZ dyno⚙️.`'
             )
             repo.__del__()
             return
-        await ups.edit('`Userbot dyno build in progress, please wait for it to complete.`'
+        await ups.edit('`SPARKZZZ dyno ⚙️ build in progress, please wait for it to complete.`'
                        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -172,8 +172,8 @@ async def upstream(ups):
             await ups.edit(f'{txt}\n`Here is the error log:\n{error}`')
             repo.__del__()
             return
-        await ups.edit('`Successfully Updated!\n'
-                       'Restarting, please wait...`')
+        await ups.edit('`SPARKZZZ Successfully Updated!\n'
+                       'Restarting 📱, please wait...`')
     else:
         # Classic Updater, pretty straightforward.
         try:
@@ -181,8 +181,8 @@ async def upstream(ups):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
-        await ups.edit('`Successfully Updated!\n'
-                       'Bot is restarting... Wait for a second!`')
+        await ups.edit('`SPARKZZZ Successfully Updated!\n'
+                       'Bot is restarting 📱.. Wait for a second!`')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
