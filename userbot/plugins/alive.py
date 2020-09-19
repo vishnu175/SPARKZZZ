@@ -95,7 +95,7 @@ async def amireallyalive(alive):
                 f"` 👉 SPARKZZZ Uptime:` **{uptime}**\n"
                 "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
                 f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n"
-                f"==============================\n\n"       
+                f"===============================\n\n"       
                 "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
         await borg.send_file(alive.chat_id, file=sticker) 
         await alive.delete()     
