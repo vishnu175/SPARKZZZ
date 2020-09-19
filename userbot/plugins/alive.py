@@ -68,7 +68,7 @@ async def amireallyalive(alive):
         tele += f"` 👉 Uptime:` **{uptime}**\n"
         tele += "` 👉 Database Status:` **FUNCTIONAL 🔌!**\n"
         tele += f"` 👉 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n"
-        tele += f"==============================\n\n"
+        tele += f"===============================\n\n"
         tele += "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
         chat = await alive.get_chat()
         await alive.delete()
