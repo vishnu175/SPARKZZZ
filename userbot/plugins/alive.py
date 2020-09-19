@@ -85,7 +85,7 @@ async def amireallyalive(alive):
         sticker.name = "sticker.webp"
         sticker.seek(0)
         await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
-                f">>>>>>>>>><<<<<<<<<<<\n 
+                f">>>>>>>>>><<<<<<<<<<<\n"
                 "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
                 "` 👉 Telethon version:` **1.16.4**\n` 💻 Python:` **3.8.3**\n"
                 f"` 👉 SPARKZZZ Version:` **{telever}**\n"
