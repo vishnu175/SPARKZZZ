@@ -5,7 +5,8 @@
 # you may not use this file except in compliance with the License.
 
 
-import os 
+import os
+from bitlyshortener import Shortener
 from re import match
 from userbot import BITLY_TOKEN
 from userbot.events import register
