@@ -1,5 +1,6 @@
 # Kangers keep credits
-# © @TeleBotHelp
+# credits to Telebot
+# @ SPARKZZZ
 
 """command: .hack"""
 
@@ -31,7 +32,7 @@ async def _(event):
 
             "**Connecting To Telegram Data Centre**",
 
-            "`Target Selected By Hacker: @TeleBotHelp`",
+            "`Target Selected By Hacker: @sparkzzzbothelp`",
 
             "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)",
 
