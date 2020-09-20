@@ -1,3 +1,4 @@
+# ported for SPARKZZZ
 """Emoji
 Available Commands:
 .np
@@ -21,11 +22,11 @@ async def _(event):
     animation_chars = [
             "No",
             "Problem",
-            "Sar 😇",
-            "No Problem Sar 😇",
-            "No Problem Sar 😇. Jao",
-            "No Problem Sar 😇. Jao gand",
-            "No Problem Sar 😇. Jao gand Marao"
+            "bro 😇",
+            "No Problem bro 😇",
+            "No Problem bro 😇. Take your",
+            "No Problem bro 😇. Take your own",
+            "No Problem bro 😇. Take your own Time"
          ]
             
 
