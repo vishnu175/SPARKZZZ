@@ -23,9 +23,9 @@ from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
 
-@borg.on(admin_cmd(pattern="rmbg ?(.*)"))
+@borg.on(admin_cmd(pattern="rbg ?(.*)"))
 async def _(event):
-    HELP_STR = "`.rmbg` as reply to a media, or give a link as an argument to this command"
+    HELP_STR = "`.rbg` as reply to a media, or give a link as an argument to this command"
     if event.fwd_from:
         return
     if Config.REM_BG_API_KEY is None:
@@ -77,9 +77,9 @@ async def _(event):
         await event.edit("ReMove.BG API returned Errors. Please report to @catuserbot_support\n`{}".format(output_file_name.content.decode("UTF-8")))
 
 
-@borg.on(admin_cmd(pattern="srmbg ?(.*)"))
+@borg.on(admin_cmd(pattern="srbg ?(.*)"))
 async def _(event):
-    HELP_STR = "`.rmbg` as reply to a media, or give a link as an argument to this command"
+    HELP_STR = "`.rbg` as reply to a media, or give a link as an argument to this command"
     if event.fwd_from:
         return
     if Config.REM_BG_API_KEY is None:
@@ -125,7 +125,7 @@ async def _(event):
             )
             await event.delete()
     else:
-        await event.edit("ReMove.BG API returned Errors. Please report to @catuserbot_support\n`{}".format(output_file_name.content.decode("UTF-8")))
+        await event.edit("ReMove.BG API returned Errors. Please report to @sparkzzzbothelp\n`{}".format(output_file_name.content.decode("UTF-8")))
 
 # this method will call the API, and return in the appropriate format
 # with the name provided.
@@ -167,6 +167,6 @@ def ReTrieveURL(input_url):
 
 CMD_HELP.update({
     "removebg":
-    ".rmbg <Link to Image> or reply to any image (Warning: does not work on stickers.)\
+    ".rbg <Link to Image> or reply to any image (Warning: does not work on stickers.)\
 \nUsage: Removes the background of images, using remove.bg API"
 })
