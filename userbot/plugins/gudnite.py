@@ -26,7 +26,4 @@ async def leave(e):
 
             await borg(LeaveChannelRequest(e.chat_id))
 
-        else:
-
-            await e.edit('`This is Not A Chat. Please use this in groups :/`')
-
+        
