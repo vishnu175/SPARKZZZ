@@ -1,9 +1,9 @@
-# TeleBot 
+# SPARKZZZ
 
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 """
-   Heroku manager for your userbot
+   Heroku manager for your SPARKZZZ-BOT
 """
 
 import heroku3
@@ -143,7 +143,7 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**⚙️ Dyno Usage ⚙️**:\n\n"
+    return await dyno.edit("**⚙️ SPARKZZZ Dyno Usage ⚙️**:\n\n"
                            f" -> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
                            f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
@@ -182,7 +182,7 @@ async def _(givelogs):
             givelogs.chat_id,
             "logs.txt",
             reply_to=givelogs.id,
-            caption="[Heroku] TeleBot Logs ",
+            caption="[Heroku] SPARKZZZ Logs ",
         )
         await givelogs.edit("Heroku Logs Incoming!!")
         await asyncio.sleep(5)
