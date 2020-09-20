@@ -12,7 +12,7 @@ from userbot.utils import admin_cmd
 
 import time
 
-@borg.on(admin_cmd(pattern="gdn", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern="gdn", outgoing=True))
 
 async def leave(e):
 
@@ -24,6 +24,6 @@ async def leave(e):
 
         if '-' in str(e.chat_id):
 
-            await borg(LeaveChannelRequest(e.chat_id))
+            await sparkzzz(LeaveChannelRequest(e.chat_id))
 
         
