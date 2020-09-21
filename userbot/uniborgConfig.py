@@ -112,9 +112,23 @@ if ENV:
         G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
         G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
         G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
-        if G_PHOTOS_AUTH_TOKEN_ID:
-             G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
+        if G_PHOTOS_AUTH_TOKEN_ID != None:
+           os.makedirs(TMP_DOWNLOAD_DIRECTORY)
+           t_file =  open(TMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
+           t_file.write(G_PHOTOS_AUTH_TOKEN_ID)
+           t_file.close()
 
+             
+             
+
+             
+
+      
+            
+
+            
+
+            
        
     
         
