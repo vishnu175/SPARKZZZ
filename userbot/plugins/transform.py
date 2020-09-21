@@ -8,7 +8,7 @@ from userbot import bot
 from userbot import CMD_HELP
 from userbot import TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
-from userbot.utils.tools import check_media
+from userbot.tools import check_media
 
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
 
