@@ -24,8 +24,8 @@ from userbot.utils import admin_cmd
 # Path to token json file, it should be in same directory as script
 G_PHOTOS_TOKEN_FILE = Var.TEMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"
 # Copy your credentials from the APIs Console
-CLIENT_ID = G_PHOTOS_CLIENT_ID
-CLIENT_SECRET = G_PHOTOS_CLIENT_SECRET
+CLIENT_ID = Var. G_PHOTOS_CLIENT_ID
+CLIENT_SECRET = Var.G_PHOTOS_CLIENT_SECRET
 # Check https://developers.google.com/drive/scopes for all available scopes
 OAUTH_SCOPE = "https://www.googleapis.com/auth/photoslibrary"
 # Redirect URI for installed apps, can be left as is
@@ -218,7 +218,7 @@ async def DoTeskWithDir(http, input_directory, event, parent_id):
         else:
             file_name, mime_type = file_ops(current_file_name)
             # current_file_name will have the full path
-            g_drive_link = await upload_file(http, current_file_name, file_name, mime_type, event, parent_id)
+            g_photos_link = await upload_file(http, current_file_name, file_name, mime_type, event, parent_id)
             r_p_id = parent_id
     # TODO: there is a #bug here :(
     return r_p_id
