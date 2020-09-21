@@ -59,4 +59,4 @@ tswift
 wheel
 bitlyshortener
 redis>=3.3.10
-apiclient.http
+
