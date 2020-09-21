@@ -14,6 +14,7 @@
 import asyncio
 import logging
 import os
+import math 
 import time
 from mimetypes import guess_type
 
@@ -21,6 +22,7 @@ import aiofiles
 import aiohttp
 from apiclient.discovery import build
 from httplib2 import Http
+from oauth2client.file import Storage
 from oauth2client import client, file
 from telethon import events
 
@@ -139,7 +141,7 @@ async def upload_google_photos(event):
     if not is_cred_exists:
         await event.edit("Run <code>.gpsetup</code> first 😡😒😒", parse_mode="html")
 
-    service = build("photoslibrary", "v1", http=creds.authorize(Http()))
+    service = build("photoslibrary", "v1", http=creds.authorize(Http)
 
     # create directory if not exists
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
