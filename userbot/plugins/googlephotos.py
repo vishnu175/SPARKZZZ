@@ -25,7 +25,7 @@ from oauth2client import client, file
 from telethon import events
 
 from userbot import (
-    BOTLOG_CHATID,
+    PRIVATE_GROUP_BOT_API_ID,
     G_PHOTOS_AUTH_TOKEN_ID,
     G_PHOTOS_CLIENT_ID,
     G_PHOTOS_CLIENT_SECRET,
@@ -53,7 +53,7 @@ TOKEN_FILE_NAME = "GP_SPARKZZZ.json"
 
 @register(outgoing=True, pattern=r"^\.gpsetup")
 async def setup_google_photos(event):
-    if event.chat_id != BOTLOG_CHATID:
+    if event.chat_id != PRIVATE_GROUP_BOT_API_ID:
         return
     token_file = TOKEN_FILE_NAME
     is_cred_exists, _ = await check_creds(token_file, event)
@@ -79,7 +79,7 @@ async def create_token_file(token_file, event):
             "reply the code"
         )
         response = await conv.wait_event(
-            events.NewMessage(outgoing=True, chats=BOTLOG_CHATID)
+            events.NewMessage(outgoing=True, chats=PRIVATE_GROUP_BOT_API_ID)
         )
         # logger.info(response.stringify())
         code = response.message.message.strip()
@@ -101,7 +101,7 @@ async def create_token_file(token_file, event):
 async def check_creds(token_file, event):
     if G_PHOTOS_AUTH_TOKEN_ID:
         confidential_message = await event.client.get_messages(
-            entity=BOTLOG_CHATID, ids=G_PHOTOS_AUTH_TOKEN_ID
+            entity=PRIVATE_GROUP_BOT_API_ID, ids=G_PHOTOS_AUTH_TOKEN_ID
         )
         if confidential_message and confidential_message.file:
             await confidential_message.download_media(file=token_file)
