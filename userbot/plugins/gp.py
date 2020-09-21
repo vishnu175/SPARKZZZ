@@ -24,8 +24,8 @@ from userbot.utils import admin_cmd
 # Path to token json file, it should be in same directory as script
 G_PHOTOS_TOKEN_FILE = Var.TEMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"
 # Copy your credentials from the APIs Console
-CLIENT_ID = Var. G_PHOTOS_CLIENT_ID
-CLIENT_SECRET = Var.G_PHOTOS_CLIENT_SECRET
+P_CLIENT_ID = Var. G_PHOTOS_CLIENT_ID
+P_CLIENT_SECRET = Var.G_PHOTOS_CLIENT_SECRET
 # Check https://developers.google.com/drive/scopes for all available scopes
 OAUTH_SCOPE = "https://www.googleapis.com/auth/photoslibrary"
 # Redirect URI for installed apps, can be left as is
@@ -39,7 +39,7 @@ async def _(event):
     if event.fwd_from:
         return
     mone = await event.reply("Processing ...")
-    if CLIENT_ID is None or CLIENT_SECRET is None:
+    if P_CLIENT_ID is None or P_CLIENT_SECRET is None:
         await mone.edit("This module requires credentials from https://da.gd/so63O. Aborting!")
         return False
     input_str = event.pattern_match.group(1)
@@ -103,7 +103,7 @@ async def _(event):
 async def sch(event):
     if event.fwd_from:
         return
-    if CLIENT_ID is None or CLIENT_SECRET is None:
+    if P_CLIENT_ID is None or P_CLIENT_SECRET is None:
         await event.edit("This module requires credentials from https://da.gd/so63O. Aborting!")
         return False    
     try:
@@ -153,7 +153,7 @@ async def gsearch(http,query,filename):
 async def _(event):
     if event.fwd_from:
         return
-    if CLIENT_ID is None or CLIENT_SECRET is None:
+    if P_CLIENT_ID is None or P_CLIENT_SECRET is None:
         await event.edit("This module requires credentials from https://da.gd/so63O. Aborting!")
         return
     if Var.PRIVATE_GROUP_ID is None:
@@ -235,8 +235,8 @@ def file_ops(file_path):
 async def create_token_file(token_file, event):
     # Run through the OAuth flow and retrieve credentials
     flow = OAuth2WebServerFlow(
-        CLIENT_ID,
-        CLIENT_SECRET,
+        P_CLIENT_ID,
+        P_CLIENT_SECRET,
         OAUTH_SCOPE,
         redirect_uri=REDIRECT_URI
     )
