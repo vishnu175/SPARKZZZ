@@ -22,6 +22,10 @@
    "description": "Where downloaded files will go.",
    "value": "./userbot/DOWNLOADS/",
    "required": false
+   },
+  "GENIUS_ACCESS_TOKEN": {
+  "description": "Client Access Token from https://genius.com/api-clients.",
+  "required": false
   },
   "APP_ID": {
    "description": "Get this value from my.telegram.org! Please do not steal",
