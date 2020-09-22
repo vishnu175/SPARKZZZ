@@ -23,6 +23,10 @@
    "value": "./userbot/DOWNLOADS/",
    "required": false
    },
+  "GENIUS": {
+  "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
+  "value": "0"
+    },
   "GENIUS_ACCESS_TOKEN": {
   "description": "Client Access Token from https://genius.com/api-clients.",
   "required": false
