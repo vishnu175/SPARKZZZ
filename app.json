@@ -72,6 +72,10 @@
    "value": "",
    "required": false
   },
+   "DEEZER_ARL_TOKEN": {
+   "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
+   "required": false
+   }, 
   "HEROKU_API_KEY": {
    "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
    "value": "",
