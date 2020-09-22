@@ -1,5 +1,6 @@
 #created by @eve_enryu
-
+import os
+import asyncio 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
