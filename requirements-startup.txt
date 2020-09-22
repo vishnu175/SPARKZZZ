@@ -4,7 +4,7 @@ aiofiles
 aiohttp
 aria2p
 async_generator
-beautifulsoup4
+beautifulsoup4>=4.8.1
 bs4
 bwb==3.0.0
 cfscrape
@@ -22,10 +22,11 @@ google-auth-httplib2
 google_images_download>=2.7.1
 googletrans>=2.4.0
 gsearch
-hachoir
+hachoir>=3.0a5
 heroku3
 httplib2<0.18.0
 humanize
+jotquote
 lxml
 oauth2client
 psycopg2-binary
@@ -39,9 +40,12 @@ python-dotenv
 python-magic
 pytube
 pytz
+PyPDF2
+patool
 qrcode
 regex
 requests>=2.18.4
+REPO_LINK
 search-engine-parser>=0.4.2
 selenium
 speedtest-cli>=2.0.2
@@ -50,7 +54,7 @@ telegraph
 asyncurban
 urbandict
 wikipedia>=1.4.0
-youtube-dl
+youtube-dl>=2019.9.28
 covid
 geopy
 validators
@@ -59,4 +63,24 @@ tswift
 wheel
 bitlyshortener
 redis>=3.3.10
+glitch_this
+youtube_search
+nekos.py
+pyaztro
+twitter_scraper
+html_telegraph_poster
+# SpeechRecognition>=3.4.6
+fontTools
+TgCrypto>=1.2.0
+deezloader
+jikanpy
+justwatch
+zipfile38
+csvfaker
+git+https://github.com/LonamiWebs/Telethon
+git+https://github.com/ahupp/python-magic
+
+
+
+
 
