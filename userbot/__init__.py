@@ -86,7 +86,8 @@ if bool(ENV):
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     
     # Genius lyrics  API
-    GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
+    GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
+    GENIUS_ACCESS_TOKEN = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 
     # Chrome Driver and Headless Google Chrome Binaries
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
