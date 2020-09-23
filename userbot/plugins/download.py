@@ -2,7 +2,7 @@
 Syntax:
 .download
 .download url | file.name to download files from a Public Link
-Credits @TeleBotHelp """
+Credits @sparkzzzbothelp """
 import asyncio
 import math
 import os
@@ -75,8 +75,8 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         if downloader.isSuccessful():
-            await mone.edit("TeleBot has downloaded it to `{}` in {} seconds.".format(downloaded_file_name, ms))
+            await mone.edit("SPARKZZZ has downloaded it to `{}` in {} seconds.".format(downloaded_file_name, ms))
         else:
             await mone.edit("Incorrect URL\n {}".format(input_str))
     else:
-        await mone.edit("Reply to a message for TeleBot to download to your local server.")
+        await mone.edit("Reply to a message for SPARKZZZ to download to your local server.")
