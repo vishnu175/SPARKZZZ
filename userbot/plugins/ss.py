@@ -12,7 +12,7 @@ from re import match
 
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import chrome, options
+from userbot.helpers import chrome, options
 
 
 @register(pattern=r"^\.ss (.*)", outgoing=True)
