@@ -1,5 +1,5 @@
 """
-Gdrive and mega downloader plugin for TeleBot
+Gdrive and mega downloader plugin for SPARKZZZ
 Ported from other bots
 """
 import requests
