@@ -90,5 +90,12 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 - The userbot will not work without setting the mandatory vars.
 
 
-    
+## CREDITS
+
+-To all userbots
+- friday userbot
+- oub remix
+- Telebot
+
+
 
