@@ -3,9 +3,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Snips
 Available Commands:
-.snips
-.snipl
-.snipd"""
+.sp
+.spl
+.spdl"""
 from telethon import events, utils
 from telethon.tl import types
 from userbot.plugins.sql_helper.snips_sql import get_snips, add_snip, remove_snip, get_all_snips
@@ -80,7 +80,7 @@ async def on_snip_list(event):
         for a_snip in all_snips:
             OUT_STR += f"👉 #{a_snip.snip} \n"
     else:
-        OUT_STR = "No Snips. Start Saving using `.snips`"
+        OUT_STR = "No Snips. Start Saving using `.sp`"
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
@@ -97,7 +97,7 @@ async def on_snip_list(event):
         await event.edit(OUT_STR)
 
 
-@borg.on(admin_cmd("sipd (\S+)"))
+@borg.on(admin_cmd("spdl (\S+)"))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
