@@ -35,6 +35,7 @@ pybase64>=0.4.0
 pyfiglet
 pylast
 pymongo
+pyemojify
 python-barcode
 python-dotenv
 python-magic
