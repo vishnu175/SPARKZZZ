@@ -2,6 +2,9 @@
 credits catuserbot
 its_vishnu175 SPARKZZZ
 """
+import os
+import asyncio
+from pyemojify import emojify
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
