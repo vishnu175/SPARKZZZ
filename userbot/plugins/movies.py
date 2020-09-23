@@ -26,7 +26,7 @@ async def movie_search(event):
     chat_id = event.chat_id
     f_id = ""
     f_ref = ""
-    async for msg in event.client.iter_messages(--1001369346613, search=movie,  limit=2, filter=InputMessagesFilterVideo):
+    async for msg in event.client.iter_messages(-2147483647, search=movie,  limit=2, filter=InputMessagesFilterVideo):
     	f_id, f_ref = get_file_id_and_ref(msg)
     	if not (f_id or f_ref):
     		await search.edit("♡ Movie Not Found !")
