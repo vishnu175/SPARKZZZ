@@ -92,10 +92,11 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 
 ## CREDITS
 
--To all userbots
-- friday userbot
-- oub remix
-- Telebot
+-To all those who Helped me and to all userbots
+
+- FRIDAY userbot (for some modules)
+- OUB-REMIX 
+- TELEBOT @xditya (special Thanks)
 
 
 
