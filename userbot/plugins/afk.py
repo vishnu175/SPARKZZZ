@@ -1,4 +1,4 @@
-# Kangers keep credits
+# # credits Telebot
 """Custom AFK Plugin for @sparkzzbothelp
 Syntax: .afk REASON"""
 import asyncio
