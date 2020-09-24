@@ -76,7 +76,7 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        shite = await borg.send_message(event.chat_id, " Woke up` \n `was sleeping for:``" + total_afk_time + "`")
+        shite = await borg.send_message(event.chat_id, " **Woke up** \n `was sleeping for:``" + total_afk_time + "`")
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
@@ -86,7 +86,7 @@ async def set_not_afk(event):
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_BOT_API_ID` " + \
-                "for the proper functioning of afk functionality. Check @sparkzzzbothelp ",
+                "for the proper functioning of sleep functionality. Check @sparkzzzbothelp ",
                 reply_to=event.message.id,
                 silent=True
             )
