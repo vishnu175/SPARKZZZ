@@ -26,13 +26,13 @@ async def set_not_afk(event):
     if ".sleep" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         try:
             await borg.send_message(  # pylint:disable=E0602
-                Config.PLUGIN_CHANNEL,  # pylint:disable=E0602
+                Config.PRIVATE_CHANNEL_BOT_API_ID,  # pylint:disable=E0602
                 "#AfkLogger: My Boss Going For Sleep"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
-                "Please set `PLUGIN_CHANNEL` " + \
+                "Please set `PRIVATE_CHANNEL_BOT_API_ID` " + \
                 "for the proper functioning of afk functionality " + \
                 "in @sparkzzzbothelp\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
@@ -71,7 +71,7 @@ async def _(event):
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
-                Config.PLUGIN_CHANNEL,  # pylint:disable=E0602
+                Config.PRIVATE_CHANNEL_BOT_API_ID,  # pylint:disable=E0602
                 f"#AfkLogger Reason: Sleep"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -127,7 +127,7 @@ async def on_afk(event):
         message_to_reply = f"**My Boss is Offline** ! \n\n**Reason** : `Sleeping` \n\n**Offline Since** : {afk_since}" + \
             f"\n\n__Kindly Leave A Message__ ! \n`He Will Reply To You Soon !`" \
             if reason \
-            else f"**Hello, Boss Is Sleeping Right Now And May Be Forgot List Reason ! Any Way He Will Come Back Soon !**"
+            else f"**Hello, Boss Is Sleeping Right Now ! Any Way He Will Come Back Soon !**"
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
