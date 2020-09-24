@@ -127,3 +127,9 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 
 
 
+
+## LICENCE
+   
+   This userbot is Licensed on [MIT](https://github.com/vishnu175/SPARKZZZ/blob/master/LICENSE)
+
+
