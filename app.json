@@ -40,7 +40,7 @@
    "value": ""
   },
   "STRING_SESSION": {
-   "description": "Get this value by running python3 telesetup.py locally or https://telebot-sessionstring-generator.xditya.repl.run online.",
+   "description": "Get this value by running python3 telesetup.py locally or https://stringsession.vishnu175.repl.run/ online.",
    "value": ""
   },  
   "CUSTOM_PMPERMIT": {
