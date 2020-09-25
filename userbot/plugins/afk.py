@@ -19,7 +19,7 @@ afk_time = None
 last_afk_message = {}
 afk_start = {}
 
-AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!! I'm AFK now."
+AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!!! I'm AFK now."
 AFKSTR = f"{AFK_MSG}"
 
 @borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
