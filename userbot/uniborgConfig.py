@@ -117,6 +117,8 @@ if ENV:
            t_file =  open(TMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
            t_file.write(G_PHOTOS_AUTH_TOKEN_ID)
            t_file.close()
+        #Inbox security
+        MAX_SPAM = int(os.environ.get("MAX_SPAM", 3))
 
              
              
