@@ -1,4 +1,6 @@
-#Created by @jisan7509 & @Sur_vivor
+#Credits to survivor
+# ported and edited for SPARKZZZ @csv1990
+# removed bad arts and added tribute to spb sir
 
 import asyncio
 from telethon import events
