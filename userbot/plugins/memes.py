@@ -966,7 +966,7 @@ async def bluetext(bt_e):
         )
 
 
-@register(outgoing=True, pattern=r"^\.f (.*)")
+@register(outgoing=True, pattern=r"^\.OO (.*)")
 async def payf(event):
     paytext = event.pattern_match.group(1)
     pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
