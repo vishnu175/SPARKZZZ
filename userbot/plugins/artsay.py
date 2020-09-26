@@ -1,6 +1,6 @@
 #Credits to survivor
 # ported and edited for SPARKZZZ @csv1990
-# removed bad arts and added tribute to spb sir
+# removed bad arts and added tribute to SP BALASUBRAMANIAM SIR
 
 import asyncio
 from telethon import events
