@@ -18,7 +18,7 @@ n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 
 
- @borg.on(admin_cmd(pattern="tspb  (.*)"))
+ @borg.on(admin_cmd(pattern="tspb (.*)"))
  async def survivor(spb):
     name = spb.pattern_match.group(1)
     V = (f"**Tribute to SPB  from ➥ {name} .\n\n**"
@@ -39,4 +39,4 @@ n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 ⠀⠀⠀ ⠀"⠀⠀            ⠀⠀⠈⠻⢷⣾⠿⠿⢿⡿⠛⠉⠀⠀⠀⠀⠀⠀⠉\n"
 
 
-     await  spb.edit(V)
+     await spb.edit(V)
