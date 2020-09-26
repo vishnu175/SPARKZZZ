@@ -137,7 +137,7 @@ async def survivor(deadfrog):
     await deadfrog.edit(I)
     
   
-@borg.on(admin_cmd(pattern="trumpsay (.*)"))
+@borg.on(admin_cmd(pattern="tmpsay (.*)"))
 async def survivor(trumpsay):
     name = trumpsay.pattern_match.group(1)
     J = (f"**Donald Trump ➥ {name} .\n\n**"
