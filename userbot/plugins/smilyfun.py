@@ -9,6 +9,9 @@ Available Commands:
 .heart
 .sparkzzz
 .nothappy
+.hbd
+.sad
+.clock
 More cmds are there, me lazy af to type em here 😅"""
 import asyncio
 from collections import deque
@@ -22,37 +25,37 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ"
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("⚡⚡⚡⚡⚡⚡⚡"))
+	deq = deque(list("⛈️🌩️💫✨🌠🌟⚡"))
 	for _ in range(999):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
 		
-@borg.on(admin_cmd(pattern=r"sparkzzz"))
+@borg.on(admin_cmd(pattern=r"hbd"))
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("⚡⚡⚡⚡⚡⚡⚡"))
+	deq = deque(list("🎂🍰🍮🧁🎉🎊🎈"))
 	for _ in range(999):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
 		
-@borg.on(admin_cmd(pattern=r"sparkzzz"))
+@borg.on(admin_cmd(pattern=r"clock"))
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("⚡⚡⚡⚡⚡⚡⚡"))
+	deq = deque(list("🕖🕢🕗🕣🕟🕔🕤🕙"))
 	for _ in range(999):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)	
 		
-@borg.on(admin_cmd(pattern=r"sparkzzz"))
+@borg.on(admin_cmd(pattern=r"sad"))
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("⚡⚡⚡⚡⚡⚡⚡"))
+	deq = deque(list("😢😥😓😪😭😥😓"))
 	for _ in range(999):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
