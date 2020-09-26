@@ -38,5 +38,5 @@ n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 ⠀⠀⠀        "      ⠀⠈⠻⢿⣿⣿⣶⣿⣿⣿⣿⣿⣿⡿⠛⠛⠻⠿⣿⣿\n"
 ⠀⠀⠀ ⠀⠀⠀      "      ⠀⠀⠈⠻⢷⣾⠿⠿⢿⡿⠛⠉⠀⠀⠀⠀⠀⠀⠉\n")
 
-
      await spb.edit(V)
+     
