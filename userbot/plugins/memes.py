@@ -905,14 +905,6 @@ async def Oof(e):
         await e.edit(t)
 
 
-@register(outgoing=True, pattern="^.oof$")
-async def oof(e):
-    t = "oof"
-    for j in range(15):
-        t = t[:-1] + "of"
-        await e.edit(t)
-
-
 @register(outgoing=True, pattern=r"^\.mock(?: |$)(.*)")
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
@@ -966,7 +958,7 @@ async def bluetext(bt_e):
         )
 
 
-@register(outgoing=True, pattern=r"^\.OO (.*)")
+@register(outgoing=True, pattern=r"^\.ooo (.*)")
 async def payf(event):
     paytext = event.pattern_match.group(1)
     pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
