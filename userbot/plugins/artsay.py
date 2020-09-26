@@ -186,7 +186,7 @@ async def survivor(ckmkb):
 @borg.on(admin_cmd(pattern="mybot (.*)"))
 async def survivor(mysparkzzz):
     name = mysparkzzz.pattern_match.group(1)
-    L = (f"**WELCOME TO SPARKZZZ ➥ {name} .\n\n**"
+    L = (f"**WELCOME TO SPARKZZZ USERBOT,HAPPY TO SEE YOU                 ➥ {name} .\n\n**"
         "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
         "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&%%%&%%%%%&%&%%&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
         "@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%%%%&&#&%&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
