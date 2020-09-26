@@ -221,6 +221,11 @@ async def survivor(pikachu):
 @borg.on(admin_cmd(pattern=r"shit"))
 async def survivor(shit):
     await shit.edit(B)
+
+@borg.on(admin_cmd(pattern=r"tspb"))
+async def survivor(tspb):
+    await shit.edit(S)
+    
     
 
     
