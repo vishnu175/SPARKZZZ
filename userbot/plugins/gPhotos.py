@@ -22,7 +22,7 @@ import os
 import time
 
 from telethon import events
-from userbot.util import admin_cmd, humanbytes, progress, time_formatter
+from userbot.utils import admin_cmd, humanbytes, progress, time_formatter
 
 from apiclient.discovery import build
 from mimetypes import guess_type
