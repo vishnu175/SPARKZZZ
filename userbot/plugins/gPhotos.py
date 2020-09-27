@@ -22,7 +22,7 @@ import os
 import time
 
 from telethon import events
-from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
+from userbot.util import admin_cmd, humanbytes, progress, time_formatter
 
 from apiclient.discovery import build
 from mimetypes import guess_type
@@ -42,7 +42,7 @@ PHOTOS_BASE_URI = "https://photoslibrary.googleapis.com"
 
 TOKEN_FILE_NAME = os.path.join(
     Config.TMP_DOWNLOAD_DIRECTORY,
-    "gPhoto_credentials_UniBorg.json"
+    "gPhoto_credentials_sparkzzz.json"
 )
 
 
