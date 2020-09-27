@@ -131,8 +131,8 @@ if bool(ENV):
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     UPSTREAM_REPO_URL = os.environ.get(
-        "UPSTREAM_REPO_URL", "https://github.com/Jisan09/catuserbot.git"
-    )
+        "UPSTREAM_REPO_URL", "https://github.com/vishnu175/SPARKZZZ.git")
+    
     CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
 
     LESS_SPAMMY = os.environ.get("LESS_SPAMMY", True)
