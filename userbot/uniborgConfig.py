@@ -117,12 +117,12 @@ if ENV:
            t_file =  open(TMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
            t_file.write(G_PHOTOS_AUTH_TOKEN_ID)
            t_file.close()
-   
-  
-
         # SpamWatch API you can get it from get api from http://t.me/SpamWatchBot?start=token
         SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)    
              
+  
+
+        
 
              
 
