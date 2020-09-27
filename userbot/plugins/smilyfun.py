@@ -114,21 +114,12 @@ async def _(event):
 		deq.rotate(1)
 
 
-@borg.on(admin_cmd(pattern="gym$", outgoing=True))
-@borg.on(sudo_cmd(pattern="gym$", allow_sudo=True))
-async def _(event):
-    event = await edit_or_reply(event, "gym")
-    deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
-    for _ in range(48):
-        await asyncio.sleep(0.1)
-        await event.edit("".join(deq))
-        deq.rotate(1)
 		
-@borg.on(admin_cmd(pattern=r"lol"))
+@borg.on(admin_cmd(pattern=r"gym"))
 async def _(event):
 	if event.fwd_from:
 		return
-	deq = deque(list("😂🤣😂🤣😂🤣"))
+	deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
 	for _ in range(999):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
