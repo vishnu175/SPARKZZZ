@@ -46,7 +46,7 @@ TOKEN_FILE_NAME = os.path.join(
 )
 
 
-@borg.on(admin_cmd(pattern="gphoto setup"))
+@borg.on(admin_cmd(pattern="gphotosetup"))
 async def setup_google_photos(event):
     if event.chat_id != Config.PRIVATE_GROUP_BOT_API_ID:
         return
@@ -147,7 +147,7 @@ async def upload_google_photos(event):
     )
     if not is_cred_exists:
         await event.edit(
-            "😏 <code>gphoto setup</code> first 😡😒😒",
+            "😏 <code>gphotosetup</code> first 😡😒😒",
             parse_mode="html"
         )
 
