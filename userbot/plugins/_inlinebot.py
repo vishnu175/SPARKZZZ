@@ -5,7 +5,7 @@ import re
 from telethon import Button, custom, events
 
 from .. import CMD_LIST
-from . import catalive
+from . import telealive
 
 CAT_IMG = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
@@ -17,16 +17,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith("__**Catuserbot") and event.query.user_id == bot.uid:
+        if query.startswith("__**SPARKZZZ") and event.query.user_id == bot.uid:
             buttons = [
                 (
                     custom.Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/Jisan09/catuserbot"),
+                    Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ"),
                 )
             ]
             result = builder.article(
                 # catpic,
-                title="Alive cat",
+                title="SPARKZZZ-BOT",
                 # force_document = False,
                 text=query,
                 buttons=buttons,
@@ -149,7 +149,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin ©catuserbot".format(plugin_name)
+                "Use .unload {} to remove this plugin ©sparkzzzbot".format(plugin_name)
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -188,8 +188,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
-    number_of_cols = Config.NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD
+    number_of_rows = Config.NO_OF_BUTTONS_TO_DISPLAY
+    number_of_cols = Config.NO_OF_COLOUMS_TO_DISPLAY
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
@@ -198,7 +198,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     modules = [
         custom.Button.inline(
             "{} {} {}".format(
-                Config.EMOJI_TO_DISPLAY_IN_HELP, x, Config.EMOJI_TO_DISPLAY_IN_HELP
+                Config.EMOJI_TO_DISPLAY, x, Config.EMOJI_TO_DISPLAY
             ),
             data="us_plugin_{}".format(x),
         )
