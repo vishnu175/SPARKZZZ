@@ -1,4 +1,4 @@
-Code from pro sar Spechide's fork of Uniborg.
+#Code from pro sar Spechide's fork of Uniborg.
 """Rename Telegram Files
 Syntax:
 .rename new.file.name"""
