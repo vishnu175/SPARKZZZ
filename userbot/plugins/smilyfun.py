@@ -40,6 +40,7 @@ async def _(event):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
+
 		
 @borg.on(admin_cmd(pattern=r"clock"))
 async def _(event):
@@ -50,6 +51,27 @@ async def _(event):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)	
+
+@borg.on(admin_cmd(pattern=r"star$", outgoing=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    deq = deque(list("🦋✨🦋✨🦋✨🦋✨"))
+    for _ in range(48):
+        await asyncio.sleep(0.1)
+        await event.edit("".join(deq))
+        deq.rotate(1)
+
+
+@borg.on(admin_cmd(pattern=r"boxs"))
+async def _(event):
+    if event.fwd_from:
+        return
+    deq = deque(list("🟥🟧🟨🟩🟦🟪🟫⬛⬜"))
+    for _ in range(999):
+        await asyncio.sleep(0.1)
+        await event.edit("".join(deq))
+        deq.rotate(1)
 		
 @borg.on(admin_cmd(pattern=r"sad"))
 async def _(event):
@@ -111,6 +133,57 @@ async def _(event):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
+
+@borg.on(admin_cmd(pattern="eye$"))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 3
+    animation_ttl = range(0, 10)
+    await event.edit("👁👁")
+    animation_chars = [
+        "👁👁\n  👄  =====> Hey, How are you?",
+        "👁👁\n  👅  =====> Everything okay?",
+        "👁👁\n  💋  =====> Why are you staring at this?",
+        "👁👁\n  👄  =====> You idiot",
+        "👁👁\n  👅  =====> Go away",
+        "👁👁\n  💋  =====> Stop laughing",
+        "👁👁\n  👄  =====> It's not funny",
+        "👁👁\n  👅  =====> I guess ur still looking",
+        "👁👁\n  💋  =====> Ok man 😑",
+        "👁👁\n  👄  =====> I go away then",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 10])
+    await asyncio.sleep(animation_interval)
+    await event.delete()
+
+
+@borg.on(admin_cmd(pattern="uff ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 1
+    animation_ttl = range(0, 103)
+    animation_chars = [
+        "U",
+        "Uf",
+        "Uff",
+        "Ufffff",
+        "Uffffff",
+        "Ufffffff",
+        "Uffffffff",
+        "Ufffffffff",
+        "Uffffffffff",
+        "Ufffffffffff",
+        "Uffffffffffff",
+        "Ufffffffffffff",
+        "Uffffffffffffff",
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 103])
 		
 @borg.on(admin_cmd(pattern=r"police"))
 
