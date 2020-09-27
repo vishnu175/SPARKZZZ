@@ -120,7 +120,8 @@ if ENV:
    
   
 
-             
+        # SpamWatch API you can get it from get api from http://t.me/SpamWatchBot?start=token
+        SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)    
              
 
              
