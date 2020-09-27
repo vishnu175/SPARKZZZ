@@ -128,7 +128,8 @@ if ENV:
         os.environ.get("NO_OF_COLOUMS_TO_DISPLAY", 3)
          )    
   
-
+        # emoji to be displayed in .help
+        EMOJI_TO_DISPLAY = os.environ.get("EMOJI_TO_DISPLAY", " ")
         
 
              
