@@ -1,20 +1,11 @@
-import asyncio
 import os
 import sys
-import time
-from distutils.util import strtobool as sb
-from logging import DEBUG, INFO, basicConfig, getLogger
-
-import pylast
-from dotenv import load_dotenv
-from pylast import LastFMNetwork, md5
-from pySmartDL import SmartDL
-from requests import get
-from telethon import TelegramClient
 from telethon.sessions import StringSession
-
+from telethon import TelegramClient
 from var import Var
-
+import time
+from pylast import LastFMNetwork, md5
+from pymongo import MongoClient
 from .helpers import fonts as fonts
 
 if Var.STRING_SESSION:
