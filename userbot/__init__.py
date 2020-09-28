@@ -224,3 +224,9 @@ ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
 
+
+# showing imports error
+from .helpers import *
+from .helpers import functions as catdef
+from .helpers import memeshelper as memes  
+
