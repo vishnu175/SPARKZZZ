@@ -121,7 +121,7 @@ if ENV:
         SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)    
        
         # emoji to be displayed in .help
-        EMOJI_TO_DISPLAY = os.environ.get("INLINE_EMOJI", " ")
+        INLINE_EMOJI = os.environ.get("INLINE_EMOJI", " ")
         
 
              
