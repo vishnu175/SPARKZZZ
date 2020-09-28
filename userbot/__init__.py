@@ -92,13 +92,12 @@ if bool(ENV):
     # Genius lyrics  API
     GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
     GENIUS_ACCESS_TOKEN = os.environ.get("GENIUS_ACCESS_TOKEN", None)
+    
+    
+    # Chrome Driver and Headless Google Chrome Binaries
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
 
-    CHROME_DRIVER = os.environ.get(
-        "CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver"
-    )
-    GOOGLE_CHROME_BIN = os.environ.get(
-        "GOOGLE_CHROME_BIN", "/app/.apt/usr/bin/google-chrome"
-    )
     # For bit.ly plugin
     BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
     
