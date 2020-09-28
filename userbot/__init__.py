@@ -1,15 +1,24 @@
+import asyncio
 import os
 import sys
-from telethon.sessions import StringSession
-from telethon import TelegramClient
-from var import Var
 import time
+from distutils.util import strtobool as sb
+from logging import DEBUG, INFO, basicConfig, getLogger
+
+import pylast
+from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
-from pymongo import MongoClient
+from pySmartDL import SmartDL
+from requests import get
+from telethon import TelegramClient
+from telethon.sessions import StringSession
+
 from var import Var
 
+from .function import fridayfunction as topfunc
 from .helpers import fonts as fonts, functions as catdef
- 
+from .helpers import memeshelper as memes
+from .helpers import tempmemes, process as process
 
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
