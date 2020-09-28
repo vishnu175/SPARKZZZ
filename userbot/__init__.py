@@ -15,10 +15,7 @@ from telethon.sessions import StringSession
 
 from var import Var
 
-from .function import fridayfunction as topfunc
-from .helpers import fonts as fonts, functions as catdef
-from .helpers import memeshelper as memes
-from .helpers import tempmemes, process as process
+from .helpers import fonts as fonts
 
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
@@ -232,10 +229,4 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
-
-
-# showing imports error
-from .helpers import *
-from .helpers import functions as catdef
-from .helpers import memeshelper as memes  
 
