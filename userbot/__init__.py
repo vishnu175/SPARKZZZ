@@ -6,6 +6,9 @@ from var import Var
 import time
 from pylast import LastFMNetwork, md5
 from pymongo import MongoClient
+from var import Var
+
+from .helpers import fonts as fonts, functions as catdef
  
 
 if Var.STRING_SESSION:
