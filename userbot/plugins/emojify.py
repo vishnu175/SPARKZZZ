@@ -10,8 +10,8 @@ from userbot import CMD_HELP
 from userbot import fonts as emojify
 
 
-@borg.on(admin_cmd(pattern="emoji(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="emoji(?: |$)(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="moji(?: |$)(.*)"))
+@borg.on(sudo_cmd(pattern="moji(?: |$)(.*)", allow_sudo=True))
 async def itachi(event):
     args = event.pattern_match.group(1)
     if not args:
@@ -71,7 +71,7 @@ def char_is_emoji(character):
 CMD_HELP.update(
     {
         "emojify": "**Plugin :** `emojify`\
-      \n\n**Syntax :** `.emoji` <text>\
+      \n\n**Syntax :** `.moji` <text>\
       \n****Usage : **Converts your text to big emoji text, with default emoji. \
       \n\n**Syntax :** `.cmoji` <emoji> <text>\
       \n****Usage : **Converts your text to big emoji text, with your custom emoji.\
