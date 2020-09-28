@@ -119,11 +119,7 @@ if ENV:
            t_file.close()
         # SpamWatch API you can get it from get api from http://t.me/SpamWatchBot?start=token
         SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)    
-       # number of rows of buttons to be displayed in .help command
-       NO_OF_BUTTONS_TO_DISPLAY = int(os.environ.get("NO_OF_BUTTONS_TO_DISPLAY", 7))
-       # number of rows of buttons to be displayed in .helpme command
-       NO_OF_COLOUMS_TO_DISPLAY = int(os.environ.get("NO_OF_COLOUMS_TO_DISPLAY", 3))
-  
+       
         # emoji to be displayed in .help
         EMOJI_TO_DISPLAY = os.environ.get("EMOJI_TO_DISPLAY", " ")
         
