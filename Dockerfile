@@ -7,7 +7,7 @@ RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot
 
 # Install requirements
-RUN pip3 install -r requirements.txt
+RUN pip3 install -m  -r requirements.txt
 
 ENV PATH="/home/userbot/bin:$PATH"
 
