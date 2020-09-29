@@ -12,7 +12,6 @@
  "repository": "https://github.com/vishnu175/SPARKZZZ/",
  
  "success_url": "https://t.me/sparkzzzbothelp",
- "stack": "container",
  "env": {
   "ENV": {
    "description": "Setting this to ANYTHING will enable heroku.",
