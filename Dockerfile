@@ -1,13 +1,8 @@
-FROM ubuntu:latest
+FROM alpine
 
-#clonning repo 
-RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
-#working directory 
-WORKDIR /root/userbot
-
-# Install requirements
-RUN pip3 install -U -r requirements.txt
-
-ENV PATH="/home/userbot/bin:$PATH"
+RUN git clone -b master https://github.com/vishnu175/SPARKZZZ /root/userbot
+RUN mkdir /root/userbot/bin/
+RUN chmod 777 /root/userbot
+WORKDIR /root/userbot/
 
 CMD ["python3","-m","userbot"]
