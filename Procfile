@@ -1,4 +1,5 @@
-userbot: python -m userbot
+userbot: bash .github/clone.sh
+
 
 
 
