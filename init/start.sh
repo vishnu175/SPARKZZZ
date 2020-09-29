@@ -1,9 +1,9 @@
-#!/bin/sh
+#! /usr/bin/env bash
+# Copyright © SPARKZZZ 2020
 
-
-echo"   
+ 
                                                                                                                                                                
-                                                                                                                                                               
+ echo"                                                                                                                                                              
    SSSSSSSSSSSSSSS PPPPPPPPPPPPPPPPP        AAA               RRRRRRRRRRRRRRRRR   KKKKKKKKK    KKKKKKKZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
  SS:::::::::::::::SP::::::::::::::::P      A:::A              R::::::::::::::::R  K:::::::K    K:::::KZ:::::::::::::::::ZZ:::::::::::::::::ZZ:::::::::::::::::Z
 S:::::SSSSSS::::::SP::::::PPPPPP:::::P    A:::::A             R::::::RRRRRR:::::R K:::::::K    K:::::KZ:::::::::::::::::ZZ:::::::::::::::::ZZ:::::::::::::::::Z
@@ -20,14 +20,13 @@ SSSSSSS     S:::::SPP::::::PP   A:::::A             A:::::A   RR:::::R     R::::
 S::::::SSSSSS:::::SP::::::::P  A:::::A               A:::::A  R::::::R     R:::::RK:::::::K    K:::::KZ:::::::::::::::::ZZ:::::::::::::::::ZZ:::::::::::::::::Z
 S:::::::::::::::SS P::::::::P A:::::A                 A:::::A R::::::R     R:::::RK:::::::K    K:::::KZ:::::::::::::::::ZZ:::::::::::::::::ZZ:::::::::::::::::Z
  SSSSSSSSSSSSSSS   PPPPPPPPPPAAAAAAA                   AAAAAAARRRRRRRR     RRRRRRRKKKKKKKKK    KKKKKKKZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+ "                                                                                                                                                              
+                                                                                                                                                               
+                                                                                                                                                               
+  python3 -m userbot                                                                                                                                                            
                                                                                                                                                                
                                                                                                                                                                
                                                                                                                                                                
-                                                                                                                                                               
-                                                                                                                                                               
-                                                                                                                                                               
-                                                                                                                                                               
-"
 
 
 
@@ -42,26 +41,6 @@ S:::::::::::::::SS P::::::::P A:::::A                 A:::::A R::::::R     R::::
 
 
 
-FILE=/app/.git
 
-if [ -d "$FILE" ] ; then
 
-    echo "$FILE directory exists already."
 
-else
-
-    git clone https://github.com/vishnu175/SPARKZZZ sparkzzz_ub
-
-    rm -rf userbot
-
-    mv sparkzzz_ub/.git .
-
-    mv sparkzzz_ub/userbot .
-
-    rm -rf sparkzzz_ub
-
-    python ./.github/update.py
-
-fi
-
-python -m userbot
