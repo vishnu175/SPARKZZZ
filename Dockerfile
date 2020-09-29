@@ -1,4 +1,4 @@
-FROM ubuntu 20.4
+FROM ubuntu:latest
 
 #clonning repo 
 RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
