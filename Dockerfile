@@ -1,7 +1,7 @@
 FROM ubuntu:20.04 
 
 #clonning repo 
-RUN git clone https://github.com/vishnu175/SPARKZZZ /root/userbot
+RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
 #working directory 
 WORKDIR /root/userbot
 
