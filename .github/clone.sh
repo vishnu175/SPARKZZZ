@@ -39,15 +39,15 @@ if [ -d "$FILE" ] ; then
 
 else
 
-    git clone https://github.com/vishnu175/SPARKZZZ sparkzzz_ub
+    git clone https://github.com/vishnu175/SPARKZZZ
 
     rm -rf userbot
 
-    mv sparkzzz_ub/.git .
+    mv SPARKZZZ/.git .
 
-    mv sparkzzz_ub/userbot .
+    mv SPARKZZZ/userbot .
 
-    rm -rf sparkzzz_ub
+    rm -rf SPARKZZZ
 
     python ./.github/update.py
 
