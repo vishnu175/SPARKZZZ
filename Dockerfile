@@ -2,6 +2,7 @@ FROM ubuntu:20.04
 
 #clonning repo 
 RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
+RUN mkdir /root/userbot/bin/
 #working directory 
 WORKDIR /root/userbot
 
