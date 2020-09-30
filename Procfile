@@ -1,4 +1,4 @@
-userbot: bash .github/clone.sh
+userbot: bash .sparkzzz/start.sh
 
 
 
