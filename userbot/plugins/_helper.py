@@ -1,13 +1,14 @@
-# Ported from other Telegram UserBots for SPARKZZZ
-# @vishnu175
+# Ported from other Telegram UserBots for TeleBot
+# Kangers, don't remove this line 
+# @csv1990
 
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
-@borg.on(admin_cmd(pattern="help ?(.*)"))
+@telebot.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -23,8 +24,8 @@ async def cmd_list(event):
             if len(string) > 4095:
                 with io.BytesIO(str.encode(string)) as out_file:
                     out_file.name = "cmd.txt"
-                    await tgbot.send_file(
-                        event.sender_id,
+                    await bot.send_file(
+                        event.chat_id,
                         out_file,
                         force_document=True,
                         allow_cache=False,
@@ -40,12 +41,12 @@ async def cmd_list(event):
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
-                string +="\n**© @SPARKZZZ**"
+                string +="\n**© @sparkzzzbotsupport**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""`Inline Helper for {DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\n\n"""
+            help_string = f"""`Userbot Helper for @{DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\n\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
