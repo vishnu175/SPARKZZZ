@@ -1,49 +1,51 @@
 FROM kalilinux/kali-rolling
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
+
 RUN apt-get install -y\
     coreutils \
     bash \
-    build-base \
-    bzip2-dev \
+    nodejs \
+    bzip2 \
     curl \
     figlet \
     gcc \
     g++ \
     git \
     util-linux \
-    libevent \
-    jpeg-dev \
+    libevent-dev \
+    libjpeg-dev \
     libffi-dev \
-    libpq \
+    libpq-dev \
     libwebp-dev \
     libxml2 \
     libxml2-dev \
     libxslt-dev \
-    linux-headers \
     musl \
     neofetch \
-    openssl-dev \
+    libcurl4-openssl-dev \
     postgresql \
     postgresql-client \
-    postgresql-dev \
+    postgresql-server-dev-all \
     openssl \
-    pv \
-    jq \
+    mediainfo \
     wget \
     python3 \
     python3-dev \
-    readline-dev \
+    python3-pip \
+    libreadline-dev \
+    zipalign \
     sqlite \
     ffmpeg \
-    sqlite-dev \
-    sudo \
-    chromium \
-    chromium-chromedriver \
-    zlib-dev \
-    jpeg \
+    libsqlite3-dev \
+    zlib1g-dev \
+    recoverjpeg \
     zip \
-    freetype-dev
+    megatools \
+    libfreetype6-dev \
+    procps \
+    policykit-1 \
+    tree
 
 RUN pip3 install --upgrade pip setuptools 
 RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
