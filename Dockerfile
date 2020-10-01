@@ -1,63 +1,71 @@
-FROM kalilinux/kali-rolling
+# We're using Debian Slim Buster image
+FROM python:3.8-slim-buster
 
-ARG DEBIAN_FRONTEND=noninteractive
+ENV PIP_NO_CACHE_DIR 1
 
-RUN apt-get update && apt upgrade -y && apt-get install sudo -y
+RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
-RUN apt-get install -y\
-    coreutils \
+# Installing Required Packages
+RUN apt update && apt upgrade -y && \
+    apt install --no-install-recommends -y \
+    debian-keyring \
+    debian-archive-keyring \
     bash \
-    nodejs \
     bzip2 \
     curl \
     figlet \
     gcc \
-    g++ \
     git \
+    sudo \
     util-linux \
-    libevent-dev \
-    libjpeg-dev \
     libffi-dev \
-    libpq-dev \
+    libjpeg-dev \
+    libjpeg62-turbo-dev \
     libwebp-dev \
-    libxml2 \
-    libxml2-dev \
-    libxslt-dev \
+    linux-headers-amd64 \
+    musl-dev \
     musl \
     neofetch \
+    python3-lxml \
+    python3-psycopg2 \
+    libpq-dev \
     libcurl4-openssl-dev \
-    postgresql \
-    postgresql-client \
-    postgresql-server-dev-all \
+    libxml2-dev \
+    libxslt1-dev \
+    python3-pip \
+    python3-requests \
+    python3-tz \
+    python3-aiohttp \
     openssl \
-    mediainfo \
+    pv \
+    jq \
     wget \
     python3 \
     python3-dev \
-    python3-pip \
     libreadline-dev \
-    zipalign \
-    sqlite \
+    libyaml-dev \
+    sudo \
+    zlib1g \
     ffmpeg \
-    libsqlite3-dev \
-    zlib1g-dev \
-    recoverjpeg \
-    zip \
-    megatools \
-    libfreetype6-dev \
-    procps \
-    policykit-1
+    libssl-dev \
+    libopus0 \
+    libopus-dev \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
+    
+# Pypi package Repo upgrade
+RUN pip3 install --upgrade pip setuptools
 
-RUN pip3 install --upgrade pip setuptools 
-RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
-RUN if [ ! -e /usr/bin/python ]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
-RUN rm -r /root/.cache
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
-RUN wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
-RUN git clone https://github.com/vishnu175/SPARKZZZ /root/userbot
-RUN mkdir /root/userbot/bin/
-WORKDIR /root/userbot/
-RUN chmod +x /usr/local/bin/*
-RUN pip3 install -r requirements.txt
-# (c) SPARKZZZ @vishnu175
+# Copy Python Requirements to /root/nana
+RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
+WORKDIR /root/userbot
+
+# #Copy config file to /root/nana/nana
+# COPY ./userbot/userbot.ini.sample ./userbot/userbot.ini.sample* /root/userbot/userbot/
+
+ENV PATH="/home/userbot/bin:$PATH"
+
+# Install requirements
+RUN sudo pip3 install -U -r requirements.txt
+
+# Starting Worker
 CMD ["bash","sparkzzz/start.sh"]
