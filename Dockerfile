@@ -1,6 +1,7 @@
 FROM kalilinux/kali-rolling
 
-ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 RUN apt-get install -y\
@@ -45,8 +46,7 @@ RUN apt-get install -y\
     megatools \
     libfreetype6-dev \
     procps \
-    policykit-1 \
-    tree
+    policykit-1
 
 RUN pip3 install --upgrade pip setuptools 
 RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
@@ -59,5 +59,5 @@ RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
-ENV PATH="/home/userbot/bin:$PATH"
-CMD ["bash","sparkzzz/start.sh"]
+# (c) SPARKZZZ @vishnu175
+CMD ["bash","startup.sh"]
