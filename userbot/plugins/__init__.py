@@ -27,9 +27,9 @@ else:
  sudo = "Enabled"
  
 if Var.INBOXSECURITY.lower() == "off":
- is = "Disabled" 
+ pm = "Disabled" 
 else:
- is = "Enabled"
+ pm = "Enabled"
  
 TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@sparkzzzbothelp"
 
@@ -38,7 +38,7 @@ tele +=f"Log Group: {log}\n"
 tele +=f"Assistant Bot: {bots}\n"
 tele +=f"Lydia: {lyd}\n"
 tele +=f"Sudo: {sudo}\n"
-tele +=f"InboxSecurity: {is}\n"
+tele +=f"InboxSecurity: {pm}\n"
 tele +=f"\nVisit @sparkzzzbothelp for assistance.\n"
 telestats = (f"{tele}")
 
