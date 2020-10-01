@@ -1,5 +1,9 @@
 # SPARKZZZ-USERBOT
 
+
+![Python Version](https://img.shields.io/badge/Python-v3.8.6-blue)
+
+
 <p align="center">
 <img src="https://telegra.ph/file/6d3f8d942faaf8bc0c255.jpg" alt="SPARKZZZ USERBOT">
 
@@ -131,5 +135,8 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 ## LICENCE
    
    This userbot is Licensed under [MIT License](https://github.com/vishnu175/SPARKZZZ/blob/master/LICENSE)
+
+
+               <p align="center">Made with love from INDIA ❤</p>
 
 
