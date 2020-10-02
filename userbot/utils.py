@@ -134,6 +134,21 @@ def remove_plugin(shortname):
 
 def admin_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
+    
+    
+    # inputpeer error
+    
+def get_input_peer(channel, allow_self=True, check_hash=True):  
+    
+    except AttributeError:
+        # e.g. custom.Dialog (can't cyclic import).
+        if allow_self and hasattr(channel, 'input_channel'):
+            return entity.input_entity
+        elif hasattr(channel, 'channel'):
+            return get_input_peer(channel.channel)
+        else:
+            _raise_cast_fail(channel, 'InputPeer')
+    
 
     stack = inspect.stack()
     previous_stack_frame = stack[1]
