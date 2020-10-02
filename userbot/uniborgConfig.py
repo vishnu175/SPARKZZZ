@@ -122,6 +122,8 @@ if ENV:
        
         # emoji to be displayed in .help
         INLINE_EMOJI = os.environ.get("INLINE_EMOJI", " ")
+        #Inbox security spam limit
+         INBOX_SECURITY_SPAM_WARNS = int(os.environ.get("INBOX_SECURITY_SPAM_WARNS", 3))
         
 
              
