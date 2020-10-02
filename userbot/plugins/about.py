@@ -19,10 +19,10 @@ async def _(event):
     animation_ttl = range(0,36)
     #input_str = event.pattern_match.group(1)
    # if input_str == "Visit this page to know more about SPARKZZZ.":
-    await event.edit("Thanks")
+    await event.edit("WELCOME TO")
     animation_chars = [
             "**⚡SPARKZZZ ⚡**",
-            "[More Info](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
+            "[More Info](https://github.com/vishnu175/SPARKZZZ)"
          ]
             
 
