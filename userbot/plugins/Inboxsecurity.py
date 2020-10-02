@@ -174,7 +174,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
            return
         if chat_id not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
-        if PM_WARNS[chat_id] == config.INBOX_SECURITY_SPAM_LIMIT:
+        if PM_WARNS[chat_id] == Config.INBOX_SECURITY_PM_LIMIT:
             r = await event.reply(USER_BOT_WARN_ZERO)
             await asyncio.sleep(3)
             await event.client(functions.contacts.BlockRequest(chat_id))
@@ -217,25 +217,6 @@ async def hehehe(event):
             pmpermit_sql.approve(chat.id, "**Dev is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
 
-# instant block 
-NEEDIT = os.environ.get("INSTANT_BLOCK", None)
-if NEEDIT == "on":
-	@telebot.on(events.NewMessage(incoming=True))
-	async def on_new_private_message(event):
-		message_text = event.message.message
-		message_media = event.message.media
-		message_id = event.message.id
-		message_to_id = event.message.to_id
-		chat_id = event.chat_id
-		sender = await borg.get_entity(chat_id)
-		if chat_id == borg.uid:
-			return
-		if sender.bot:
-			return
-		if sender.verified:
-			return
-		if not pmpermit_sql.is_approved(chat_id):
-			await borg(functions.contacts.BlockRequest(chat_id))
       
             
            
