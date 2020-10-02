@@ -1,5 +1,0 @@
-telethon==1.16.4
--r requirements-all.txt
-
-
-
