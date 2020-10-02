@@ -25,8 +25,6 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
                     f"{MESAG}"
                     "\n\n\n - Thank You 🙏")
 
-
-
     @telebot.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
