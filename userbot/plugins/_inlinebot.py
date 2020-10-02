@@ -1,6 +1,7 @@
 # Ported from other Telegram UserBots for SPARKZZZ BOT
 # Kangers, don't remove this line 
-# @its_vishnu175
+# CREDITS XDITYA
+# @vishnu175
 
 from math import ceil
 import asyncio
@@ -10,7 +11,12 @@ import re
 from telethon import events, errors, custom, Button
 from userbot import CMD_LIST
 import io
-from . import telealive
+from userbot.plugins import telestats
+from userbot import ALIVE_NAME
+from userbot import bot
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+myid = bot.uid
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -18,19 +24,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith(
-                "**Welcome") and event.query.user_id == bot.uid:
-            buttons = [
-                (custom.Button.inline(
-                    "Stats", data="telestatus"), Button.url(
-                    "Source", "https://github.com/vishnu175/SPARKZZZ"))]
-            result = builder.article(
-                title="SPARKZZZ BOT",
-                text=query,
-                buttons=buttons
-            )
-            await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("`Userbot"):
+        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
@@ -40,7 +34,33 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=buttons,
                 link_preview=False
             )
-            await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query == "stats":
+            result = builder.article(
+                title="Stats",
+                text=f"**SPARKZZZ Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @sparkzzzbothelp",
+                buttons=[
+                    [custom.Button.inline("Stats", data="statcheck")],
+                    [Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ")],
+                    [Button.url("Deploy Now!",
+                                "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
+                ]
+            )
+        else:
+            result = builder.article(
+                "Source Code",
+                text="**Welcome to SPARKZZZ**\n\n`Click below buttons for more`",
+                buttons=[
+                    [custom.Button.url("Creator👨‍🦱", "https://t.me/csv1990")],
+                    [custom.Button.url("👨‍💻Source Code‍💻", "https://github.com/vishnu175/SPARKZZZ"), custom.Button.url(
+                        "Deploy 🌀",
+                        "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
+                    [custom.Button.url("Updates and Support Group↗️", "https://t.me/sparkzzzbothelp")]
+                ],
+                link_preview=False
+            )
+        await event.answer([result] if result else None)
+
+
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_next\((.+?)\)")
     ))
@@ -56,13 +76,21 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             reply_pop_up_alert = "Please get your own Userbot from @sparkzzzbothelp , and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await event.edit("Help Menu Closed.")
         else:
-            reply_pop_up_alert = "Please get your own userbot from @sparkzzzbotsupport "
+            reply_pop_up_alert = "Please get your own userbot from @sparkzzzbothelp "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
+    async def rip(event):
+        text = telestats
+        await event.answer(text, alert=True)
+
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_prev\((.+?)\)")
@@ -79,9 +107,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot from @sparkzzzbotsupport"
+            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            
+
+
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
     ))
@@ -105,18 +134,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except:
             with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
                 out_file.name = "{}.txt".format(plugin_name)
-                await bot.send_file(
-                    event.chat_id,
+                await tgbot.send_file(
+                    event.sender_id,
                     out_file,
                     force_document=True,
                     allow_cache=False,
                     caption=plugin_name
                 )
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"telestatus")))
-    async def on_plug_in_callback_query_handler(event):
-        statustext = await telealive()
-        reply_pop_up_alert = statustext
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
