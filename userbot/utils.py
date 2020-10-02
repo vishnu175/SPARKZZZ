@@ -140,6 +140,10 @@ def admin_cmd(pattern=None, **args):
     
 def get_input_peer(channel, allow_self=True, check_hash=True):  
     
+     try:
+        if channel.CHANNEL_ID == 0xc91c90b6:  # crc32(b'InputPeer')
+            return channel
+    
     except AttributeError:
         # e.g. custom.Dialog (can't cyclic import).
         if allow_self and hasattr(channel, 'input_channel'):
