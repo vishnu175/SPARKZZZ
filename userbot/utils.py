@@ -137,22 +137,6 @@ def admin_cmd(pattern=None, **args):
     
  
 
-    
-    typedef struct _inputPeerChannelFromMessage { // 0x9c95f7bb
-    InputPeer peer;
-    int msg_id;
-    int channel_id;
-    };
-
- typedef struct _inputPeerChannel { // 0x20adaef8
-    InputPeer peer;
-    int channel_id;
-    int64 access_hash;
-};
-
-typedef struct _inputPeerEmpty { // 0x7f3b18ea
-};
-
     stack = inspect.stack()
     previous_stack_frame = stack[1]
     file_test = Path(previous_stack_frame.filename)
