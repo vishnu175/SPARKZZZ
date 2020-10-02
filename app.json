@@ -46,7 +46,12 @@
   "CUSTOM_PMPERMIT": {
    "description": "The message that appears when someone PM's you. Leave it as such for default message.",
    "value": "Do not spam here, else you will be blocked automatically."
-  },  
+  }, 
+   "INBOX_SECURITY_SPAM_LIMIT": {
+   "description": "Number of messages one can send in your PM before being approved. By default, it is 3.",
+   "value": "3",
+   "required": false
+  },
   "CUSTOM_AFK": {
    "description": "The message that appears when you go afk. Leave it as such for default.",
    "value": "My Master is [AFK](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
