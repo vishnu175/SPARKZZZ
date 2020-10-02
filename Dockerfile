@@ -68,4 +68,5 @@ ENV PATH="/home/userbot/bin:$PATH"
 RUN sudo pip3 install -U -r requirements.txt
 
 # Starting Worker
+# (c) SPARKZZZ 2020 VISHNU175
 CMD ["bash","sparkzzz/start.sh"]
