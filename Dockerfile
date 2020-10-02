@@ -1,5 +1,6 @@
-# sparkzzz using Debian Slim Buster image
+# sparkzzz userbot  using Debian Slim Buster image
 FROM python:3.8.6-slim-buster
+MAINTAINER vishnu175/sparkzzz
 
 ENV PIP_NO_CACHE_DIR 1
 
