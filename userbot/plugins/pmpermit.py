@@ -10,11 +10,18 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No name set yet nibba"
-USER_BOT_WARN_ZERO = "`You were spamming my peru master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot.` **Now GTFO, i'm playing minecraft** "
-USER_BOT_NO_WARN = ("[┈╭━━╮╭━━╮┈┈┈┈┈ \n┈┃╭╮┗┻━━┻━╮┈┈┈ \n┈┃╰┓╭━╮╭━╮┃┈┈┈ \n┈╰━┓┃▇┃┃▇┃┃┈┈┈ \n┈┈┈┃╱▔▔▔▔▔▔▔▇┈ \n┈┈┈┃▏┏┳┳┳┳┳━┛┈ \n┈┈┈┃╲╰┻┻┻┻┻┓┈┈](tg://user?id=1037944593)\n\n"
-                    "`Hello, this is Ultra Level Telegram Security Service for peru users only.You have found your way here to my master,`"
-                    f"{DEFAULTUSER}'s` inbox.\n\n"
+PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
+PM_WARNS = {}
+PREV_REPLY_MESSAGE = {}
+myid = bot.uid
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security 🔐! Please wait for me to approve you. 😊"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
+USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
+                    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
+                    f"{MESAG}"
+                    "\n\n\n - Thank You 🙏")
                     "Leave your name, phone number, address and 10k$ and hopefully you'll get a reply within 2 light years.`\n\n"
                     "** Send** `/start` ** so that we can decide why you're here.**")
 
