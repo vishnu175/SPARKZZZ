@@ -1,0 +1,6 @@
+telethon==1.16.4
+python-3.8.6
+-r requirements-all.txt
+
+
+
