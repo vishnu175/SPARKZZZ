@@ -2,6 +2,9 @@
 
 
 ![Python Version](https://img.shields.io/badge/Python-v3.8.6-blue)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/vishnu175/SPARKZZZ/?ref=repository-badge)
+
+
 
 
 <p align="center">
