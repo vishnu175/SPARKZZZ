@@ -207,10 +207,6 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
         PREV_REPLY_MESSAGE[chat_id] = r
 
 # Do not touch the below codes!
-
-
-
-
 @bot.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
     if event.fwd_from:
