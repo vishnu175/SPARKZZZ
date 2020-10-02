@@ -25,6 +25,10 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
                     f"{MESAG}"
                     "\n\n\n - Thank You 🙏")
 
+
+
+
+if Var.PRIVATE_GROUP_ID is not None:
     @telebot.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
