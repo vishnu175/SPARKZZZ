@@ -7,7 +7,7 @@ import time
 from pylast import LastFMNetwork, md5
 from pymongo import MongoClient
 
-from .fonts import fonts as fonts
+from userbot.fonts import fonts as fonts
 
 
  
