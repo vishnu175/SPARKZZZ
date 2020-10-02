@@ -125,21 +125,6 @@ if ENV:
         #Inbox security spam limit
         INBOX_SECURITY_SPAM_LIMIT = int(os.environ.get("INBOX_SECURITY_SPAM_LIMIT", 3))
         
-
-             
-
-      
-            
-
-            
-
-            
-       
-    
-        
-       
-        
-
         
 else:
     class Config(object):
