@@ -197,6 +197,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 return
             except:
                 return
+        MSG = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.INBOX_SECURITY_SPAM_LIMIT)      
         r = await borg.send_file(event.chat_id, TELEPIC, caption=USER_BOT_NO_WARN, force_document=False)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
