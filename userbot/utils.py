@@ -145,6 +145,7 @@ def admin_cmd(pattern=None, **args):
     };
 
  typedef struct _inputPeerChannel { // 0x20adaef8
+    InputPeer peer;
     int channel_id;
     int64 access_hash;
 };
