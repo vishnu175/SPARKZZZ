@@ -27,7 +27,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @telebot.on(admin_cmd(pattern="a ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -62,7 +62,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
                     
-    @telebot.on(admin_cmd(pattern="block ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -81,7 +81,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @telebot.on(admin_cmd(pattern="da ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -97,7 +97,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @telebot.on(admin_cmd(pattern="listapproved"))
+   @sparkzzz.on(admin_cmd(pattern="listapproved"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
