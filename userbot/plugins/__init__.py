@@ -27,7 +27,7 @@ if Config.SUDO_USERS:
 else:
  sudo = "Enabled"
  
-if Var.PMSECURITY.lower() == "off":
+if Var.INBOXSECURITY.lower() == "off":
  pm = "Disabled" 
 else:
  pm = "Enabled"
@@ -39,7 +39,7 @@ tele +=f"Log Group: {log}\n"
 tele +=f"Assistant Bot: {bots}\n"
 tele +=f"Lydia: {lyd}\n"
 tele +=f"Sudo: {sudo}\n"
-tele +=f"PMSecurity: {pm}\n"
+tele +=f"InboxSecurity: {pm}\n"
 tele +=f"\nVisit @sparkzzzbothelp for assistance.\n"
 telestats = (f"{tele}")
 
