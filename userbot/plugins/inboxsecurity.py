@@ -186,7 +186,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             the_message += "⚡️Powered By [SPARKZZZ](https://t.me/sparkzzzbothelp)"
           # the_message += f"Media: {message_media}"
             try:
-            try:
                 await event.client.send_message(
                     entity=Var.PRIVATE_GROUP_ID,
                     message=the_message,
