@@ -35,7 +35,7 @@ async def handler(event):
         silent=True
     )
 
-ENV.HELPER.update({"miatoll": "\
+CMD_HELP.update({"miatoll": "\
 ```.miatoll <rom_name>```\
 \nUsage: Returns the latest build for a custom rom.\
 \n```.miatoll <kernel_name>```\
