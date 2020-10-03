@@ -57,7 +57,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/nana
-RUN git clone https://github.com/vishnu175/SPARKZZZ.git /root/userbot
+RUN git clone -b devolop https://github.com/vishnu175/SPARKZZZ.git /root/userbot
 WORKDIR /root/userbot
 
 # #Copy config file to /root/nana/nana
