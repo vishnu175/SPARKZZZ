@@ -44,7 +44,9 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await event.edit("Approved [{}](tg://user?id={}) to PM you.".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.delete()
-   # Approve outgoing            
+  
+
+ # Approve outgoing            
    @bot.on(events.NewMessage(outgoing=True))
     async def you_dm_niqq(event):
         if event.fwd_from:
