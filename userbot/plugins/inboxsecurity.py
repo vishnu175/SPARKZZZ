@@ -187,7 +187,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         r = await event.client.send_file(
-            event.chat_id, WARN_PIC, caption=USER_BOT_NO_WARN
+            event.chat_id, TELEPIC, caption=USER_BOT_NO_WARN
         )
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
@@ -195,7 +195,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         PREV_REPLY_MESSAGE[chat_id] = r
 
 
-@bot.on(events.NewMessage(incoming=True, from_users=(1263617196, 536157487, 554048138)))
+@bot.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
     if event.fwd_from:
         return
