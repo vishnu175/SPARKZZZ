@@ -180,10 +180,12 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await PREV_REPLY_MESSAGE[chat_id].delete()
             PREV_REPLY_MESSAGE[chat_id] = r
             the_message = ""
-            the_message += "#BLOCKED_PMs\n\n"
-            the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
-            the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
-            # the_message += f"Media: {message_media}"
+            the_message += "😈**Blocked Users**😈\n\n"
+            the_message += f"[👱‍♂ User](tg://user?id={chat_id}): {chat_id}\n"
+            the_message += f"🔢 Message Count: {PM_WARNS[chat_id]}\n"
+            the_message += "⚡️Powered By [SPARKZZZ](https://t.me/sparkzzzbothelp)"
+          # the_message += f"Media: {message_media}"
+            try:
             try:
                 await event.client.send_message(
                     entity=Var.PRIVATE_GROUP_ID,
