@@ -1,5 +1,9 @@
 #(c) SPARKZZZ 2020
 # @vishnu175
+import os
+import asyncio
+from telethon import custom
+from userbot.utils import admin_cmd
 @sparkzzz.on(events(pattern="miatoll ?(.*)"))
 async def handler(event):
     if event.fwd_from:
