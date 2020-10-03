@@ -8,7 +8,8 @@ from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
-@telebot.on(admin_cmd(pattern="help ?(.*)"))
+@command(pattern="^.help ?(.*)")
+#@borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -37,16 +38,15 @@ async def cmd_list(event):
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "**Commands available in {}** \n\n".format(input_str)
+                string = "Commands found in {}:".format(input_str)
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
-                string +="\n**© @sparkzzzbotsupport**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = """Userbot Modules For\n[SPARKZZZ](https://telegram.dog/sparkzzzbothelp)\n`Userbot Helper to reveal all the modules`"""
+            help_string = """Userbot Modules For\n[CBA-USERBOT](https://telegram.dog/CBA_USERBOT)\n`Userbot Helper to reveal all the modules`"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
