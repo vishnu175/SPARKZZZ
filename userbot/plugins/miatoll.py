@@ -7,7 +7,7 @@ from telethon import events, errors, functions, types
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
-@sparkzzz.on(admin_cmd(pattern="miatoll ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="curtana ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
@@ -17,7 +17,7 @@ async def handler(event):
     args = input_args.split()[0]
     args = f"#{args}"
     chat = "@curtanaupdates"
-    async for message in client.iter_messages(chat):
+    async for message in sparkzzz.iter_messages(chat):
         msg = message.text
         if msg is None:
             msg = ""
