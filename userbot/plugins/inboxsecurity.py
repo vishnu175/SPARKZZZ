@@ -30,7 +30,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
 if Var.PRIVATE_GROUP_ID is not None:
 
     @command(pattern="^.a$")
-    async def block(event):
+    async def approve_p_m(event):
         if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
@@ -49,6 +49,25 @@ if Var.PRIVATE_GROUP_ID is not None:
                 )
                 await asyncio.sleep(3)
                 await event.delete()
+
+
+    # Approve outgoing            
+    @bot.on(events.NewMessage(outgoing=True))
+    async def you_dm_niqq(event):
+        if event.fwd_from:
+            return
+        chat = await event.get_chat()
+        if event.is_private:
+            if not pmpermit_sql.is_approved(chat.id):
+                if not chat.id in PM_WARNS:
+                    pmpermit_sql.approve(chat.id, "outgoing")
+                    bruh = "__Auto-approved coz outgoing 🚶‍♂️__"
+                    rko = await borg.send_message(event.chat_id, bruh)
+                    await asyncio.sleep(3)
+                    await rko.delete
+
+
+
 
     @command(pattern="^.block$")
     async def approve_p_m(event):
@@ -196,21 +215,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         
         
         
-        # Approve outgoing            
-    @bot.on(events.NewMessage(outgoing=True))
-    async def you_dm_niqq(event):
-        if event.fwd_from:
-            return
-        chat = await event.get_chat()
-        if event.is_private:
-            if not pmpermit_sql.is_approved(chat.id):
-                if not chat.id in PM_WARNS:
-                    pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "__Auto-approved coz outgoing 🚶‍♂️__"
-                    rko = await borg.send_message(event.chat_id, bruh)
-                    await asyncio.sleep(3)
-                    await rko.delete
-
+        
 
 @bot.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
