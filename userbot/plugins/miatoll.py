@@ -16,7 +16,7 @@ async def handler(event):
     # Tweak input for lower chance of failure
     args = input_args.split()[0]
     args = f"#{args}"
-    chat = "@MiatollOfficial"
+    chat = "@curtanaupdates"
     async for message in client.iter_messages(chat):
         msg = message.text
         if msg is None:
@@ -36,12 +36,12 @@ async def handler(event):
         silent=True
     )
 
-CMD_HELP.update({"miatoll": "\
-```.miatoll <rom_name>```\
+CMD_HELP.update({"curtana": "\
+```.curtana <rom_name>```\
 \nUsage: Returns the latest build for a custom rom.\
-\n```.miatoll <kernel_name>```\
+\n```.curtana <kernel_name>```\
 \nUsage: Returns the latest build for a custom kernel.\
-\n```.miatoll recovery```\
+\n```.curtana lrtwrp```\
 \nUsage: Returns the latest lrtwrp build.\
-\n\nUsing .miatoll rom / .miatoll kernel will return latest rom or kernel.\
+\n\nUsing .curtana rom / .curtana kernel will return latest rom or kernel.\
 "})
