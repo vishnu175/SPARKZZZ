@@ -3,6 +3,7 @@
 import os
 import asyncio
 from telethon import custom
+from telethon import events, errors, functions, types
 from userbot.utils import admin_cmd
 @sparkzzz.on(events(pattern="miatoll ?(.*)"))
 async def handler(event):
