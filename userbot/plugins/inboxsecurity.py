@@ -215,7 +215,7 @@ async def hehehe(event):
     chat = await event.get_chat()
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
-            pmpermit_sql.approve(chat.id, "**Dev is here**")
+            pmpermit_sql.approve(chat.id, "**Devoloper is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
            
 # (c) SPARKZZZ
