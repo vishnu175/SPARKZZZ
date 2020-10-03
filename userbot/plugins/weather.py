@@ -203,15 +203,5 @@ CMD_HELP.update(
     \nUsage: Sets your default city so you can just use .weather."
     }
 )
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+# © 2020 GitHub, Inc.
+
