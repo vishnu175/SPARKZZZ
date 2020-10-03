@@ -1,6 +1,6 @@
 #(c) SPARKZZZ 2020
 # @vishnu175
-@client.on(events(pattern="miatoll ?(.*)"))
+@sparkzzz.on(events(pattern="miatoll ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
