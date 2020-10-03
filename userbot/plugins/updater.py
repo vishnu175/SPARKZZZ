@@ -82,8 +82,8 @@ async def upstream(ups):
         origin = repo.create_remote('upstream', off_repo)
         origin.fetch()
         force_updateme = True
-        repo.create_head('devolop', origin.refs.devolop)
-        repo.heads.devolop.set_tracking_branch(origin.refs.devolop)
+        repo.create_head('devolop', origin.refs.master)
+        repo.heads.devolop.set_tracking_branch(origin.refs.master)
         repo.heads.devolop.checkout(True)
 
     ac_br = repo.active_branch.name
