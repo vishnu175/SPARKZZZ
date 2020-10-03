@@ -115,4 +115,4 @@ async def _(event):
                      await event.client(functions.contacts.BlockRequest(chat_id))
 
 
-(C) SPARKZZZ 2020
+#(C) SPARKZZZ 2020
