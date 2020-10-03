@@ -5,6 +5,7 @@ import asyncio
 from telethon import custom
 from telethon import events, errors, functions, types
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 @sparkzzz.on(admin_cmd(pattern="miatoll ?(.*)"))
 async def handler(event):
