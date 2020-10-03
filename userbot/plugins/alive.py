@@ -1,4 +1,4 @@
-# credits @Telebot
+# credits to Telebot
 # @csv1990
 """Check if your userbot is working."""
 import os
