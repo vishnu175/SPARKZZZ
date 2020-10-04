@@ -3,6 +3,7 @@
 import os
 import asyncio
 from telethon import custom
+from userbot import client 
 from telethon import events, errors, functions, types
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
@@ -17,7 +18,7 @@ async def handler(event):
     args = input_args.split()[0]
     args = f"#{args}"
     chat = "@curtanaupdates"
-    async for message in sparkzzz.iter_messages(chat):
+    async for message in client.iter_messages(chat):
         msg = message.text
         if msg is None:
             msg = ""
