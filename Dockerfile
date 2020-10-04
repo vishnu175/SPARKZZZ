@@ -57,7 +57,7 @@ RUN git clone https://github.com/vishnu175/SPARKZZZ /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
-RUN python3 -m pip install --no-warn-script-location --no-cache-dir --upgrade -r requirements.txt
+RUN sudo pip3 install -U -r requirements.txt
 RUN sudo chmod o+r /usr/lib/python3/dist-packages/*
 # (c) SPARKZZZ 2020 VISHNU175
 CMD ["bash","sparkzzz/start.sh"]
