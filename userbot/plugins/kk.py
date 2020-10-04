@@ -1,6 +1,8 @@
 """command: .kk"""
 """By @Grandpaa_please """
-
+import os
+import asyncio
+from userbot import events 
 from telethon import events
 import random
 import logging
