@@ -55,8 +55,8 @@ RUN apt update && apt upgrade -y && \
     
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
-
-# Copy Python Requirements to /root/nana
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
+RUN wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
 RUN git clone -b devolop https://github.com/vishnu175/SPARKZZZ.git /root/userbot
 WORKDIR /root/userbot
 
