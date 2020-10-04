@@ -1,4 +1,4 @@
-# sparkzzz userbot  using  Slim Buster image
+# SPARKZZZ userbot  using  Slim Buster image
 FROM python:3.8.6-slim-buster
 MAINTAINER:vishnu175/SPARKZZZ
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
