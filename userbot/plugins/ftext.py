@@ -3,8 +3,7 @@ from telethon import events
 import asyncio
 import os
 import sys
-from userbot import utils
-from userbot utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @sparkzzz.on(admin_cmd(pattern="ftext ?(.*)"))
