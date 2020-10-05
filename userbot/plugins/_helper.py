@@ -44,8 +44,8 @@ async def cmd_list(event):
             else:
                 await event.reply(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Userbot Helper.. Provided by ⚡{DEFAULTUSER} \n
-`SPARKZZZ Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
+            help_string = f"""Module Helper for ⚡{DEFAULTUSER} to reveal all commands of `SPARKZZZ`\n
+__Do .help plugin_name to know how the modules works.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
@@ -74,7 +74,7 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.reply("""Telethon UserBot powered by JARVIS UserBot""")
+    await event.reply("""Telethon UserBot powered by SPARKZZZ UserBot""")
 
 
 @sparkzzz.on(admin_cmd(pattern="syntax (.*)"))
