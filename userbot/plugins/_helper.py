@@ -3,7 +3,7 @@ from telethon import functions
 
 from userbot import ALIVE_NAME
 
-from .. import CMD_HELP, CMD_LIST, SUDO_LIST
+from .. import CMD_HELP, CMD_LIST
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Sparkzzz user"
@@ -104,26 +104,3 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(sudo_cmd(allow_sudo=True, pattern="help(?: |$)(.*)"))
-async def info(event):
-    if event.fwd_from:
-        return
-    args = event.pattern_match.group(1).lower()
-    input_str = event.pattern_match.group(1)
-    if args:
-        if args in SUDO_LIST:
-            if input_str in SUDO_LIST:
-                string = "Commands found in {}:\n".format(input_str)
-                for i in SUDO_LIST[input_str]:
-                    string += "    " + i
-                    string += "\n"
-                await event.reply(string)
-        else:
-            await event.reply(args + " is not a valid plugin!")
-    else:
-        string = "**Please specify which plugin do you want help for !!**\
-            \n**Usage:** `.help` <plugin name>\n\n"
-        for i in sorted(SUDO_LIST):
-            string += "◆`" + str(i)
-            string += "`   "
-        await event.reply(string)
