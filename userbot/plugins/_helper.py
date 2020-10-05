@@ -46,7 +46,7 @@ async def cmd_list(event):
         else:
             help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
                           \nUserbot Helper to reveal all the plugin names\
-                          \n\n__Do__ `.help` __plugin_name to know how the modules work.__\"
+                          \n\n__Do__ `.help` __plugin_name to know how the modules work.__"
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
@@ -94,6 +94,6 @@ async def _(event):
             plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
     else:
 
-        plugin_syntax = "Enter valid **Plugin** name.\nDo `.plinfo` or `.help` to get list of valid plugin names."
+        plugin_syntax = "Enter valid **Plugin** name.\nDo `.help` to get list of valid plugin names."
 
     await event.reply(plugin_syntax)
