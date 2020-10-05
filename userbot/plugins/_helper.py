@@ -44,8 +44,7 @@ async def cmd_list(event):
             else:
                 await event.reply(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Module Helper for ⚡{DEFAULTUSER} to reveal all commands of `SPARKZZZ`\n
-__Do .help plugin_name to know how the modules works.__"""
+            help_string = f"""`Module Helper for @{DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\n\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
