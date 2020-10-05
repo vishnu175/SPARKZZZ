@@ -1,10 +1,8 @@
 import io
 import math
 import re
-
 from telethon import Button, custom, events
-
-from .. import CMD_LIST
+from userbot import CMD_LIST
 from . import telealive
 
 ALIVE_PIC = Config.ALIVE_PIC if Config.ALIVE_PIC else None
