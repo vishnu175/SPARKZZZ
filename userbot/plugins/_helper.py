@@ -5,6 +5,9 @@
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
+from platform import uname
+import sys
+from telethon import events, functions, __version__
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
