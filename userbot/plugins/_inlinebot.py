@@ -5,9 +5,9 @@ import re
 from telethon import Button, custom, events
 
 from .. import CMD_LIST
-from . import catalive
+from . import telealive
 
-CAT_IMG = Config.ALIVE_PIC if Config.ALIVE_PIC else None
+ALIVE_PIC = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -17,16 +17,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith("**Catuserbot") and event.query.user_id == bot.uid:
+        if query.startswith("**SPARKZZZ") and event.query.user_id == bot.uid:
             buttons = [
                 (
                     custom.Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/Jisan09/catuserbot"),
+                    Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ"),
                 )
             ]
             result = builder.article(
                 # catpic,
-                title="Alive cat",
+                title="Alive sparkzzz",
                 # force_document = False,
                 text=query,
                 buttons=buttons,
@@ -147,7 +147,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin ©catuserbot".format(plugin_name)
+                "Use .unload {} to remove this plugin ©SPARKZZZ userbot".format(plugin_name)
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -193,7 +193,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     modules = [
         custom.Button.inline(
             "{} {} {}".format(
-                Config.EMOJI_TO_DISPLAY_IN_HELP, x, Config.EMOJI_TO_DISPLAY_IN_HELP
+                Config.INLINE_EMOJI, x, Config.INLINE_EMOJI
             ),
             data="us_plugin_{}".format(x),
         )
@@ -223,11 +223,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
+                    "👈", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("Close", data="close"),
                 custom.Button.inline(
-                    "⌦", data="{}_next({})".format(prefix, modulo_page)
+                    "👉", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
