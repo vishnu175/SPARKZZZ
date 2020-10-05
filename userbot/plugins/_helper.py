@@ -44,11 +44,12 @@ async def cmd_list(event):
             else:
                 await event.reply(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Userbot Helper..for⚡{DEFAULTUSER} provided by `SPARKZZZ` \n
-`SPARKZZZ Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
+            help_string = f"Userbot Helper.. Provided by [{DEFAULTUSER}]({USERNAME})\
+                          \nUserbot Helper to reveal all the plugin names\
+                          \n__Do__ `.help` __plugin_name for commands, in case popup doesn't appear.__\
+                          \nDo `.info` plugin_name for usage"
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
+                tgbotusername, help_string
             )
             await results[0].click(
                 event.chat_id,
