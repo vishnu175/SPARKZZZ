@@ -71,12 +71,15 @@ if ENV:
         # can be None in which case plugins requiring
         # DataBase would not work
         DB_URI = os.environ.get("DATABASE_URL", None)
+        # number of rows of buttons to be displayed in .help command
+        NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int( os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 7))
         # number of rows of buttons to be displayed in .helpme command
-        NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5))
+        NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int( os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 3))
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
         CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
         SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "\^")
+        HELP_INLINETYPE = os.environ.get("HELP_INLINETYPE", None)
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
