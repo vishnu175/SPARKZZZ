@@ -44,8 +44,7 @@ async def cmd_list(event):
             else:
                 await event.reply(input_str + " is not a valid plugin!")
         else:
-            help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
-                          \n`Userbot Helper for to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\
+            help_string = f"`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\
                           \nSpecify which module do you want help for!\
                           \n\n__Type__ `.help` __plugin_name to know how the modules work.__"
             results = await bot.inline_query(  # pylint:disable=E0602
