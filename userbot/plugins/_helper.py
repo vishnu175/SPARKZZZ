@@ -46,7 +46,7 @@ async def cmd_list(event):
         else:
             help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
                           \n`Userbot Helper for to reveal all the commands of `**[SPARKZZZ](https://github.com/vishnu175/SPARKZZZ/)**\
-                          \n__Do__ `.help` __plugin_name for commands, in case popup doesn't appear.__\
+                          \n__Type__ `.help`<module name> to know usage of modules.__\
                           \nDo `.info` plugin_name for usage"
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
