@@ -1,16 +1,16 @@
-# Ported from other Telegram UserBots for SPARKZZZ BOT
-# Kangers, don't remove this line 
-# @its_vishnu175
-
+# (C) SPARKZZZ 2020
+# @VISHNU175
 from math import ceil
 import asyncio
 import json
 import random
 import re
-from telethon import events, errors, custom, Button
+from telethon import events, errors, custom, functions, __version__
 from userbot import CMD_LIST
 import io
+import sys
 from . import telealive
+
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -18,29 +18,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith(
-                "**Welcome") and event.query.user_id == bot.uid:
-            buttons = [
-                (custom.Button.inline(
-                    "Stats", data="telestatus"), Button.url(
-                    "Source", "https://github.com/vishnu175/SPARKZZZ"))]
-            result = builder.article(
-                title="SPARKZZZ BOT",
-                text=query,
-                buttons=buttons
-            )
-            await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("`Userbot"):
+        if event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© SPARKZZZ Help",
-                text="{}\nCurrently Loaded Plugins: {}".format(
+                "© SPARKZZZ BOT",
+                text="{}\nTotal Plugins Loaded: {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False
             )
-            await event.answer([result] if result else None)
+        await event.answer([result] if result else None)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_next\((.+?)\)")
     ))
@@ -99,7 +87,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-            © Userbot".format(plugin_name)
+            © SPARKZZZ Userbot ".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except:
@@ -110,14 +98,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption=plugin_name
-                )
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"telestatus")))
-    async def on_plug_in_callback_query_handler(event):
-        statustext = await telealive()
-        reply_pop_up_alert = statustext
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+                   caption=plugin_name  
+               )  
+             
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 10
@@ -144,5 +127,3 @@ def paginate_help(page_number, loaded_plugins, prefix):
              custom.Button.inline("Next👉", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
-
-             
