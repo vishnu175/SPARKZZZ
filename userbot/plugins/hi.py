@@ -1,7 +1,7 @@
 from userbot.utils import admin_cmd
 from userbot import events
 
-@sparkzzz.on(admin_cmd(pattern=r"hhi ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern=r"hi ?(.*)"))
 async def hhi(event):
     giveVar = event.text
     cat = giveVar[5:6]
