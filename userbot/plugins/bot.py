@@ -1,4 +1,4 @@
-from userbot.utils admin_cmd
+from userbot.utils import admin_cmd
 from userbot import events
 
 @sparkzzz.on(admin_cmd("bot"))
