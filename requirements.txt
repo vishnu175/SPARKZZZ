@@ -12,6 +12,7 @@ bwb==3.0.0
 cfscrape
 coffeehouse
 cowpy
+covid-india
 cryptg
 dnspython
 emoji
