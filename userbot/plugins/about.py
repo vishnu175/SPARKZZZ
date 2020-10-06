@@ -3,7 +3,7 @@
 # @its_vishnu175
 
 """Available Commands:
-.info
+.about
 """
 
 import asyncio
