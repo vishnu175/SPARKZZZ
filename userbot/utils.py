@@ -89,7 +89,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("Successfully (re)imported "+shortname)
+        print("⚡Sparkzzz⚡ Successfully (re)imported "+shortname)
     else:
         import userbot.utils
         import importlib
@@ -113,7 +113,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins."+shortname] = mod
-        print("Successfully (re)imported "+shortname)
+        print("⚡Sparkzzz⚡ Successfully (re)imported "+shortname)
 
 def remove_plugin(shortname):
     try:
@@ -262,7 +262,7 @@ def errors_handler(func):
             ftext += "\nyou may not report this error if you've"
             ftext += "\nany confidential data here, no one will see your data\n\n"
 
-            ftext += "--------BEGIN USERBOT TRACEBACK LOG--------"
+            ftext += "--------BEGIN SPARKZZZ USERBOT TRACEBACK LOG--------"
             ftext += "\nDate: " + date
             ftext += "\nGroup ID: " + str(errors.chat_id)
             ftext += "\nSender ID: " + str(errors.sender_id)
@@ -272,7 +272,7 @@ def errors_handler(func):
             ftext += str(traceback.format_exc())
             ftext += "\n\nError text:\n"
             ftext += str(sys.exc_info()[1])
-            ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
+            ftext += "\n\n--------END SPARKZZZ USERBOT TRACEBACK LOG--------"
 
             command = "git log --pretty=format:\"%an: %s\" -5"
 
