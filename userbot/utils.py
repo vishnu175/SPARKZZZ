@@ -244,7 +244,6 @@ def errors_handler(func):
             pass
     return wrapper
 
-
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for both
     upload.py and download.py"""
