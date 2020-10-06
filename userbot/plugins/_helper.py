@@ -32,7 +32,7 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"All commands of the catuserbot are [here]({url})"
+            reply_text = f"All commands of the sparkzzzuserbot are [here]({url})"
             await event.edit(reply_text)
             return
         await event.edit(string)
