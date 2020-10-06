@@ -51,7 +51,7 @@ async def cmd_list(event):
             help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
                           \n`All modules of `**[SPARKZZZ]**(https://github.com/vishnu175/SPARKZZZ/) are listed here\
                           \n__**Type__ `.help`<module name>** to know usage of modules.\
-                          \nDo `.info` plugin_name for usage"
+
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
