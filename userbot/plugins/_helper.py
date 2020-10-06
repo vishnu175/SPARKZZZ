@@ -50,9 +50,8 @@ async def cmd_list(event):
         else:
             help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
                           \n`All modules of `**[SPARKZZZ]**(https://github.com/vishnu175/SPARKZZZ/) are listed here\
-                          \n__**Type__ `.help`<module name>** to know usage of modules.\
-
-            results = await bot.inline_query(  # pylint:disable=E0602
+                          \n__**Type__ `.help`<module name>** to know usage of modules."
+                results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
             await results[0].click(
@@ -75,26 +74,6 @@ async def cmd_list(event):
                 string += "◆`" + str(i)
                 string += "`   "
             await event.edit(string)
-
-
-@borg.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
-@borg.on(sudo_cmd(pattern="info ?(.*)", allow_sudo=True))
-async def info(event):
-    """ For .info command,"""
-    args = event.pattern_match.group(1).lower()
-    if args:
-        if args in CMD_HELP:
-            await edit_or_reply(event, str(CMD_HELP[args]))
-        else:
-            await edit_or_reply(event, "Please specify a valid plugin name.")
-    else:
-        string = "**Please specify which plugin do you want help for !!**\
-            \n**Usage:** `.info` <plugin name>\n\n"
-        for i in sorted(CMD_HELP):
-            string += "◆`" + str(i)
-            string += "`   "
-        await edit_or_reply(event, string)
-
 
 @borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
