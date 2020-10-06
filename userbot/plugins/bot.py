@@ -3,4 +3,4 @@ from userbot import events
 
 @sparkzzz.on(admin_cmd("bot"))
 async def handler(event):
-await event.reply("you are using SPARKZZZBOT")
+    await event.reply("you are using SPARKZZZBOT")
