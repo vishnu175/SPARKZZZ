@@ -26,7 +26,7 @@ else:
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialisation finished with no errors")
-        print("Starting Userbot")
+        print("Starting SPARKZZZ")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
         print("Startup Completed")
     else:
@@ -44,7 +44,7 @@ for name in files:
 
 import userbot._core
 
-print("hurray!!! your userbot is officially working. Enjoy The SPARKZZZ bot.created by @csv1990. Do join  @Sparkzzzbothelp")
+print("SPARKZZZ INSIDE.... Enjoy The bot.created by @csv1990. Do join  @Sparkzzzbothelp")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
