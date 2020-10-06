@@ -240,16 +240,14 @@ def errors_handler(func):
     async def wrapper(event):
         try:
             return await func(event)
-        except Exception:
-            pass
-    return wrapper
+        except Exception:           
 
 
-date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-            new = {
-                'error': str(sys.exc_info()[1]),
-                'date': datetime.datetime.now()
-            }
+                date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+                new = {
+                    'error': str(sys.exc_info()[1]),
+                    'date': datetime.datetime.now()
+                }
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
