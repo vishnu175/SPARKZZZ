@@ -1,5 +1,5 @@
 try:
-    from jarvis.modules.sql_helper import SESSION, BASE
+    from userbot.plugins.sql_helper import SESSION, BASE
 except ImportError:
     raise Exception("Hello!")
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
