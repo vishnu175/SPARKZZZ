@@ -11,7 +11,7 @@ import asyncio
 from userbot.utils import admin_cmd
 sparkzzz = bot 
 
-@sparkzzz.on(admin_cmd(pattern="info"))
+@sparkzzz.on(admin_cmd(pattern="about"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
    # if input_str == "Visit this page to know more about SPARKZZZ.":
     await event.edit("WELCOME TO")
     animation_chars = [
-            "**⚡SPARKZZZ ⚡**",
+            "**⚡SPARKZZZ USERBOT⚡**",
             "[More Info](https://github.com/vishnu175/SPARKZZZ)"
          ]
             
