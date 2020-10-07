@@ -43,7 +43,7 @@ async def _(event):
     if (x==12):
       await event.edit("**“I have told you these things, so that in me you may have peace, in this world you will have trouble,But take heart I have overcome the world.“ - John 16:33**")
     if (x==13):
-      await event.edit("**”But he said to me, My grace is sufficient for you, for my power is made perfect in weakness. Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me." - 2 Corinthians 12:9**")
+      await event.edit("**”But he said to me, My grace is sufficient for you, for my power is made perfect in weakness. Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me.“ - 2 Corinthians 12:9**")
     if (x==14):
       await event.edit("**“Jesus looked at them and said, With man this is impossible, but with God all things are possible.“ - Mathew 19:26**")
     if (x==15):
