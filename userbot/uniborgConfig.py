@@ -130,6 +130,7 @@ if ENV:
         # in pm permit pic
         PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
         CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
+        PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         
         
 else:
