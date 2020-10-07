@@ -13,6 +13,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
+myid = bot.uid
 
 PM_ON_OFF = Config.PM_DATA
 
