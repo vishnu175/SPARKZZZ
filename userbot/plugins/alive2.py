@@ -20,9 +20,9 @@ async def amireallyalive(aliv2):
     time.sleep(1)
     await aliv2.edit("I LOVE PYTHON")
     time.sleep(1)
-    await aliv2.edit("MY CURRENT PYTHON VERSION IS 3.8.4")
+    await aliv2.edit("MY CURRENT PYTHON VERSION IS 3.8.6")
     time.sleep(1)
-    await aliv2.edit("**I AM WORLD'S FIRST AI PROGRAMED USERBOT FROM BANGLADESH**")
+    await aliv2.edit("**I AM YOUR SPARKZZZ BOT**")
     time.sleep(1)
     await aliv2.edit("**I HAVE A FIXED GOAL**")
     time.sleep(1)
@@ -32,7 +32,7 @@ async def amireallyalive(aliv2):
     time.sleep(1)
     await aliv2.edit("TILL THEN \n**JAI HO :** " + DEFAULTUSER)
     await aliv2.edit("▒▒▒▒▒▒▐███████▌\n▒▒▒▒▒▒▐░▀░▀░▀░▌\n▒▒▒▒▒▒▐▄▄▄▄▄▄▄▌\n▄▀▀▀█▒▐░▀▀▄▀▀░▌▒█▀▀▀▄\n▌▌▌▌▐▒▄▌░▄▄▄░▐▄▒▌▐▐▐▐\n\n"
-                      "**Apun Jinda Hai Sur, WHAT ABOUT YOU ! ! !\n\nTelethon version:- 6.9.0**\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n**Python: 3.7.3**\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n"
+                      "**I AM ALIVE HERE, WHAT ABOUT YOU ! ! !\n\nTelethon version:- 1.16.4**\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n**Python: 3.8.6**\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n"
                     f"`My Peru Owner`: {DEFAULTUSER}\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n"
                      "**Database Status: Databases functioning normally!**\n◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆\n\n**Always With You, My Peru Master ! ! !**\n\n`"
-                    "**BOT CREATOR:- [『Subro』](@Subroz)**")
+                    "**BOT CREATOR:- [『CSV1990』](@CSV1990)**")
