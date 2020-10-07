@@ -70,30 +70,13 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            string = f"**Userbot Helper.. Provided by [{DEFAULTUSER}]\nUserbot Helper to reveal all the plugin names\n\n**Do `.help` plugin_name for commands\nDo `.info` plugin_name for usage\n\n"
+            string = f"**Userbot Helper.. Provided by [{DEFAULTUSER}]\nUserbot Helper to reveal all the plugin names\n\n**Do `.help` for commands\nDo `.help` plugin_name for usage\n\n"
             for i in sorted(CMD_LIST):
                 string += "◆`" + str(i)
                 string += "`   "
             await event.edit(string)
 
 
-@sparkzzz.on(admin_cmd(outgoing=True, pattern="info ?(.*)"))
-@sparkzzz.on(sudo_cmd(pattern="info ?(.*)", allow_sudo=True))
-async def info(event):
-    """ For .info command,"""
-    args = event.pattern_match.group(1).lower()
-    if args:
-        if args in CMD_HELP:
-            await edit_or_reply(event, str(CMD_HELP[args]))
-        else:
-            await edit_or_reply(event, "Please specify a valid plugin name.")
-    else:
-        string = "**Please specify which plugin do you want help for !!**\
-            \n**Usage:** `.info` <plugin name>\n\n"
-        for i in sorted(CMD_HELP):
-            string += "◆`" + str(i)
-            string += "`   "
-        await edit_or_reply(event, string)
 
 
 @sparkzzz.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
