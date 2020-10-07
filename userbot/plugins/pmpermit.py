@@ -13,12 +13,12 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 USER_BOT_WARN_ZERO = "`You were spamming my peru master's inbox, henceforth you are blocked by my master's userbot.` **Now GTFO, i'm playing minecraft** "
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @borg.on(admin_cmd(pattern="approve ?(.*)"))
+    @borg.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -79,14 +79,14 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.fwd_from:
             return
         chat = await event.get_chat()
-        if event.text.startswith((".bloack", ".disapprove")):
+        if event.text.startswith((".blo", ".da")):
             return
         if event.is_private:
             if not pmpermit_sql.is_approved(chat.id):
                 if chat.id not in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
 
-    @borg.on(admin_cmd(pattern="disapprove ?(.*)"))
+    @borg.on(admin_cmd(pattern="da ?(.*)"))
     async def disapprove_p_m(event):
         if event.fwd_from:
             return
@@ -206,7 +206,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         message_text.lower()
         USER_BOT_NO_WARN = (
             f"[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id={catid})\n\n"
-            "This is auto generated message from cat security service\n\n"
+            "This is auto generated message from SPARKZZZ security service\n\n"
             f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
             "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
             "**Send** `/start` ** so that my master can decide why you're here.**"
@@ -274,7 +274,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 )
             else:
                 USER_BOT_NO_WARN = (
-                    "This is auto generated message from cat security service\n\n"
+                    "This is auto generated message from SPARKZZZ security service\n\n"
                     f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
                     "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
                     "**Send** `/start` ** so that my master can decide why you're here.**"
@@ -290,7 +290,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             else:
                 USER_BOT_NO_WARN = (
                     f"[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id={catid})\n\n"
-                    "This is auto generated message from cat security service\n\n"
+                    "This is auto generated message from SPARKZZZ security service\n\n"
                     f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
                     "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
                     "**Send** `/start` ** so that my master can decide why you're here.**"
