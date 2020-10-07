@@ -39,7 +39,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
             if not pmpermit_sql.is_approved(chat.id):
@@ -78,7 +77,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
           if chat.id == 731591473:
@@ -99,7 +97,6 @@ if Var.PRIVATE_GROUP_ID is not None:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
-        reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
           if chat.id == 731591473:
