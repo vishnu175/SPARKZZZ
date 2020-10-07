@@ -1,13 +1,13 @@
+import time
 import asyncio
 import io
 import os
-from userbot.uniborgConfig import Config
-from telethon import events, functions
-from telethon.tl.functions.users import GetFullUserRequest
-from userbot.utils import admin_cmd
-
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon import events, errors, functions, types
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
+from userbot.utils import admin_cmd
+from userbot.events import register
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
