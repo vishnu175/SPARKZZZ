@@ -41,19 +41,19 @@ async def _(event):
     if (x==11):
       await event.edit("**“So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets.” - Mathew 7:12**")
     if (x==12):
-      await event.edit("**“I have told you these things, so that in me you may have peace, in this world you will have trouble,But take heart I have overcome the world." - John 16:33**")
+      await event.edit("**“I have told you these things, so that in me you may have peace, in this world you will have trouble,But take heart I have overcome the world.“ - John 16:33**")
     if (x==13):
       await event.edit("**”But he said to me, My grace is sufficient for you, for my power is made perfect in weakness. Therefore I will boast all the more gladly about my weaknesses, so that Christ’s power may rest on me." - 2 Corinthians 12:9**")
     if (x==14):
       await event.edit("**“Jesus looked at them and said, With man this is impossible, but with God all things are possible.“ - Mathew 19:26**")
     if (x==15):
-      await event.edit("**“You have heard that it was said,Love your neighbor and hate your enemy.  But I tell you, love your enemies and pray for those who persecute you," - Mathew 5:43-44**")
+      await event.edit("**“You have heard that it was said,Love your neighbor and hate your enemy.  But I tell you, love your enemies and pray for those who persecute you,“ - Mathew 5:43-44**")
     if (x==16):
-      await event.edit("**“So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand." - Isaiah 41:10**")
+      await event.edit("**“So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.“ - Isaiah 41:10**")
     if (x==17):
       await event.edit("**“My flesh and my heart may fail, but God is the strength of my heart and my portion forever.“ - Psalm  73:26**")
     if (x==18):
-      await event.edit("**“I pray that out of his glorious riches he may strengthen you with power through his Spirit in your inner being." - Ephesians 3:16**")
+      await event.edit("**“I pray that out of his glorious riches he may strengthen you with power through his Spirit in your inner being.“ - Ephesians 3:16**")
     if (x==19):
       await event.edit("**“LORD my God, I called to you for help, and you healed me.“ - Psalms 30:2**")
     if (x==20):
