@@ -155,7 +155,7 @@ async def upstream(ups):
             )
             repo.__del__()
             return
-        await ups.edit('`SPARKZZZ dyno ⚙️ build in progress, please wait for it to complete.`'
+        await ups.edit('`SPARKZZZ dyno ⚙️ build in progress, please wait for 6-8 minutes to complete.`'
                        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -172,7 +172,7 @@ async def upstream(ups):
             await ups.edit(f'{txt}\n`Here is the error log:\n{error}`')
             repo.__del__()
             return
-        await ups.edit('`SPARKZZZ Successfully Updated!\n'
+        await ups.edit('`SPARKZZZ succesfully updated!\n'
                        'Restarting 📱, please wait...`')
     else:
         # Classic Updater, pretty straightforward.
