@@ -125,6 +125,9 @@ if ENV:
         INLINE_EMOJI = os.environ.get("INLINE_EMOJI", " ")
         #Inbox security spam limit
         INBOX_SECURITY_SPAM_LIMIT = int(os.environ.get("INBOX_SECURITY_SPAM_LIMIT", 3))
+        # in pm permit pic
+        PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+        CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
         
         
 else:
