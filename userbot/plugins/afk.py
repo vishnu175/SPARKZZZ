@@ -38,7 +38,7 @@ async def set_not_afk(event):
     me = await borg.get_me()
     telname = (me.first_name)
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-    try:
+        try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 "Set AFK mode to False"
