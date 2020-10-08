@@ -23,6 +23,39 @@ afk_start = {}
 AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!!! I'm AFK now."
 AFKSTR = f"{AFK_MSG}"
 
+@borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
+async def set_not_afk(event):
+    global USER_AFK  # pylint:disable=E0602
+    global afk_time  # pylint:disable=E0602
+    global last_afk_message  # pylint:disable=E0602
+    global afk_start
+    global afk_end
+    back_alive = datetime.now()
+    afk_end = back_alive.replace(microsecond=0)
+    if afk_start != {}:
+        total_afk_time = str((afk_end - afk_start))
+    current_message = event.message.message
+    me = await borg.get_me()
+    telname = (me.first_name)
+    if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
+        shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afk_time + "`")
+        try:
+            await borg.send_message(  # pylint:disable=E0602
+                Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
+                "Set AFK mode to False"
+            )
+        except Exception as e:  # pylint:disable=C0103,W0703
+            await borg.send_message(  # pylint:disable=E0602
+                event.chat_id,
+                "Please set `PRIVATE_GROUP_BOT_API_ID` " + \
+                "for the proper functioning of afk functionality. Check @sparkzzzbothelp ",
+                reply_to=event.message.id,
+                silent=True
+            )
+        await asyncio.sleep(5)
+        await shite.delete()
+        USER_AFK = {}  # pylint:disable=E0602
+        afk_time = None  # pylint:disable=E0602
 @borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -73,39 +106,7 @@ async def _(event):
             logger.warn(str(e))  # pylint:disable=E0602
 
 
-@borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
-async def set_not_afk(event):
-    global USER_AFK  # pylint:disable=E0602
-    global afk_time  # pylint:disable=E0602
-    global last_afk_message  # pylint:disable=E0602
-    global afk_start
-    global afk_end
-    back_alive = datetime.now()
-    afk_end = back_alive.replace(microsecond=0)
-    if afk_start != {}:
-        total_afk_time = str((afk_end - afk_start))
-    current_message = event.message.message
-    me = await borg.get_me()
-    telname = (me.first_name)
-    if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afk_time + "`")
-        try:
-            await borg.send_message(  # pylint:disable=E0602
-                Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "Set AFK mode to False"
-            )
-        except Exception as e:  # pylint:disable=C0103,W0703
-            await borg.send_message(  # pylint:disable=E0602
-                event.chat_id,
-                "Please set `PRIVATE_GROUP_BOT_API_ID` " + \
-                "for the proper functioning of afk functionality. Check @sparkzzzbothelp ",
-                reply_to=event.message.id,
-                silent=True
-            )
-        await asyncio.sleep(5)
-        await shite.delete()
-        USER_AFK = {}  # pylint:disable=E0602
-        afk_time = None  # pylint:disable=E0602
+
 
 
 @borg.on(events.NewMessage(  # pylint:disable=E0602
