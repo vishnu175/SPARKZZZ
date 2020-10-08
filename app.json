@@ -170,7 +170,7 @@
    "required": false
   }
  },
- "addons": [
+  "addons": [
     {
       "plan": "heroku-postgresql",
       "options": {
@@ -182,7 +182,9 @@
     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     },
-    
+    {
+      "url": "heroku/python"
+    },
     {
       "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
     },
