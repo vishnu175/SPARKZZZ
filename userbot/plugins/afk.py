@@ -52,10 +52,20 @@ async def set_not_afk(event):
                 reply_to=event.message.id,
                 silent=True
             )
+        try:
+            await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+            first_name=f"{ALIVE_NAME}",
+            last_name = ""
+        ))
+        except Exception as e:  # pylint:disable=C0103,W0703
+            await event.edit(str(e))
+        USER_AFK = {}  # pylint:disable=E0602
+        afk_time = None  # pylint:disable=E0602
         await asyncio.sleep(5)
         await shite.delete()
         USER_AFK = {}  # pylint:disable=E0602
         afk_time = None  # pylint:disable=E0602
+
 @borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
