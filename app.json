@@ -195,6 +195,7 @@
       "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
     }
   ]
+     "stack": "heroku-18",
 }
      
     
