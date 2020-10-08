@@ -1,6 +1,7 @@
-# SPARKZZZ userbot  using  Slim Buster image
-FROM python:3.8.6-slim-buster
-MAINTAINER vishnu175/SPARKZZZ
+FROM kalilinux/kali-rolling
+
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
 
 RUN apt-get install -y\
@@ -45,20 +46,18 @@ RUN apt-get install -y\
     megatools \
     libfreetype6-dev \
     procps \
-    policykit-1 \
-    p7zip \
-    tree
-
+    policykit-1
 
 RUN pip3 install --upgrade pip setuptools 
-RUN pip3 install --upgrade pip install wheel 
+RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
+RUN if [ ! -e /usr/bin/python ]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
+RUN rm -r /root/.cache
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
-RUN wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && mv chromedriver /usr/bin && rm -v chromedriver_linux64.zip
-RUN git clone https://github.com/vishnu175/SPARKZZZ /root/userbot
+RUN wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
+RUN git clone https://github.com/xditya/TeleBot /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
-RUN sudo pip3 install -U -r requirements.txt
-RUN sudo chmod o+r /usr/lib/python3/dist-packages/*
-# (c) SPARKZZZ 2020 VISHNU175
-CMD ["bash","sparkzzz/start.sh"]
+RUN pip3 install -r requirements.txt
+# (c) SPARKZZZ, @vishnu175
+CMD ["bash","startup.sh"]
