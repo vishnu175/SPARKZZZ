@@ -1,5 +1,5 @@
 telethon==1.16.4
-python 3.8.5
+python==3.8.5
 -r requirements-all.txt
 
 
