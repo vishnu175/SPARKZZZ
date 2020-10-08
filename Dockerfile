@@ -60,4 +60,4 @@ WORKDIR /root/userbot/
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt
 # (c) SPARKZZZ, @vishnu175
-CMD ["bash","startup.sh"]
+CMD ["bash","sparkzzz/startup.sh"]
