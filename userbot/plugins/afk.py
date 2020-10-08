@@ -63,8 +63,6 @@ async def set_not_afk(event):
         afk_time = None  # pylint:disable=E0602
         await asyncio.sleep(5)
         await shite.delete()
-        USER_AFK = {}  # pylint:disable=E0602
-        afk_time = None  # pylint:disable=E0602
 
 @borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
@@ -114,8 +112,6 @@ async def _(event):
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
-
-
 
 
 
