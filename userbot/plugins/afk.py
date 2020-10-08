@@ -38,7 +38,7 @@ async def set_not_afk(event):
     me = await borg.get_me()
     telname = (me.first_name)
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-    shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afk_time + "`")  
+    shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk**“  
     try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
