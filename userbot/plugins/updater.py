@@ -31,7 +31,7 @@ IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
+RESTARTING_APP = "SPARKZZZ dyno ⚙️ build in process...."
 # -- Constants End -- #
 
 
@@ -72,8 +72,8 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("▄︻̷̿┻̿═━一")
-        await asyncio.sleep(1)
+        await message.edit("⚡SPARKZZZ⚡ updation in progress.....")
+        await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
         branch_name=active_branch_name,
@@ -142,8 +142,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await asyncio.sleep(130)
-    await message.edit("👉⌐╦╦═─⚡⚡ SPARKZZZ updation Successful  \n **To MasterBranch**")
+    await message.edit("⚡SPARKZZZ⚡ updation Successful! \n ** Now Restarting To Finish This Process. Try `.alive` To Check bot is alive..if dead check logs**")
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
