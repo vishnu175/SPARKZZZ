@@ -12,6 +12,7 @@ cowpy
 cryptg
 dnspython
 emoji
+fontTools
 gTTS-token>=1.1.3
 gTTS>=2.0.1
 geopy
@@ -41,6 +42,7 @@ python-dotenv
 python-magic
 pytube
 pytz
+REPO_LINK
 qrcode
 regex
 requests
@@ -52,11 +54,14 @@ telegraph
 tswift
 urbandict>=0.5
 wikipedia>=1.4.0
-youtube-dl
+youtube-dl>=2019.9.28
+youtube_search
+zipfile38
 covid
 validators
 glitch_this
 asyncurban
 scipy
 wordcloud
-
+justwatch
+deezloader
