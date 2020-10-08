@@ -8,9 +8,9 @@ from uniborg.util import admin_cmd
 from userbot import ALIVE_NAME
 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Friday Userbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ Userbot"
 
-@borg.on(admin_cmd(pattern=r"police"))
+@sparkzzz.on(admin_cmd(pattern=r"police"))
 
 async def _(event):
 
