@@ -1,4 +1,4 @@
-userbot: bash .sparkzzz/start.sh
+userbot: python3 -m userbot
 
 
 
