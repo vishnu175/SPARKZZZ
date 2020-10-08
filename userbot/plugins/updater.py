@@ -19,11 +19,11 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
-BOT_IS_UP_TO_DATE = "`SPARKZZZ is up-to-date with master`"
+BOT_IS_UP_TO_DATE = "`The userbot is up-to-date.\nThank you for Using this Service.`"
 NEW_BOT_UP_DATE_FOUND = (
-    "New update available for {branch_name}\n" "changelog: \n\n{changelog}\n" "updating ..."
+    "new update found for {branch_name}\n" "changelog: \n\n{changelog}\n" "updating ..."
 )
-NEW_UP_DATE_FOUND = "New update available for {branch_name}\n" "`updating ...`"
+NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating ...`"
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
@@ -67,7 +67,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`SPARKZZZ Updation in Progress......`")
+        await message.edit("`Updation in Progress......`")
         await asyncio.sleep(8)
 
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -138,7 +138,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive \n© @sparkzzzbothelp"
+        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive ༒★彡☣️ 🇦 🇵 🇽 🇩 ☣️彡★༒"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
