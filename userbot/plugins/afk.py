@@ -12,7 +12,7 @@ from telethon.tl import functions, types
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
-ALIVE_NAME = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+ALIVE_NAME = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
