@@ -8,7 +8,6 @@ base
 async_generator
 beautifulsoup4>=4.8.1
 bs4
-pygments
 bwb==3.0.0
 cfscrape
 coffeehouse
