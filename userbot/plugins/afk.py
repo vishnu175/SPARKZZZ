@@ -72,9 +72,8 @@ async def _(event):
         return
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
-    global last_afk_message  # pylint:disable=E0602
-    
-global reason
+    global last_afk_message  # pylint:disable=E0602 
+    global reason
     USER_AFK = {}
     afk_time = None
     last_afk_message = {}
