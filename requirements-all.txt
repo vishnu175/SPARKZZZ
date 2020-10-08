@@ -64,7 +64,6 @@ validators
 lyricsgenius
 tswift
 wheel
-bitlyshortener
 redis>=3.3.10
 glitch_this
 youtube_search
