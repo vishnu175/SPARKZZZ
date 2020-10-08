@@ -94,6 +94,8 @@ async def updater(message):
         os.remove("change.log")
     else:
         await message.edit(message_one)
+        await asyncio.sleep(10)
+ 
 
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
@@ -140,6 +142,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
+    await asyncio.sleep(130)
     await message.edit("👉⌐╦╦═─⚡⚡ SPARKZZZ updation Successful  \n **To MasterBranch**")
     await remote.push(refspec=refspec)
     await bot.disconnect()
