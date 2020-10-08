@@ -11,6 +11,7 @@ coffeehouse
 cowpy
 cryptg
 dnspython
+datetime
 emoji
 fontTools
 gTTS-token>=1.1.3
