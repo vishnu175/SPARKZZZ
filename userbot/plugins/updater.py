@@ -138,7 +138,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive ༒★彡☣️ 🇦 🇵 🇽 🇩 ☣️彡★༒"
+        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive @sparkzzzbothelp"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
