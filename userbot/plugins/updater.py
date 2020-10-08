@@ -142,7 +142,8 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("⚡SPARKZZZ⚡ updation Successful! \n ** Now Restarting To Finish This Process. Try `.alive` To Check bot is alive..if dead check logs**")
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
+    await message.edit("⚡SPARKZZZ⚡ updation Successful! \n ** Now Restarting To Finish This Process. Try `.alive` To Check bot is alive..if dead check logs**")
+    
