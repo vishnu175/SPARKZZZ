@@ -94,7 +94,7 @@ async def updater(message):
         os.remove("change.log")
     else:
         await message.edit(message_one)
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
  
 
     temp_upstream_remote.fetch(active_branch_name)
