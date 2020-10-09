@@ -48,8 +48,8 @@ def get_readable_time(seconds: int) -> str:
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@SPARKZZZ user"
 
-@telebot.on(admin_cmd(outgoing=True, pattern="alive"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="alive"))
+@sparkzzz.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
 async def amireallyalive(alive):
     start = datetime.now()
     myid = bot.uid
@@ -77,7 +77,7 @@ async def amireallyalive(alive):
         await borg.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/23a195e027158d3a4b168.png")
+    req = requests.get("https://telegra.ph/file/f05bb1b963445ff544027.png")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
