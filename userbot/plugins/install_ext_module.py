@@ -17,12 +17,12 @@ async def install(event):
     if event.fwd_from:
         return
     documentss = await event.client.get_messages(event.chat_id, None ,search='.py', filter=InputMessagesFilterDocument)
-	total = int(documentss.total)
-	total_doxx = range(0, total)
-	b = await event.client.send_message(event.chat_id, f"**Installing {total} plugins...**\n`This msg will be deleted after the installation gets completed`")
-	text =  "**Installing Plugins...**\n\n"
-	a = await event.client.send_message(event.chat_id, text)
-	if total == 0:
+    total = int(documentss.total)
+    total_doxx = range(0, total)
+    b = await event.client.send_message(event.chat_id, f"**Installing {total} plugins...**\n`This msg will be deleted after the installation gets completed`")
+    text =  "**Installing Plugins...**\n\n"
+    a = await event.client.send_message(event.chat_id, text)
+    if total == 0:
 		await a.edit("**No plugins to install.**")
 		await event.delete()
 		return
