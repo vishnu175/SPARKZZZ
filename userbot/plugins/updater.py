@@ -29,7 +29,7 @@ IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
+RESTARTING_APP = "connecting 🔌 to ⚡SPARKZZZ⚡...."
 # -- Constants End -- #
 
 
@@ -67,7 +67,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`Updation in Progress......`")
+        await message.edit("`checking 📲 for updates......`")
         await asyncio.sleep(8)
 
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -138,7 +138,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check If I Am Alive \n© sparkzzzbothelp"
+        "SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
