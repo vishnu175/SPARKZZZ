@@ -4,7 +4,7 @@ from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import command, remove_plugin, load_module
 from pathlib import Path
-from userbot utils import admin_cmd
+from userbot.utils import admin_cmd
 import sys
 import asyncio
 import traceback
