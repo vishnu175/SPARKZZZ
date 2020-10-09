@@ -1,6 +1,10 @@
 # SPARKZZZ-USERBOT
 
 
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5470903.gif" width="399" height="91" alt="SPARKZZZ" /></a>
+<br /><a href="https://cooltext.com"></a> - <a href="https://cooltext.com/Edit-Logo?LogoID=3650308409"></a>
+
+
 ![Python Version](https://img.shields.io/badge/Python-v3.8.6-blue)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/vishnu175/SPARKZZZ/?ref=repository-badge)
 
