@@ -18,7 +18,7 @@ async def install(event):
 	total = int(documentss.total)
 	total_doxx = range(0, total)
 	b = await event.client.send_message(event.chat_id, f"**Installing {total} plugins...**\n`This msg will be deleted after the installation gets completed`")
-	text =  "**Installing Plugins...**\n\n"
+	text =  "**Installing New Plugins...**\n\n"
 	a = await event.client.send_message(event.chat_id, text)
 	if total == 0:
 		await a.edit("**No plugins to install.**")
@@ -37,6 +37,6 @@ async def install(event):
 				text += f"**• Error installing** `{(os.path.basename(downloaded_file_name))}`\n"
 		else:
 			text += f"**• Plugin** `{(os.path.basename(downloaded_file_name))}` **already installed.**\n"
-		await a.edit(f"{text}\n**Installed every plugin.**")
+		await a.edit(f"{text}\n**Succesfully Installed all plugin.**")
 		await event.delete()
 		await b.delete()
