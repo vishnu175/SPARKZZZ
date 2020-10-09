@@ -44,7 +44,8 @@ for name in files:
 
 import userbot._core
 
-print("hurray!!! your userbot is officially working. Enjoy The SPARKZZZ bot.created by @csv1990. Do join  @Sparkzzzbothelp")
+print("SPARKZZZ installed succesfully,Enjoy The SPARKZZZ bot created by CSV1990")
+print("You Can Visit @sparkzzzbothelp For any doubts and suggestions")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
