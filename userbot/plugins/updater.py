@@ -7,6 +7,7 @@ import os
 import sys
 import asyncio
 from userbot.utils import admin_cmd
+import time
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -15,7 +16,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPAKZZZ"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -72,7 +73,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("⚡️⚡️⚡️⚡️⚡️")
+        await message.edit("▄︻̷̿┻̿═━一")
         await asyncio.sleep(1)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -140,7 +141,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("⚡️ Update Successful⚡️ \n **To MasterBranch**")
+    await message.edit("😎⌐╦╦═─😎 updation Successful🇮🇳 \n **SPARKZZZ**")
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
