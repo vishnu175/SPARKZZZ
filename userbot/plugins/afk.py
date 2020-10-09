@@ -52,7 +52,7 @@ async def _(event):
             await borg.send_message(event.chat_id, f"**I am Going afk!** __Reason - {reason}__")
         else:
             await borg.send_message(event.chat_id, f"**I am Going afk!**")
-        await asyncio.sleep(5)
+        await asyncio.sleep(3)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
