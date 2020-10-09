@@ -1,175 +1,108 @@
 {
- "name": "SPARKZZZ - UserBot",
- "description": "An advanced Telegram Userbot, from @sparkzzzbotsupport",
- "logo": "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg",
- "keywords": [
-  "telegram",
-  "userbot",
-  "SPARKZZZ",
-  "modular",
-  "productivity"
- ],
- "repository": "https://github.com/vishnu175/SPARKZZZ/",
- 
- "success_url": "https://t.me/sparkzzzbothelp",
- "env": {
-  "ENV": {
-   "description": "Setting this to ANYTHING will enable heroku.",
-   "value": "ANYTHING"
-  },
-  "TEMP_DOWNLOAD_DIRECTORY": {
-   "description": "Where downloaded files will go.",
-   "value": "./userbot/DOWNLOADS/",
-   "required": false
-   },
-  "GENIUS": {
-  "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
-  "value": "0"
+  "name": "SPARKZZZ-Userbot",
+  "description": "A Userbot Based On Telethon By @CSV1990",
+  "logo": "https://telegra.ph/file/a4054f83f99e4009f22ac.png",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "telegram-userbot",
+    "productivity"
+  ],
+  "repository": "https://github.com/vishnu175/SPARKZZZ",
+  "success_url": "t.me/sparkzzzbothelp",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
     },
-  "GENIUS_ACCESS_TOKEN": {
-  "description": "Client Access Token from https://genius.com/api-clients.",
-  "required": false
-  },
-  "APP_ID": {
-   "description": "Get this value from my.telegram.org! Please do not steal",
-   "value": ""
-  },
-  "API_HASH": {
-   "description": "Get this value from my.telegram.org! Please do not steal",
-   "value": ""
-  },
-  "STRING_SESSION": {
-   "description": "Get this value by running python3 stringsession.py locally or https://stringsession.vishnu175.repl.run/ online.",
-   "value": ""
-  },  
-  "CUSTOM_PMPERMIT": {
-   "description": "The message that appears when someone PM's you. Leave it as such for default message.",
-   "value": "Do not spam here, else you will be blocked automatically."
-  }, 
-   "INBOX_SECURITY_SPAM_LIMIT": {
-   "description": "Number of messages one can send in your PM before being approved. By default, it is 3.",
-   "value": "3",
-   "required": false
-  },
-  "CUSTOM_AFK": {
-   "description": "The message that appears when you go afk. Leave it as such for default.",
-   "value": "My Master is [AFK](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
-  },
-  "GITHUB_ACCESS_TOKEN": {
-   "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
-   "value": "",
-   "required": false
-  },
-   "CMD_HNDLR": {
-   "description": "Used to invoke commands, leave blank for default, (dot)",
-   "value": "",
-   "required": false
-  },  
-   "SUDO_HNDLR": {
-   "description": "Used to invoke sudo commands, leave blank for default",
-   "value": "",
-   "required": false
-  },  
-  "GIT_REPO_NAME": {
-   "description": "Your repo name Example: vishnu175/SPARKZZZ, but GITHUB_ACCESS_TOKEN must be setup first.",
-   "value": "",
-   "required": false
-  },
-  "LYDIA_API_KEY": {
-   "description": "Needed for Lydia AI. Create a Intellivoid Account by visting https://coffeehouse.intellivoid.info/ to get your API.",
-   "value": "",
-   "required": false
-  },
-   "DEEZER_ARL_TOKEN": {
-   "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
-   "required": false
-   }, 
-  "HEROKU_API_KEY": {
-   "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
-   "value": "",
-   "required": true
-  },  
-  "CHROME_BIN": {
-   "description": "Leave as such, Google Chrome (or) Chromium binary location for selenium based modules.",
-   "value": "/usr/bin/google-chrome",
-   "required": false
-  },
-  "CHROME_DRIVER": {
-   "description": "Leave as such, ChromeDriver location for selenium based modules",
-   "value": "/usr/bin/chromedriver",
-   "required": false
-  },
-  "SUDO_USERS": {
-   "description": "Users you want to give access to your bot. (Don't allow unknown people)",
-   "value": "",
-   "required": false
-  },
-  "PRIVATE_GROUP_BOT_API_ID": {
-   "description": "Must read https://telegra.ph/SPARKZZZ-BOT-setup-09-18 for knowing how to get the value. Required for pmpermit.",
-   "value": "",
-   "required": true
-  },
+    "TEMP_DOWNLOAD_DIRECTORY": {
+      "description": "Where downloaded files will go.",
+      "value": "./userbot/DOWNLOADS/",
+      "required": false
+    },
+    "ALIVE_NAME": {
+      "description": "Enter your Telegram Username Here ",
+      "value": ""
+    },
+    "ALIVE_PIC": {
+      "description": "telegra.ph link to theimage you want as alive pic, leave blank for sticker",	
+      "value": "",
+      "required": false
+    }, 
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "CUSTOM_AFK": {
+      "description": "The message that appears when you go afk. Leave it as such for default.",
+      "value": "My Master is [AFK](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
+    },
+    "SUDO_USERS": {
+      "description": "Enter A User Id Which You Would Like to Use To Control Sudo. Don't Give Your Own ID Or ID Of Users You Don't Trust.",
+      "value": "",
+      "required": false
+    },
+   "PRIVATE_GROUP_BOT_API_ID": {
+     "description": "Must read https://telegra.ph/SPARKZZZ-BOT-setup-09-18 for knowing how to get the value. Required for pmpermit.",
+     "value": "",
+     "required": true
+   },
   "PRIVATE_GROUP_ID": {
-   "description": "Same value as PRIVATE_GROUP_BOT_API_ID. Must read https://telegra.ph/SPARKZZZ-BOT-setup-09-18 for knowing how to get the value. Required for pmpermit.",
-   "value": "",
-   "required": true
+    "description": "Same value as PRIVATE_GROUP_BOT_API_ID. Must read https://telegra.ph/SPARKZZZ-BOT-setup-09-18 for knowing how to get the value. Required for pmpermit.",
+    "value": "",
+    "required": true
+    },
+   "STRING_SESSION": {
+     "description": "Get this value by running python3 stringsession.py locally or https://stringsession.vishnu175.repl.run/ online.",
+     "value": ""
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "Your Github Access Token for GitHub Commit Plugin. Google 'Github access token' to find more About It.",
+      "value": "",
+      "required": false
+    },
+    "GIT_REPO_NAME": {
+      "description": "Your repo name Example: vishnu175/SPARKZZZ, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "value": "",
+      "required": false
+    },
+    "LYDIA_API_KEY": {
+      "description": "Needed for Lydia AI. Create a Intellivoid Account by visting https://coffeehouse.intellivoid.info/ to get your API.",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_API_KEY": {
+      "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "value": ""
+    },
+    "TG_BOT_TOKEN_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at @BotFather and get the token of your bot. Get it.",
+      "value": ""
+    },
+    "TG_BOT_USER_NAME_BF_HER": {
+      "description": "You Telegram Bot API Key Here. Needed For Help Module And Cbutton.",
+      "value": ""
+    },
+    "DOWNLOAD_PFP_URL_CLOCK": {
+      "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
+      "value": "",
+      "required": false
+    },
+    "TZ": {
+      "description": "Required for Correct Time on autopic",
+      "value": "Asia/Kolkata",
+      "required": false
+    }
   },
-  "HEROKU_APP_NAME": {
-   "description": "The Value of App Name you filled in right on top.Required for updater to work.",
-   "value": "",
-   "required": true
-  },
-  "TG_BOT_TOKEN_BF_HER": {
-   "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. Get it else .help won't work.",
-   "value": "",
-   "required": true
-  },
-  "TG_BOT_USER_NAME_BF_HER": {
-   "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot. Needed for .help to work.",
-   "value": "",
-   "required": true
-  },
-  "DOWNLOAD_PFP_URL_CLOCK": {
-   "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
-   "value": "",
-   "required": false
-  },
-  "ALIVE_NAME": {
-   "description": "Your Telegram Username. ",
-   "value": "",
-   "required": false
-  },  
-  "MAX_FLOOD_IN_P_M_s": {
-   "description": "Maximum number of messages a person can send in pm before getting blocked. Value must be an integer. 3 by default.",
-   "value": "3",
-   "required": false
-  },
-  "OCR_SPACE_API_KEY": {
-   "description": "Required for OCR functionality. Get from https://ocr.space/ocrapi",
-   "value": "",
-   "required": false
-  },
-  "REM_BG_API_KEY": {
-   "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
-   "value": "",
-   "required": false
-  },
-  "ALIVE_PIC": {
-   "description": "telegra.ph link to theimage you want as alive pic, leave blank for sticker",
-   "value": "",
-   "required": false
-  },
-  "PMPERMIT_PIC": {
-  "description": "telegra.ph link to theimage you want as pmpermit pic, leave blank for default one!",
-  "value": "",
-  "required": false
-  },
-  "TZ": {
-   "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-   "value": "",
-   "required": false
-  }
- },
   "addons": [
     {
       "plan": "heroku-postgresql",
@@ -195,18 +128,4 @@
       "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
     }
   ]
-     "stack": "heroku-18",
 }
-     
-    
-    
-      
-    
-    
-      
-   
- 
-
-   
-
-
