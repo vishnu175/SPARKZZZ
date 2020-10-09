@@ -15,7 +15,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 @command(outgoing=True, pattern="^.start$")
 async def amireallyalive(start):
     """ For .start command, check if the bot is running.  """
-    await start.edit("▁ ▂ ▄ ▅ ▆ ▇ █ ≋S≋P≋A≋R≋K≋Z≋Z≋Z≋█ ▇ ▆ ▅ ▄ ▂ ▁\n\n"
+    await start.edit("▁ ▂ ▄ ▅ ▆ ▇ █S≋P≋A≋R≋K≋Z≋Z≋Z█ ▇ ▆ ▅ ▄ ▂ ▁\n\n"
                      "👍🏻  `-̷-̷ Currently Alive! 🍻 -̷-̷` \n\n"
                      "💻__Telethon version: 1.16.4 #### 🐍Python: 3.8.6\n\n__"
                      "**◆ ---------------------- ✪ ---------------------------◆**\n"
