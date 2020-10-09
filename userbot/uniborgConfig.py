@@ -26,10 +26,12 @@ if ENV:
         TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "sparkzzz")
         # For Command Handler
         CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
+        COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", "\.")
+        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", "\.")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
-        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", --1001369346613))
+        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP",-1001369346613 ))
         # TG API limit. An album can have atmost 10 media!
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
@@ -87,7 +89,7 @@ if ENV:
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "967883138").split())
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
         # VeryStream only supports video formats
         VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
         VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
