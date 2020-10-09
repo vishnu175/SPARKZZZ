@@ -23,9 +23,9 @@ async def install(event):
     text =  "**Installing Plugins...**\n\n"
     a = await event.client.send_message(event.chat_id, text)
     if total == 0:
-		await a.edit("**No plugins to install.**")
-		await event.delete()
-		return
+	    await a.edit("**No plugins to install.**")
+	    await event.delete()
+	    return
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(await borg.get_messages(chat, ids=mxo), "userbot/plugins/")
@@ -39,6 +39,6 @@ async def install(event):
 		     text += f"**• Error installing** `{(os.path.basename(downloaded_file_name))}`\n"
 	    else:
 			text += f"**• Plugin** `{(os.path.basename(downloaded_file_name))}` **already installed.**\n"
-		await a.edit(f"{text}\n**Installed every plugin.**")
-		await event.delete()
-		await b.delete()
+	    await a.edit(f"{text}\n**Installed every plugin.**")
+	    await event.delete()
+	    await b.delete()
