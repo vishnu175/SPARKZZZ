@@ -240,6 +240,8 @@ async def kang(args):
         await args.edit(f"`Sticker kanged successfully!`\
             \nPack can be found [here](t.me/addstickers/{packname})",
                         parse_mode='md')
+        await asyncio.sleep(2)
+        await args.delete()
 
 
 async def resize_photo(photo):
