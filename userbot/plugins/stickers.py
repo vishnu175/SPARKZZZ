@@ -11,6 +11,7 @@ import urllib.request
 from os import remove
 from PIL import Image
 import random
+import asyncio
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
 from userbot import bot, CMD_HELP
 from userbot.events import register
