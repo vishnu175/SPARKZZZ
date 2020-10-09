@@ -12,11 +12,11 @@ import traceback
 import os
 import userbot.utils
 
-@command(pattern="^.extdl", outgoing=True)
+@sparkzzz.on(admin_cmd(pattern=r"extdl$"))
 async def install(event):
-        if event.fwd_from:
-                return
-        documentss = await event.client.get_messages(event.chat_id, None ,search='.py', filter=InputMessagesFilterDocument)
+	if event.fwd_from:
+		return
+	documentss = await event.client.get_messages(event.chat_id, None ,search='.py', filter=InputMessagesFilterDocument)
 	total = int(documentss.total)
 	total_doxx = range(0, total)
 	b = await event.client.send_message(event.chat_id, f"**Installing {total} plugins...**\n`This msg will be deleted after the installation gets completed`")
