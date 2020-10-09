@@ -30,7 +30,7 @@ IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-RESTARTING_APP = "re-starting heroku application"
+RESTARTING_APP = "connecting to Github...."
 # -- Constants End -- #
 
 
@@ -139,7 +139,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updation Sucessfull ! Now Restarting To Finish This Process. Try `.alive` To Check SPARKZZZ is alive."
+        "SPARKZZZ dyno ⚙️ build in progress..... Try `.alive` To Check SPARKZZZ is alive."
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
