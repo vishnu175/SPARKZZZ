@@ -9,7 +9,7 @@ from pymongo import MongoClient
 
 from userbot.fonts import fonts as fonts
 
-
+Lastupdate = time.time()
  
 
 if Var.STRING_SESSION:
