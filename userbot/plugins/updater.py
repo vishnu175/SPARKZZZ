@@ -135,12 +135,15 @@ def generate_change_log(git_repo, diff_marker):
     return out_put_str
 
 
-async def deploy_start(tgbot, message, refspec, remote):
+async def deploy_start(message ):
     await message.edit(RESTARTING_APP)
     await message.edit(
         "SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp"
     )
-    await remote.push(refspec=refspec)
+async def deploy_start(tgbot,refspec, remote):
+    return tgbot,refspec,remote
+    update=remote.push(refspec=refspec)
+    await update
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
