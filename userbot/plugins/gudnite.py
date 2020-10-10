@@ -1,4 +1,4 @@
-# @ copyright SPARKZZZZ
+# (C) SPARKZZZ 2020
 
 """
 
