@@ -1,10 +1,4 @@
-"""
-Files Batch Uploader Plugin for userbot.
-usage:- .upb 
-Note:- set TEMP_DIR in Your ENV Vars First.
-By:-@Zero_cool7870	
-
-"""
+# SPARKZZZ 2020 @vishnu175
 import os 
 import asyncio
 from uniborg.util import admin_cmd
@@ -12,11 +6,11 @@ from telethon import events
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"upb"))
+@sparkzzz.on(admin_cmd(pattern=r"upb"))
 async def batch_upload(event):
 	if event.fwd_from:
 		return   
-	temp_dir = Config.TEMP_DIR	
+	temp_dir = Config.TMP_DOWNLOAD_DIRECTORY	
 	if os.path.exists(temp_dir):    
 		files = os.listdir(temp_dir)
 		files.sort()
