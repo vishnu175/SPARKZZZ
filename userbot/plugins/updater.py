@@ -1,8 +1,4 @@
-"""Update UserBot code (for Xtra-Telegram)
-Syntax: .update
-\nAll Credits goes to © @Three_Cube_TeKnoways
-\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
-
+# SPARKZZZ 2020 
 import asyncio
 import os
 import sys
