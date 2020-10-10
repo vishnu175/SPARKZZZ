@@ -223,6 +223,7 @@ USERS = {}
 COUNT_PM = {}
 LASTMSG = {}
 CMD_HELP = {}
+SUDO_LIST = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
