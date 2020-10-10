@@ -26,9 +26,9 @@ import shutil
 from PIL import Image, ImageDraw, ImageFont
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
-@borg.on(admin_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    """ A Wrapper for carbon.now.sh """
    await e.edit("🔲🔲🔲🔲🔲")
@@ -44,7 +44,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -53,7 +53,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("🔳🔳🔲🔲🔲")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -84,7 +84,7 @@ async def carbon_api(e):
    await e.delete() # Deleting msg
 
    
-@borg.on(admin_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    """ A Wrapper for carbon.now.sh """
    await e.edit("📛📛📛📛📛")
@@ -100,7 +100,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -109,7 +109,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("🔘🔘📛📛📛")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -139,7 +139,7 @@ async def carbon_api(e):
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg
 
-@borg.on(admin_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    """ A Wrapper for carbon.now.sh """
    await e.edit("🎛🎛🎛🎛🎛")
@@ -155,7 +155,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -164,7 +164,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("🔵🔵🎛🎛🎛")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -194,7 +194,7 @@ async def carbon_api(e):
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg 
    
-@borg.on(admin_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    """ A Wrapper for carbon.now.sh """
    await e.edit("🌚🌚🌚🌚🌚")
@@ -210,7 +210,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -219,7 +219,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("🌝🌝🌚🌚🌚")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -249,7 +249,7 @@ async def carbon_api(e):
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg
 
-@borg.on(admin_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    RED = random.randint(0,256)
    GREEN = random.randint(0,256)
@@ -269,7 +269,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, O=OPC, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -278,7 +278,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("⬛⬛⬜⬜⬜")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -307,7 +307,7 @@ async def carbon_api(e):
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg
    
-@borg.on(admin_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
 async def carbon_api(e):
    RED = random.randint(0,256)
    GREEN = random.randint(0,256)
@@ -358,7 +358,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -367,7 +367,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("⬛⬛⬜⬜⬜")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
    driver.get(url)
    download_path = './'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -398,8 +398,8 @@ async def carbon_api(e):
    
 
 """
-@borg.on(admin_cmd(pattern=f"karpp", allow_sudo=True))
-@borg.on(events.NewMessage(pattern=r"\.karpp", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern=f"karpp", allow_sudo=True))
+@sparkzzz.on(events.NewMessage(pattern=r"\.karpp", outgoing=True))
 async def carbon_api(e):
  while True:
    kpp= 'karbonpp.png'
@@ -453,14 +453,14 @@ async def carbon_api(e):
      url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
      chrome_options = Options()
      chrome_options.add_argument("--headless")
-     chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+     chrome_options.binary_location = ("/app/.apt/usr/bin/google-chrome")
      chrome_options.add_argument("--window-size=1920x1080")
      chrome_options.add_argument("--disable-dev-shm-usage")
      chrome_options.add_argument("--no-sandbox")
      chrome_options.add_argument('--disable-gpu')
      prefs = {'download.default_directory' : './'}
      chrome_options.add_experimental_option('prefs', prefs)
-     driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+     driver = webdriver.Chrome(executable_path=("/app/.chromedriver/bin/chromedriver"), options=chrome_options)
      driver.get(url)
      download_path = './'
      driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
