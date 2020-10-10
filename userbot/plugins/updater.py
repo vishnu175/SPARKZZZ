@@ -108,9 +108,8 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
-                    remote.push("refspec=HEAD:refs/heads/master", force=True)
                 asyncio.get_event_loop().create_task(
-                    deploy_start(tgbot, message)
+                    deploy_start(tgbot, message,refspec,remote)
                 )
 
             else:
@@ -132,9 +131,10 @@ def generate_change_log(git_repo, diff_marker):
     return out_put_str
 
 
-async def deploy_start(tgbot,message):
+async def deploy_start(tgbot,message,refspec,remote):
     await message.edit(RESTARTING_APP)
     await message.edit("SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp")
+    remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
