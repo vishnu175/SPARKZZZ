@@ -13,7 +13,7 @@ import sys
 import random
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern="bbl", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern="bbl", outgoing=True))
 
 async def _(event):
 
@@ -21,7 +21,7 @@ async def _(event):
 
         return
 
-    await event.edit("LAKHU CHU 1 MINUTE !...")
+    await event.edit("SOME POSITIVE THOUGHTS !...")
 
     await asyncio.sleep(2)
 
