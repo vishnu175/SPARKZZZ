@@ -6,7 +6,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.utils import register, errors_handler
 from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(outgoing=True, pattern="purge"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="purge"))
 @errors_handler
 async def fastpurger(purg):
     """ For .purge command, purge all messages starting from the reply. """
@@ -38,7 +38,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="purgeme"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="purgeme"))
 @errors_handler
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
@@ -66,7 +66,7 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="del"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="del"))
 @errors_handler
 async def delete_it(delme):
     """ For .del command, delete the replied message. """
@@ -84,7 +84,7 @@ async def delete_it(delme):
                     BOTLOG_CHATID, "Well, I can't delete a message")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="edit"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="edit"))
 @errors_handler
 async def editer(edit):
     """ For .editme command, edit your last message. """
@@ -104,7 +104,7 @@ async def editer(edit):
                                        "Edit query was executed successfully")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="sd"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="sd"))
 @errors_handler
 async def selfdestruct(destroy):
     """ For .sd command, make seflf-destructable messages. """
