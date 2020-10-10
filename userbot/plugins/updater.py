@@ -110,7 +110,7 @@ async def updater(message):
                     remote = repo.create_remote("heroku", heroku_git_url)
                     remote.push("refspec=refspec", force=True)
                 asyncio.get_event_loop().create_task(
-                    deploy_start(tgbot, message,)
+                    deploy_start(tgbot, message)
                 )
 
             else:
