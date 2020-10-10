@@ -14,9 +14,9 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     input_sgra = input_str.split("-")
     if len(input_sgra) == 3:
-        dd = input_sgra[0]
-        mm = input_sgra[1]
-        yyyy = input_sgra[2]
+        yyyy = input_sgra[0]
+        mm   = input_sgra[1]
+        dd   = input_sgra[2]
         required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(yyyy, mm, dd, "en")
         headers = {"Accept": "application/json"}
         response_content = requests.get(required_url, headers=headers).json()
