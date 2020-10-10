@@ -40,7 +40,7 @@
     },
     "CUSTOM_AFK": {
       "description": "The message that appears when you go afk. Leave it as such for default.",
-      "value": "My Master is [AFK](https://telegra.ph/file/d8084e46678ed299cdd4f.jpg)"
+      "value": "My Master is [AFK](https://telegra.ph/file/b7a4ef25f21131fdc4b70.png)"
     },
     "SUDO_USERS": {
       "description": "Enter A User Id Which You Would Like to Use To Control Sudo. Don't Give Your Own ID Or ID Of Users You Don't Trust.",
