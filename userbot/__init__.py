@@ -7,7 +7,7 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient
 from var import Var
 from logging import DEBUG, INFO, basicConfig, getLogger
-
+import pylast
 from requests import get
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
