@@ -8,7 +8,7 @@ import asyncio
 
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("angry"))
+@sparkzzz.on(admin_cmd("angry"))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,7 +27,7 @@ async def _(event):
            "My friend is also a hacker...",
            "I would call him if you don't shut up",
            "🤬🤬Warning you, Don't repeat it again and shut up now...🤬🤬",
-           "🤬🤬🤬🤬🤬 Mavane kola gandiliruke...unne kolama vidamatte."
+           "🤬🤬🤬🤬🤬 Mavane kola gaandiliruke...unne kolama vidamatte."
         ]
 
     for i in animation_ttl:
