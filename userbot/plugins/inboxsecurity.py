@@ -1,6 +1,4 @@
-# credits @xditya
-#ported for Sparkzzz
-
+# SPARKZZZ 2020 @vishnu175
 import time
 import asyncio
 import io
@@ -13,11 +11,11 @@ from userbot.utils import admin_cmd
 from userbot.events import register
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/d8084e46678ed299cdd4f.jpg"
+TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security 🔐! Please wait for me to approve you. 😊"
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Do not spam here, else you will be blocked automatically."
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
 USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
@@ -27,7 +25,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @telebot.on(admin_cmd(pattern="a ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -62,7 +60,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
                     
-    @telebot.on(admin_cmd(pattern="block ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -81,7 +79,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @telebot.on(admin_cmd(pattern="da ?(.*)"))
+    @sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -97,7 +95,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 pmpermit_sql.disapprove(chat.id)
                 await event.edit("[{}](tg://user?id={}) disapproved to PM.".format(firstname, chat.id))
                 
-    @telebot.on(admin_cmd(pattern="listapproved"))
+    @sparkzzz.on(admin_cmd(pattern="listapproved"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
