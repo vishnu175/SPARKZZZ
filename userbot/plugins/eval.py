@@ -6,7 +6,7 @@ import io
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="eval"))
+@sparkzzz.on(admin_cmd(pattern="exec"))
 async def _(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def _(event):
     else:
         evaluation = "Success"
 
-    final_output = "**EVAL**: `{}` \n\n **OUTPUT**: \n`{}` \n".format(cmd, evaluation)
+    final_output = "**EXEC**: `{}` \n\n **OUTPUT**: \n`{}` \n".format(cmd, evaluation)
 
     if len(final_output) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(final_output)) as out_file:
