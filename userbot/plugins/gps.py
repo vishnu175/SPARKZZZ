@@ -5,7 +5,7 @@ credits :@mrconfused
 
 #help from @sunda005 and @SpEcHIDe
 # don't edit credits 
-# Plugin for TeleBot
+# Plugin for SPARKZZZ
 from geopy.geocoders import Nominatim
 from userbot.utils import admin_cmd
 from telethon.tl import types
@@ -26,7 +26,7 @@ async def gps(event):
 
     await event.edit("Finding...")
 
-    geolocator = Nominatim(user_agent="catuserbot")
+    geolocator = Nominatim(user_agent="sparkzzz")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
