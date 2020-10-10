@@ -127,7 +127,7 @@ async def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
     d_form = "%d/%m/%y" + " at " + "%H:%M:%S"
     for repo_change in git_repo.iter_commits(diff_marker):
-    out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
+        out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     await asyncio.sleep(3)
     return out_put_str
 
