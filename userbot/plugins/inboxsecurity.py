@@ -1,4 +1,4 @@
-# SPARKZZZ 2020 
+# SPARKZZZ 2020 @vishnu175
 import time
 import asyncio
 import io
@@ -11,11 +11,11 @@ from userbot.utils import admin_cmd
 from userbot.events import register
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/66bbc3df3f8db313aedf1.jpg"
+TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`SPARKZZZ inbox security 🔐! Please wait for me to approve you. 😊"
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Do not spam here, else you will be blocked automatically."
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
 USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
