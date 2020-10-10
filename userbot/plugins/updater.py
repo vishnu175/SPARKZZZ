@@ -15,7 +15,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/baaphulawde/Fry_Shit_GIT"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
 BOT_IS_UP_TO_DATE = "FriShit UserShit is UpToShit!!!!"
 NEW_BOT_UP_DATE_FOUND = (
     "**FriShit Update Found For** {branch_name}\n"
