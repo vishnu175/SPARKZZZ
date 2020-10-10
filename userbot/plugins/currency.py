@@ -1,10 +1,10 @@
 """command: .currency usd inr"""
 from datetime import datetime
 import requests
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="currency (.*)"))
+@sparkzzz.on(admin_cmd(pattern="currency (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
             if currency_to in current_response["rates"]:
                 current_rate = float(current_response["rates"][currency_to])
                 rebmun = round(number * current_rate, 2)
-                await event.edit("**According to current rates,**\n {} **{}** = {} **{}**\n \n●▬▬▬▬▬ஜ۩❀۩ஜ▬▬▬▬▬●\n\n**Current Conversion Rates:**\n 1 **{}** = {} **{}**".format(number, currency_from, rebmun, currency_to, currency_from, current_rate, currency_to))
+                await event.edit("**According to current rates,**\n {} **{}** = {} **{}**\n \n░S░P░A░R░K░Z░Z░Z░\n\n**Current Conversion Rates:**\n 1 **{}** = {} **{}**".format(number, currency_from, rebmun, currency_to, currency_from, current_rate, currency_to))
             else:
                 await event.edit("Welp, Hate to tell yout this but this Currency isn't supported **yet**.\n__Try__ `.currencies` __for a list of supported currencies.__")
         except e:
@@ -32,7 +32,7 @@ async def _(event):
     ms = (end - start).seconds
 
  
-@borg.on(admin_cmd(pattern="currencies (.*)"))
+@sparkzzz.on(admin_cmd(pattern="currencies (.*)"))
 async def list(ups):
     if ups.fwd_from:
         return
