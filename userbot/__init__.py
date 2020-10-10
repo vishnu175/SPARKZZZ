@@ -1,17 +1,22 @@
+import asyncio
 import os
 import sys
+import time
+from distutils.util import strtobool as sb
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 from var import Var
-import time
-from pylast import LastFMNetwork, md5
-from pymongo import MongoClient
+from logging import DEBUG, INFO, basicConfig, getLogger
 
+from requests import get
+from pylast import LastFMNetwork, md5
+from pySmartDL import SmartDL
+from pymongo import MongoClient
 from userbot.fonts import fonts as fonts
 
 Lastupdate = time.time()
  
-
+os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
@@ -32,13 +37,7 @@ LOAD_PLUG = {}
 ENV = os.environ.get("ENV", False)
 """ PPE initialization. """
 
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
-import asyncio
 
-import pylast
-from pySmartDL import SmartDL
-from requests import get
 # Bot Logs setup:
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -207,10 +206,8 @@ if not os.path.exists('bin'):
     os.mkdir('bin')
 
 binaries = {
-    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown":
-    "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
+    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown": "bin/megadown",
+    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py": "bin/cmrudl",
 }
 
 for binary, path in binaries.items():
