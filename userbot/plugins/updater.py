@@ -108,8 +108,10 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
+                 try:
+                    remote.push("refspec=refspec", force=True)
                 asyncio.get_event_loop().create_task(
-                    deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote)
+                    deploy_start(tgbot, message,)
                 )
 
             else:
@@ -123,20 +125,17 @@ async def updater(message):
         await message.edit("No heroku api key found in `HEROKU_API_KEY` var")
 
 
-async def generate_change_log(git_repo, diff_marker):
+def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
-    d_form = "%d/%m/%y" + " at " + "%H:%M:%S"
+    d_form = "On " + "%d/%m/%y" + " at " + "%H:%M:%S"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
-    await asyncio.sleep(3)
     return out_put_str
 
 
-async def deploy_start(tgbot,message,refspec,remote):
+async def deploy_start(tgbot,message):
     await message.edit(RESTARTING_APP)
     await message.edit("SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp")
-    update=remote.push(refspec=refspec)
-    await update
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
