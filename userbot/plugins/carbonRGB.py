@@ -1,7 +1,7 @@
 """Carbon Scraper Plugin for Userbot. //text in creative way.
 usage: .karb //as a reply to any text message
 
-Thanks to @SPARKZZZ for THIS PLUGIN"""
+Thanks to dev for THIS PLUGIN"""
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from urllib.parse import quote_plus
