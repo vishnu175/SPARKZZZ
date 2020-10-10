@@ -1,4 +1,3 @@
-# credits Telebot 
 # ported for SPARKZZZ
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
