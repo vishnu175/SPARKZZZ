@@ -1,4 +1,8 @@
-# SPARKZZZ 2020 
+"""Update UserBot code (for Xtra-Telegram)
+Syntax: .update
+\nAll Credits goes to © @Three_Cube_TeKnoways
+\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
+
 import asyncio
 import os
 import sys
@@ -109,7 +113,7 @@ async def updater(message):
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
                 asyncio.get_event_loop().create_task(
-                    deploy_start(tgbot, message,refspec,remote)
+                    deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote)
                 )
 
             else:
@@ -125,16 +129,18 @@ async def updater(message):
 
 def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
-    d_form = "On " + "%d/%m/%y" + " at " + "%H:%M:%S"
+    d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
 
-async def deploy_start(tgbot,message,refspec,remote):
+async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp")
-    remote.push(refspec=refspec)
+    await message.edit(
+        "SPARKZZZ Dyno ⚙️ build in progress....wait for 6-8 minutes to complete. \n© sparkzzzbothelp"
+    )
+    await remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
