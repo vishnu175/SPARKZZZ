@@ -11,7 +11,7 @@ from userbot.utils import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"go (.*)"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern=r"go (.*)"))
 async def gsearch(q_event):
     """ For .google command, do a Google search from @TeleBotHelp. """
     match = q_event.pattern_match.group(1)
