@@ -1,26 +1,22 @@
-# For @UniBorg
-
-# Courtesy @yasirsiddiqui
+# (C) SPARKZZZ 2020 
 
 """
 
-.bye
+.leave
 
 """
-
-
 
 from telethon.tl.functions.channels import LeaveChannelRequest
 from userbot.utils import admin_cmd
 import time
 
-@borg.on(admin_cmd(pattern="bye", outgoing=True))
+@sparkzzz.on(admin_cmd(pattern="leave", outgoing=True))
 
 async def leave(e):
 
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
 
-        await e.edit("`People here are so dumb 😑. I'm leaving.`")
+        await e.edit("`Peoples here not having helping mentality..so i m leaving 🙋.`")
 
         time.sleep(3)
 
@@ -30,4 +26,4 @@ async def leave(e):
 
         else:
 
-            await e.edit('`This is Not A Chat. Please use this in groups :/`')
+            await e.edit('`Please use this in groups :/`')
