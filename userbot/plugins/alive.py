@@ -6,7 +6,7 @@ import requests
 import time
 from PIL import Image
 from io import BytesIO
-from userbot import ALIVE_NAME, telever
+from userbot import ALIVE_NAME, sparkzzzver
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.__init__ import StartTime
 from datetime import datetime
