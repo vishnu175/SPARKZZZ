@@ -65,7 +65,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1).lower()
-    off_repo = 'https://github.com/mkaraniya/BotHub.git'
+    off_repo = 'https://github.com/vishnu175/SPARKZZZ.git'
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
