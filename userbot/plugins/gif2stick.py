@@ -8,7 +8,6 @@ from pySmartDL import SmartDL
 from telethon import types, utils, events
 from telethon.tl.functions.messages import SaveGifRequest, UploadMediaRequest
 from telethon import events
-from heroku_config import Config
 
 sticker_to_gif = storage.sticker_to_gif or {}
 access_hashes = storage.access_hashes or {}
