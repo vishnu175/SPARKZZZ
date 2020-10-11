@@ -25,7 +25,7 @@ else:
     bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 StartTime = time.time()
-botver = "1.7"
+sparkzzzver = "1.7"
 
 CMD_LIST = {}
 # for later purposes
