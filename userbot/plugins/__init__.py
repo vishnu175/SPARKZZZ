@@ -7,7 +7,7 @@ import math
 import heroku3
 import requests
 from heroku_config import Var
-from userbot import telever
+from userbot import sparkzzzver
 from userbot.uniborgConfig import Config
 from telethon import events
 from datetime import datetime
@@ -76,7 +76,7 @@ async def telealive():
     except Exception as e:
         dyno = e
     info = f"SPARKZZZ Stats\
-                  \n\nVersion : {telever}\
+                  \n\nVersion : {sparkzzzver}\
                   \nSudo : {sudo}\
 		  \nPing : {ms}\
                   \nDyno : {dyno}\
