@@ -79,7 +79,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("**Updating ⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**Status** : `Pulling Updates..` \n**SPARKZZZ is ready to update !**")
+        await message.edit("**Updating ⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n🔄**Status** : `Pulling Updates..` \n**SPARKZZZ is ready to update !**")
         await asyncio.sleep(5)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -147,7 +147,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**Version** : `1.7` \n**Telethon** : `1.16.4` \n**Branch** : `Master` \n**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__")
+    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**🛡️Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__")
     remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -189,7 +189,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await sparkzzz.send_message("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**Status** : `Pulling Updates` \n**SPARKZZZ is ready to update !**")
+        await sparkzzz.send_message("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n🔄**Status** : `Pulling Updates` \n**SPARKZZZ is ready to update !**")
         await asyncio.sleep(5)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -257,7 +257,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**Branch** : `Master` \n**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__")
+    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**📱Version** : `1.7` \n💻**Telethon** : `1.16.4` \n🛡️**Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__\n**©sparkzzzbothelp**(t.me/sparkzzzbothelp)")
     remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
