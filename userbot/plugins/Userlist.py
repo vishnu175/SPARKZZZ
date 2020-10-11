@@ -1,5 +1,8 @@
 """Get Administrators of any Chat*
 Syntax: .userlist"""
+import os
+import sys
+import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 from userbot.utils import admin_cmd
