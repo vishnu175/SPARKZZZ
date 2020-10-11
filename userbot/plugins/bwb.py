@@ -1,3 +1,5 @@
+import os
+import sys
 import subprocess
 subprocess.call("pip install bwb".split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 from telethon.events import NewMessage
