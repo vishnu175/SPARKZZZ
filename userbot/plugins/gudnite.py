@@ -25,7 +25,7 @@ async def _(event):
             "Gud",
             "Gud night",
             "Gud night sweet",
-            "Gud night sweet dreams",
+            "Gud night sweet dreams 😴😴",
         ]
 
         for i in animation_ttl:
