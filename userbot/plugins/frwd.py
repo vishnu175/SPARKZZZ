@@ -1,12 +1,12 @@
 # ported for SPARKZZZ @csv1990
 """Enable Seen Counter in any message,
 to know how many users have seen your message
-Syntax: .seen as reply to any message"""
+Syntax: .frwd as reply to any message"""
 from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
 
 
-@sparkzzz.on(admin_cmd(pattern="seen"))
+@sparkzzz.on(admin_cmd(pattern="frwd"))
 async def _(event):
     if event.fwd_from:
         return
