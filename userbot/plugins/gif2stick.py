@@ -3,6 +3,7 @@
 from io import BytesIO
 
 from userbot import utils
+from userbot import storage
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon import types, utils, events
