@@ -257,7 +257,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**📱Version** : `1.7` \n💻**Telethon** : `1.16.4` \n🛡️**Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__\n**©sparkzzzbothelp**(t.me/sparkzzzbothelp)")
+    await message.edit("**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n**📱Version** : `1.7` \n💻**Telethon** : `1.16.4` \n🛡️**Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__\n**©[sparkzzzbothelp]**(t.me/sparkzzzbothelp)")
     remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
