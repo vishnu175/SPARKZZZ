@@ -2,8 +2,8 @@
 # Kangers, don't remove this line 
 # @its_vishnu175
 
-"""Available Commands:
-.info
+"""
+cmds:.info
 """
 
 import asyncio
@@ -21,7 +21,7 @@ async def _(event):
    # if input_str == "Visit this page to know more about SPARKZZZ.":
     await event.edit("WELCOME TO")
     animation_chars = [
-            "**⚡SPARKZZZ ⚡**",
+            "**⚡SPARKZZZ⚡**",
             "[More Info](https://github.com/vishnu175/SPARKZZZ)"
          ]
             
