@@ -56,9 +56,7 @@ async def _(event):
       await event.edit("**“LORD my God, I called to you for help, and you healed me.“ - Psalms 30:2**")
     if (x==20):
       await event.edit("**“I said, Have mercy on me, LORD; heal me, for I have sinned against you.“ - Psalms 41:4**")	
-      
-      
-      
+          
   # WORD OF GOD is vast...i have added only a few, more WORDS will be added soon 
   # (C) SPARKZZZ 2020   
 	
