@@ -24,7 +24,7 @@ from heroku_config import Var as Config
 # -- Constants -- #
 OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-DELETE_TIMEOUT = 4
+DELETE_TIMEOUT = 3
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 # -- Constants End -- #
 
@@ -132,7 +132,7 @@ async def gen_chlog(repo, diff_marker):
     return ch_log
 
 async def deploy_start(bot, upd, refspec, remote):
-    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`1.7` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `1.16.4` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**\n[**𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡](t.me/sparkzzzbothelp)')
+    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`𝟙.𝟟` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `𝟙.𝟙𝟞.𝟜` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.𝐚𝐥𝐢𝐯𝐞` __To check 𝐒𝐏𝐀𝐑𝐊𝐙𝐙𝐙 after 6-8 mins !__**\n[**𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡](t.me/sparkzzzbothelp)')
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
