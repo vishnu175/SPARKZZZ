@@ -6,7 +6,7 @@ from userbot import ALIVE_NAME
 from .. import CMD_HELP, CMD_LIST
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Sparkzzz user"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
 
 @sparkzzz.on(admin_cmd(pattern="help ?(.*)"))
@@ -49,8 +49,8 @@ async def cmd_list(event):
                 await event.edit(input_str + " is not a valid plugin!")
         else:
             help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
-                          \n`All modules of `**[SPARKZZZ]**(https://github.com/vishnu175/SPARKZZZ/) are listed here\
-                          \n__**Type__ `.help`<module name>** to know usage of modules.\
+                          \n`All modules of `**[𝕊ℙ𝔸ℝ𝕂ℤℤℤ]**(https://github.com/vishnu175/SPARKZZZ/) are listed here\
+                          \n__**Type__ `.𝖍𝖊𝖑𝖕`<module name>** to know usage of modules.\
                           \nDo `.info` plugin_name for usage"
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
