@@ -66,8 +66,7 @@ async def updater(upd):
     changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
 
     if not changelog:
-        await upd.edit(
-            f'\n{DEFAULTUSER} **⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is up-to-date..**\n')
+        await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is up-to-date..**\n')
         repo.__del__()
         await asyncio.sleep(DELETE_TIMEOUT)
         await upd.delete()
