@@ -86,7 +86,7 @@ async def updater(message):
         await bot.client.send_file(
             message.chat_id,
             "change.txt",
-            reply_to=upd.id,
+            reply_to=message.id,
         )
     else:    
         await message.edit(changelog_str)     
@@ -189,7 +189,7 @@ async def updater(message):
         await bot.client.send_file(
             message.chat_id,
             "change.txt",
-            reply_to=upd.id,
+            reply_to=message.id,
         )
     else:    
         await message.edit(changelog_str)     
