@@ -58,19 +58,19 @@ async def amireallyalive(alive):
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**⚡SPARKZZZ INSIDE⚡**\n\n"
+        tele = f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
         tele += f"======================================\n"
-        tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
+        tele += "`🌐 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 🌐`\n\n"
         tele += "` 👉 Telethon version:` **1.16.4**\n` 🐍 Python:` **3.8.6**\n"
         tele += f"` ⚡ SPARKZZZ Version:` **{sparkzzzver}**\n"
         tele += "` 👉 Info:` **@sparkzzzbotsupport**\n"
-        tele += "` 👤 Bot Creator:`**[CSV1990]**(t.me/CSV1990)\n"
+        tele += "` 👤 Bot Creator:`**[ℂ𝕊𝕍𝟙𝟡𝟡𝟘]**(t.me/CSV1990)\n"
         tele += f"` 👉 Sudo :` **{sudo}**\n"
         tele += f"` 🕙 Uptime:` **{uptime}**\n"
         tele += "` 🖥️ Database Status:` **FUNCTIONAL 🔌!**\n"
         tele += f"` 🙋 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += f"=======================================\n\n"
-        tele += "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
+        tele += "    [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)"
         chat = await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
@@ -86,19 +86,19 @@ async def amireallyalive(alive):
         img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
-        await borg.send_message(alive.chat_id, f"**⚡SPARKZZZ INSIDE⚡**\n\n"
+        await borg.send_message(alive.chat_id, f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
                 f"======================================\n"
-                "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
+                "`🌐 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 🌐`\n\n"
                 "` 👉 Telethon version:` **1.16.4**\n` 🐍 Python:` **3.8.6**\n"
                 f"` ⚡ SPARKZZZ Version:` **{sparkzzzver}**\n"
                 "` 👉 Info:` **@sparkzzzbothelp**\n"
-                "` 👤 Bot Creator:`**[CSV1990]**(t.me/CSV1990)\n"             
+                "` 👤 Bot Creator:`**[ℂ𝕊𝕍𝟙𝟡𝟡𝟘]**(t.me/CSV1990)\n"             
                 f"` 👉 Sudo :` **{sudo}**\n"
                 f"` 🕙 SPARKZZZ Uptime:` **{uptime}**\n"
                 "` 🖥️ Database Status:` **FUNCTIONAL 🔌!**\n"
                 f"` 🙋 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
                 f"=======================================\n\n"       
-                "    [⚙️  FORK REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
+                "    [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
         await borg.send_file(alive.chat_id, file=sticker) 
         await alive.delete()     
         
