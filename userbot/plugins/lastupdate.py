@@ -1,3 +1,4 @@
+# SPARKZZZ 2020
 import time
 from datetime import datetime
 from userbot.__init__ import Lastupdate
