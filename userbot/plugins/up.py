@@ -133,11 +133,12 @@ async def gen_chlog(repo, diff_marker):
 
 async def deploy_start(bot, upd, refspec, remote):
     await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**🛡️Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**')
-    
-
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
+    await asyncio.sleep (360)
     await upd.edit('**⚡SPARKZZZ⚡SUCCESFULLY UPDATED**')
+    await upd.delete ()
+    return
     
 
