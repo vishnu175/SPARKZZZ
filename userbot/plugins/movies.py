@@ -1,7 +1,7 @@
 import os
 import sys
 import asyncio
-from userbot import admin_cmd
+from userbot.utils import admin_cmd
 from typing import Tuple, Optional
 from telethon.tl.types import InputMessagesFilterVideo
 
