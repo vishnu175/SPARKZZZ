@@ -73,7 +73,7 @@ async def updater(upd):
         await upd.delete()
         return
 
-    changelog_str = f'**New UPDATE available for ** {DEFAULTUSER}\n\n**CHANGELOG:**\n {changelog}'
+    changelog_str = f'**New ░U░P░D░A░T░E░ available for ** {DEFAULTUSER}\n\n**CHANGELOG:**\n {changelog}'
     if len(changelog_str) > 4095:
         await upd.edit('**Changelog is too big, view the file to see it.**')
         file = open("change.txt", "w+")
@@ -133,7 +133,7 @@ async def gen_chlog(repo, diff_marker):
     return ch_log
 
 async def deploy_start(bot, upd, refspec, remote):
-    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**🛡️Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**')
+    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**𝐯𝐞𝐫𝐬𝐢𝐨𝐧** :`1.7` \n💻**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `1.16.4` \n**🛡️🅱🆁🅰🅽🅲🅷** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🌀**🅂🅃🄰🅃🅄🅂**:`𝐔𝐩𝐝𝐚𝐭𝐢𝐧𝐠 & 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐢𝐧𝐠` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**\n**[𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡]**(t.me/sparkzzzbothelp)')
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
