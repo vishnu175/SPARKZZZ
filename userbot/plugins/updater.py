@@ -24,7 +24,7 @@ from heroku_config import Var as Config
 # -- Constants -- #
 OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-DELETE_TIMEOUT = 30
+DELETE_TIMEOUT = 4
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 # -- Constants End -- #
 
@@ -87,6 +87,7 @@ async def updater(upd):
         os.remove("change.txt")
     else:
         await upd.edit(changelog_str)
+        await asyncio.sleep(10)
 
     upd_rem.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
