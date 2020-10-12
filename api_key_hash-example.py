@@ -1,3 +1,4 @@
+# SPARKZZZ 2020
 # get App id and App hash from My telegram.org
 # api id will be 5 digits
 # api hash will be 32 digits
