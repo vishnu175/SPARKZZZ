@@ -17,12 +17,12 @@ from telethon import events
 import git
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from userbot import bot, ALIVE_NAME, UPSTREAM_REPO_URL
+from userbot import bot, ALIVE_NAME, OFFICIAL_UPSTREAM_REPO
 from userbot.utils import admin_cmd
 from heroku_config import Var as Config
 
 # -- Constants -- #
-UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ.git"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ.git"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 DELETE_TIMEOUT = 4
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
@@ -38,7 +38,7 @@ async def updater(upd):
         repo = git.Repo()
     except git.exc.InvalidGitRepositoryError as e:
         repo = git.Repo.init()
-        origin = repo.create_remote('updater', UPSTREAM_REPO_URL)
+        origin = repo.create_remote('updater', OFFICIAL_UPSTREAM_REPO)
         origin.fetch()
         repo.create_head('master', origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
@@ -55,7 +55,7 @@ async def updater(upd):
         return
 
     try:
-        repo.create_remote('updater', UPSTREAM_REPO_URL)
+        repo.create_remote('updater', OFFICIAL_UPSTREAM_REPO)
     except BaseException as e:
         print(e)
         pass
