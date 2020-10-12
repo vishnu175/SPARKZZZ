@@ -17,7 +17,7 @@ from telethon import events
 import git
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from userbot import bot, ALIVE_NAME, OFFICIAL_UPSTREAM_REPO
+from userbot import bot, ALIVE_NAME
 from userbot.utils import admin_cmd
 from heroku_config import Var as Config
 
