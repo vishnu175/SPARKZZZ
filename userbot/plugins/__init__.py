@@ -1,5 +1,5 @@
 # inspired by https://github.com/sandy1709/catuserbot/blob/master/userbot/plugins/__init__.py
-
+# SPARKZZZ 2020
 import os
 import re
 import time
