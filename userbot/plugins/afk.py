@@ -19,7 +19,7 @@ afk_time = None
 last_afk_message = {}
 afk_start = {}
 
-AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!!! I'm AFK now."
+AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!!! I'm 🇦‌🇫‌🇰‌ now."
 AFKSTR = f"{AFK_MSG}"
 
 @borg.on(admin_cmd(pattern=r"afk ?(.*)", outgoing=True))  # pylint:disable=E0602
@@ -49,9 +49,9 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await borg.send_message(event.chat_id, f"**I am Going afk!** __Reason - {reason}__")
+            await borg.send_message(event.chat_id, f"**I am Going 🇦‌🇫‌🇰‌!** __Reason - {reason}__")
         else:
-            await borg.send_message(event.chat_id, f"**I am Going afk!**")
+            await borg.send_message(event.chat_id, f"**I am Going 🇦‌🇫‌🇰‌!**")
         await asyncio.sleep(3)
         await event.delete()
         try:
