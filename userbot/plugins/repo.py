@@ -1,6 +1,6 @@
 # (C) SPARKZZZ 2020
 # @vishnu175
-"""Cmd: `.repo`"""
+"""syntax: `.repo`"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
