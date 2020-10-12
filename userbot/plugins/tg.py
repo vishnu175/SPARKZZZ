@@ -3,6 +3,7 @@ import asyncio
 import os
 import subprocess
 import sys
+from userbot.utils import admin_cmd
 from userbot.utils import humanbytes, progress, time_formatter
 
 @sparkzzz.on(admin_cmd(pattern=r"getc"))
