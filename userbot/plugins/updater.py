@@ -32,7 +32,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 @sparkzzz.on(admin_cmd("update ?(.*)", outgoing=True))
 async def updater(upd):
     "For .update command, check if the bot is up to date, update if specified"
-    await upd.edit('**Updation 📲 in progress....**')
+    await upd.edit('**Updation 📲 in progress.....**')
 
     try:
         repo = git.Repo()
