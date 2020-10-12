@@ -66,13 +66,13 @@ async def updater(upd):
     changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
 
     if not changelog:
-        await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is up-to-date..**\n')
+        await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is 𝐮𝐩-𝐭𝐨-𝐝𝐚𝐭𝐞..**\n')
         repo.__del__()
         await asyncio.sleep(DELETE_TIMEOUT)
         await upd.delete()
         return
 
-    changelog_str = f'**New 𝐔𝐏𝐃𝐀𝐓𝐄 available for ** {DEFAULTUSER}\n\n**CHANGELOG:**\n {changelog}'
+    changelog_str = f'**New 𝐔𝐏𝐃𝐀𝐓𝐄 available for ** {DEFAULTUSER}\n\n**𝑪𝑯𝑨𝑵𝑮𝑬𝑳𝑶𝑮:**\n {changelog}'
     if len(changelog_str) > 4095:
         await upd.edit('**Changelog is too big, view the file to see it.**')
         file = open("change.txt", "w+")
