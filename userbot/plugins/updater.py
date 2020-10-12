@@ -1,15 +1,26 @@
 """Update UserBot code
 Syntax: .update"""
 
-import git
-from contextlib import suppress
-import os
-import sys
+import requests
 import asyncio
+import random
+import re
+import time
+import sys
+import os
+from os import remove, execl
+from datetime import datetime
+from collections import deque
+from contextlib import suppress
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon import events
+import git
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from userbot import bot, ALIVE_NAME
 from userbot.utils import admin_cmd
-from userbot import bot
 from heroku_config import Var as Config
-
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
