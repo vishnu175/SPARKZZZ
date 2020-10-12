@@ -19,7 +19,7 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import bot, ALIVE_NAME, UPSTREAM_REPO_URL
 from userbot.utils import admin_cmd
-from userbot import Var
+from heroku_config import Var as Config
 
 # -- Constants -- #
 UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ.git"
