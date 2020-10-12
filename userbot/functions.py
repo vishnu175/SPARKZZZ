@@ -1,4 +1,4 @@
-# Functions for several modules
+# Functions for some modules 
 import requests , os, re
 import time
 import shlex
