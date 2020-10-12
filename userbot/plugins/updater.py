@@ -67,7 +67,7 @@ async def updater(upd):
 
     if not changelog:
         await upd.edit(
-            f'\n{DEFAULTUSER} **⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is upto Date...**\n')
+            f'\n{DEFAULTUSER} **⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is up-to-date..**\n')
         repo.__del__()
         await asyncio.sleep(DELETE_TIMEOUT)
         await upd.delete()
