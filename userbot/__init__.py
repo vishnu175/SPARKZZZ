@@ -119,6 +119,10 @@ if bool(ENV):
     # Bot Name
     TERM_ALIAS = os.environ.get("TERM_ALIAS", "SPARKZZZ-BOT")
 
+    # Custom (forked) repo URL and BRANCH for updater.
+    UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL","https://github.com/100101110/userbot-100101110.git")
+
+
     
     # Github Credentials for updater and Gitupload.
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
