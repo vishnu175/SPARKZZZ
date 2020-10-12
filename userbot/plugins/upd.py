@@ -22,7 +22,7 @@ from userbot.utils import admin_cmd
 from heroku_config import Var as Config
 
 # -- Constants -- #
-OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ.git"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 DELETE_TIMEOUT = 4
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
