@@ -56,7 +56,7 @@ HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 @sparkzzz.on(admin_cmd("update ?(.*)", outgoing=True))
 async def updater(upd):
     
-	 try:
+     try:
         repo = git.Repo()
      except git.exc.InvalidGitRepositoryError as e:
         repo = git.Repo.init()
