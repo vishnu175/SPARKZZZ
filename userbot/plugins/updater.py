@@ -67,7 +67,7 @@ async def updater(upd):
 
     if not changelog:
         await upd.edit(
-            f'\n{DEFAULTUSER} **Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡**\n')
+            f'\n{DEFAULTUSER} **⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is upto Date...**\n')
         repo.__del__()
         await asyncio.sleep(DELETE_TIMEOUT)
         await upd.delete()
@@ -133,7 +133,7 @@ async def gen_chlog(repo, diff_marker):
     return ch_log
 
 async def deploy_start(bot, upd, refspec, remote):
-    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐯𝐞𝐫𝐬𝐢𝐨𝐧** :`1.7` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `1.16.4` \n🔷**🄱🅁🄰🄽🄲🄷** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**🅂🅃🄰🅃🅄🅂**:`𝐔𝐩𝐝𝐚𝐭𝐢𝐧𝐠 & 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐢𝐧𝐠` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**\n[**𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡](t.me/sparkzzzbothelp)')
+    await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`1.7` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `1.16.4` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**\n[**𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡](t.me/sparkzzzbothelp)')
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
