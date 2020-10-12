@@ -1,5 +1,5 @@
-
-
+# (C) SPARKZZZ 2020 @vishnu175
+# Kangers plz keep credits
 import requests
 import asyncio
 import random
@@ -24,7 +24,7 @@ from heroku_config import Var as Config
 # -- Constants -- #
 OFFICIAL_UPSTREAM_REPO = "https://github.com/vishnu175/SPARKZZZ"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-DELETE_TIMEOUT = 8
+DELETE_TIMEOUT = 15
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 # -- Constants End -- #
 
@@ -133,7 +133,11 @@ async def gen_chlog(repo, diff_marker):
 
 async def deploy_start(bot, upd, refspec, remote):
     await upd.edit('**Updating⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n📱**Version** : `1.7` \n💻**Telethon** : `1.16.4` \n**🛡️Branch** : `Master` \n🔄**Status** : `Updating & Restarting` \n__Type__ `.alive` __To Check If I am Alive after 6-8 mins !__**')
+    
+
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
+    await upd.edit('**⚡SPARKZZZ⚡SUCCESFULLY UPDATED**')
+    
 
