@@ -44,7 +44,7 @@ for name in files:
 
 import userbot._core
 
-print("SPARKZZZ installed succesfully,Enjoy The SPARKZZZ bot created by CSV1990")
+print("⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡installed succesfully,Enjoy The SPARKZZZ bot created by CSV1990")
 print("You Can Visit @sparkzzzbothelp For any doubts and suggestions")
 
 if len(argv) not in (1, 3, 4):
