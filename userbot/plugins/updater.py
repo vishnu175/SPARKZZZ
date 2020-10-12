@@ -78,7 +78,7 @@ async def updater(message):
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
     temp_upstream_remote.fetch(active_branch_name)
 
-    changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
+    changelog = await gen_chlog(repo, f'HEAD..REPO_REMOTE_NAME/{active_branch_name}')
     
     if not changelog:
         await message.edit(
@@ -181,7 +181,7 @@ async def updater(message):
     temp_upstream_remote.fetch(active_branch_name)
 
 
-    changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
+    changelog = await gen_chlog(repo, f'HEAD..REPO_REMOTE_NAME/{active_branch_name}')
     
     if not changelog:
         await message.edit(
