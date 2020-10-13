@@ -49,32 +49,26 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         try:
-
-await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-
-            first_name=f"「AFK」 {telname}",
-
-            last_name = ""
-
+         
+           await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+           first_name=f"「AFK」 {telname}",
+           last_name = ""
         ))
-
         except Exception as e:  # pylint:disable=C0103,W0703
-
             await event.edit(str(e))
         if reason:
-            await borg.send_message(event.chat_id, f"**I am Going afk!** __Reason - {reason}__")
+            await event.edit(f"`Your status has been set to AFK.`\n**Reason** - __{reason}__")
         else:
-            await borg.send_message(event.chat_id, f"**I am Going afk!**")
-        await asyncio.sleep(3)
+            await event.edit(f"`Your status has been set to AFK.`")
+        await asyncio.sleep(5)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"Set AFK mode to True, and Reason is {reason}"
+                f"#AFK\nSet AFK mode to True, with Reason - {reason}"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
-
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_afk(event):
