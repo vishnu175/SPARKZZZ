@@ -8,7 +8,9 @@ from telethon import events
 from telethon.tl import functions, types
 from userbot import CUSTOM_AFK
 from userbot.utils import admin_cmd
+from userbot import ALIVE_NAME
 
+ALIVE_NAME = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ"
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
@@ -39,6 +41,9 @@ async def _(event):
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
+    me = await borg.get_me()
+    telname = (me.first_name)
+    telnm = (me.last_name)
     if not USER_AFK:  # pylint:disable=E0602
         last_seen_status = await borg(  # pylint:disable=E0602
             functions.account.GetPrivacyRequest(
@@ -51,7 +56,7 @@ async def _(event):
         try:
          
            await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-           first_name=f"『A』『F』『K』 {myname}",
+           first_name=f"『A』『F』『K』{telname}",
            last_name = ""
         ))
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -83,7 +88,7 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     me = await borg.get_me()
-    myname = (me.first_name)
+    telename = (me.first_name)
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afk_time + "`")
         try:
