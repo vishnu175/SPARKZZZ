@@ -11,7 +11,7 @@
 
 
 <p align="center">
-<img src="https://telegra.ph/file/6d3f8d942faaf8bc0c255.jpg" alt="SPARKZZZ USERBOT">
+<img src="https://telegra.ph/file/71f4e2070e38ae93531e1.jpg" alt="SPARKZZZ USERBOT">
 
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
