@@ -51,7 +51,7 @@ async def _(event):
         try:
          
            await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-           first_name=f"「AFK」 {telname}",
+           first_name=f"『A』『F』『K』 {myname}",
            last_name = ""
         ))
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -82,6 +82,8 @@ async def set_not_afk(event):
     if afk_start != {}:
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
+    me = await borg.get_me()
+    myname = (me.first_name)
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afk_time + "`")
         try:
