@@ -46,7 +46,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@SPARKZZZ user"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
 @sparkzzz.on(admin_cmd(outgoing=True, pattern="alive"))
 @sparkzzz.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
