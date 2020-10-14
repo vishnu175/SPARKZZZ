@@ -10,6 +10,7 @@ from userbot.__init__ import StartTime
 from userbot import ALIVE_NAME
 from heroku_config import Var
 from userbot.utils import admin_cmd
+from userbot.utils import  sudo_cmd
 from userbot import sparkzzzver
 
 
