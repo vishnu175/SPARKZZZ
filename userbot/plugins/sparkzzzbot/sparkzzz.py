@@ -6,12 +6,21 @@ import os
 import requests
 import asyncio
 import emoji
-from datetime import datetimemport math
+import html
+from datetime import datetime
+import math
 from userbot import bot
 from userbot import ALIVE_NAME
 from userbot.uniborgConfig import Config
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
 from heroku_config import Var
-
+from userbot.plugins.sparkzzzbot import startinfo
+from userbot.plugins.sparkzzzbot import helpinfo
+from userbot.plugins.sparkzzzbot import pingspeed
+import heroku3
+from googletrans import Translator
 
 
 DEFUSR = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ-user'
