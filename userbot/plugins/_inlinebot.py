@@ -34,7 +34,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=buttons,
                 link_preview=False
             )
-        if event.query.user_id == bot.uid and query == "stats":
+        elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
                 text=f"**SPARKZZZ Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @sparkzzzbothelp",
@@ -59,7 +59,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 link_preview=False
             )   
         await event.answer([result] if result else None) 
-        elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
+     elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
             markdown_note = query[14:]
             prev = 0
             note_data = ""
