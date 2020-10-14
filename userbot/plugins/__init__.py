@@ -81,7 +81,6 @@ deployinfo =("You Can easily Deploy SPARKZZZ-BOT In Heroku ,\n\n[SPARKZZZ-BOT](t
 # 4) Translate /tr (type /tr as reply to translate languages)
 
 # 5) /info 
-info = ("type /info @username to grt information about the given user")
 async def _(event):
     if event.fwd_from:
         return
