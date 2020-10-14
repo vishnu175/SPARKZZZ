@@ -360,3 +360,42 @@ async def edit_or_reply(event, text):
             return await reply_to.reply(text)
         return await event.reply(text)
     return await event.edit(text)
+
+
+
+
+# SPARKZZZ-BOT
+
+# Assistant 
+def start_sparkzzzbot(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        import userbot.utils
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("LOADING SPARKZZBOT.")
+        print("SPARKZZZ-BOT Sucessfully imported " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        import userbot.utils
+
+        path = Path(f"userbot/plugins/sparkzzzbot/{shortname}.py")
+        name = "userbot.plugins.sparkzzzbot.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.sparkzzzbot" + shortname] = mod
+        print("SPARKZZZ-BOT Has succesfully imported " + shortname)
