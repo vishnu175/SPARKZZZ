@@ -37,7 +37,7 @@ async def start(event):
       )
     
     
-tgbot.on(events.NewMessage(pattern="^/help"))
+@tgbot.on(events.NewMessage(pattern="^/help"))
 async def thisfn(event):
     await tgbot.send_message(
            event.chat_id,
@@ -47,7 +47,6 @@ async def thisfn(event):
            [Button.url("SPARKZZZ", "https://t.me/sparkzzzbothelp")]
             ]
       )  
-    
     
 @tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
 async def _(event):
