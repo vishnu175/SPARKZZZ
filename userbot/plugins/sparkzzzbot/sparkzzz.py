@@ -38,7 +38,7 @@ async def start(event):
     
     
 @tgbot.on(events.NewMessage(pattern="^/help"))
-async def thisfn(event):
+async def help(event):
     await tgbot.send_message(
            event.chat_id,
            message=helpinfo,
