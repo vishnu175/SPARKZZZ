@@ -375,8 +375,8 @@ def start_sparkzzzbot(shortname):
 
         import userbot.utils
 
-        path = Path(f"userbot/plugins/assistant/{shortname}.py")
-        name = "userbot.plugins.assistant.{}".format(shortname)
+        path = Path(f"userbot/plugins/sparkzzzbot/{shortname}.py")
+        name = "userbot.plugins.sparkzzzbot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
