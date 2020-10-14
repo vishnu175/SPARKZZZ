@@ -365,8 +365,6 @@ async def edit_or_reply(event, text):
 
 
 # SPARKZZZ-BOT
-
-# Assistant 
 def start_sparkzzzbot(shortname):
     if shortname.startswith("__"):
         pass
