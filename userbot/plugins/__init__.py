@@ -16,8 +16,8 @@ from userbot import sparkzzzver
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SPARKZZZ-BOT STATS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-botname = Config.TG_BOT_USER_NAME_BF_HER:
-pvtgrpid = Config.PRIVATE_GROUP_BOT_API_ID:	
+botname = Config.TG_BOT_USER_NAME_BF_HER
+pvtgrpid = Config.PRIVATE_GROUP_BOT_API_ID	
 sudousers = Config.SUDO_USERS
 lydiaactive =  Var.LYDIA_API_KEY
 inboxsecurity = Var.INBOXSECURITY
