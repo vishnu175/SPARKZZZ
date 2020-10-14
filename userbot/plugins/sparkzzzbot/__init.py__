@@ -1,3 +1,5 @@
+# (C) SPARKZZZ 2020
+# @vishnu175
 from telethon.utils import get_input_location
 from datetime import datetime
 import asyncio
@@ -31,6 +33,10 @@ deployinfo =("You Can easily Deploy SPARKZZZ-BOT In Heroku ,\n\n[SPARKZZZ-BOT](t
 info = ("type /info @username to grt information about the given user")
 
 # 6) /ping will give the ping stats
+
+
+
+# (C) SPARKZZZ 2020
 
 
 
