@@ -1,65 +1,46 @@
-# (C) SPARKZZZ 2020 
-# @vishnu175
 import io
 import math
 import re
-import random
 from telethon import Button, custom, events
 from userbot import CMD_LIST
 from . import telealive
-from userbot import ALIVE_NAME
-from userbot import bot
-
-
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
-myid = bot.uid
-
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+
+    @tgbot.on(events.InlineQuery)
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
+        if query.startswith("**SPARKZZZ") and event.query.user_id == bot.uid:
+            buttons = [
+                (
+                    custom.Button.inline("Stats", data="stats"),
+                    Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ"),
+                )
+            ]
+            result = builder.article(
+                # catpic,
+                title="Alive sparkzzz",
+                # force_document = False,
+                text=query,
+                buttons=buttons,
+            )
+            await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© SPARKZZZ",
-                text="{}\nCurrently Loaded Plugins: {}".format(
-                    query, len(CMD_LIST)),
+                "© Userbot Help",
+                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
-                link_preview=False
+                link_preview=False,
             )
-        elif event.query.user_id == bot.uid and query == "stats":
-            result = builder.article(
-                title="Stats",
-                text=f"**SPARKZZZ Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @sparkzzzbothelp",
-                buttons=[
-                    [custom.Button.inline("Stats", data="statcheck")],
-                    [Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ")],
-                    [Button.url("Deploy Now!",
-                                "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
-                ]
-            )
-        else:
-            result = builder.article(
-                "Source Code",
-                text="**Welcome to SPARKZZZ**\n\n`Click below buttons for more`",
-                buttons=[
-                    [custom.Button.url("Creator🙋", "https://t.me/CSV1990")],
-                    [custom.Button.url("👨‍💻Source Code‍💻", "https://github.com/vishnu175/SPARKZZZ"), custom.Button.url(
-                        "Deploy 🛠️",
-                        "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
-                    [custom.Button.url("Updates and Support Group↗️", "https://t.me/sparkzzzbothelp")]
-                ],
-                link_preview=False
-            )   
-        await event.answer([result] if result else None) 
-     elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
+            await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
             markdown_note = query[14:]
             prev = 0
             note_data = ""
@@ -109,7 +90,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Plz make your own sparkzzzbot from @sparkzzzbothelp and not use mine!"
+                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -128,7 +109,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Plz make your own sparkzzzbot from @sparkzzzbothelp and not use mine!"
+                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -181,7 +162,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     )
         else:
             reply_pop_up_alert = (
-                "Plz make your own sparkzzzbot from @sparkzzzbothelp and not use mine!"
+                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -191,7 +172,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit("menu closed")
         else:
             reply_pop_up_alert = (
-                "Plz make your own sparkzzzbot and not use mine!"
+                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
