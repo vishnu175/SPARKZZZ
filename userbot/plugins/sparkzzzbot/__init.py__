@@ -1,0 +1,37 @@
+from telethon.utils import get_input_location
+from datetime import datetime
+import asyncio
+import time
+import html
+from telethon.tl.types import MessageEntityMentionName
+from userbot.__init__ import StartTime
+from telethon.tl.functions.users import GetFullUserRequest
+from userbot import ALIVE_NAME
+
+
+# SPARKZZZ- BOT IS AN INLINE ASSISTANT BOT HAVING SOME COOL FEAUTURES
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SPARKZZZ-BOT<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+#=============================HELP COMMANDS===================================
+
+
+# 1)  /start
+startinfo =(f"Hi{ALIVE_NAME}, **WELCOME TO SPARKZZZ-BOT** Nice To Meet You.\n Type /help to know what are the things you can do with SPARKZZZ-BOT \n\n[SPARKZZZ-BOT](t.me/sparkzzzbothelp)")
+
+# 2) /help
+helpinfo = (" Facilities provided by SPARKZZZ-BOT are here")
+
+# 3) Deploy Button
+deployinfo =("You Can easily Deploy SPARKZZZ-BOT In Heroku ,\n\n[SPARKZZZ-BOT](t.me/sparkzzzbothelp)"
+
+# 4) Translate /tr (type /tr as reply to translate languages)
+
+# 5) /info 
+info = ("type /info @username to grt information about the given user")
+
+# 6) /ping will give the ping stats
+
+
+
+
