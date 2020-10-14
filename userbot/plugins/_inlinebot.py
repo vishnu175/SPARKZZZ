@@ -3,43 +3,36 @@
 import io
 import math
 import re
+import random
 from telethon import Button, custom, events
 from userbot import CMD_LIST
 from . import telealive
+from userbot import ALIVE_NAME
+from userbot import bot
+
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+myid = bot.uid
+
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-
-    @tgbot.on(events.InlineQuery)
+    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith("**SPARKZZZ") and event.query.user_id == bot.uid:
-            buttons = [
-                (
-                    custom.Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ"),
-                )
-            ]
-            result = builder.article(
-                # catpic,
-                title="Alive sparkzzz",
-                # force_document = False,
-                text=query,
-                buttons=buttons,
-            )
-            await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("Userbot"):
+        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "©SPARKZZZ Userbot Help",
-                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
+                "© SPARKZZZ",
+                text="{}\nCurrently Loaded Plugins: {}".format(
+                    query, len(CMD_LIST)),
                 buttons=buttons,
-                link_preview=False,
+                link_preview=False
             )
         elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
