@@ -6,8 +6,9 @@ import asyncio
 import time
 import html
 from telethon.tl.types import MessageEntityMentionName
-from userbot.__init__ import StartTime
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from userbot.__init__ import StartTime
 from userbot import ALIVE_NAME
 
 
