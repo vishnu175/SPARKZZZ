@@ -41,7 +41,31 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=buttons,
                 link_preview=False,
             )
-            await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query == "stats":
+            result = builder.article(
+                title="Stats",
+                text=f"**SPARKZZZ Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @sparkzzzbothelp",
+                buttons=[
+                    [custom.Button.inline("Stats", data="statcheck")],
+                    [Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ")],
+                    [Button.url("Deploy Now!",
+                                "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
+                ]
+            )
+        else:
+            result = builder.article(
+                "Source Code",
+                text="**Welcome to SPARKZZZ**\n\n`Click below buttons for more`",
+                buttons=[
+                    [custom.Button.url("Creator🙋", "https://t.me/CSV1990")],
+                    [custom.Button.url("👨‍💻Source Code‍💻", "https://github.com/vishnu175/SPARKZZZ"), custom.Button.url(
+                        "Deploy 🛠️",
+                        "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ")],
+                    [custom.Button.url("Updates and Support Group↗️", "https://t.me/sparkzzzbothelp")]
+                ],
+                link_preview=False
+            )   
+        await event.answer([result] if result else None) 
         elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
             markdown_note = query[14:]
             prev = 0
