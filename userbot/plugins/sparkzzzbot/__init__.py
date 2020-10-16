@@ -5,11 +5,15 @@ from datetime import datetime
 import asyncio
 import time
 import html
+from userbot.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import MessageEntityMentionName
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from userbot.__init__ import StartTime
 from userbot import ALIVE_NAME
+from userbot.uniborgConfig import Config
+from heroku_config import Var
+
 
 
 # SPARKZZZ- BOT IS AN INLINE ASSISTANT BOT HAVING SOME COOL FEAUTURES
