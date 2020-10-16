@@ -2,8 +2,8 @@ import io
 import math
 import re
 from telethon import Button, custom, events
-from userbot import CMD_LIST
-from . import telealive
+a userbot import CMD_LIST
+from . import inlinestats
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
