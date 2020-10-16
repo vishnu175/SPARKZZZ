@@ -6,7 +6,7 @@ import requests
 import time
 from PIL import Image
 from io import BytesIO
-from userbot import ALIVE_NAME, telever
+from userbot import ALIVE_NAME, sparkzzzver
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.__init__ import StartTime
 from datetime import datetime
@@ -62,7 +62,7 @@ async def amireallyalive(alive):
         tele += f"======================================\n"
         tele += "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
         tele += "` 👉 Telethon version:` **1.16.4**\n` 🐍 Python:` **3.8.6**\n"
-        tele += f"` ⚡ SPARKZZZ Version:` **{telever}**\n"
+        tele += f"` ⚡ SPARKZZZ Version:` **{sparkzzzver}**\n"
         tele += "` 👉 Info:` **@sparkzzzbotsupport**\n"
         tele += "` 👤 Bot Creator:`**[CSV1990]**(t.me/CSV1990)\n"
         tele += f"` 👉 Sudo :` **{sudo}**\n"
@@ -90,7 +90,7 @@ async def amireallyalive(alive):
                 f"======================================\n"
                 "`🌐 SYSTEM IS ONLINE 🌐`\n\n"
                 "` 👉 Telethon version:` **1.16.4**\n` 🐍 Python:` **3.8.6**\n"
-                f"` ⚡ SPARKZZZ Version:` **{telever}**\n"
+                f"` ⚡ SPARKZZZ Version:` **{sparkzzzver}**\n"
                 "` 👉 Info:` **@sparkzzzbothelp**\n"
                 "` 👤 Bot Creator:`**[CSV1990]**(t.me/CSV1990)\n"             
                 f"` 👉 Sudo :` **{sudo}**\n"
