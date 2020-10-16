@@ -135,3 +135,80 @@ async def _(event):
              await event.edit("```can you kindly disable your forward privacy settings for good?```")
           else: 
              await event.edit(f"{response.message.message}")
+
+
+
+
+@borg.on(admin_cmd(pattern="purl ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return 
+    if not event.reply_to_msg_id:
+       await event.reply("**Reply to any document.**")
+       return
+    reply_message = await event.get_reply_message() 
+    chat = "@FiletolinkTGbot"
+    sender = reply_message.sender
+    await event.edit("**Making public url...**")
+    async with event.client.conversation(chat) as conv:
+          try:     
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=1011636686))
+              await event.client.forward_messages(chat, reply_message)
+              response = await response 
+          except YouBlockedUserError: 
+              await a.edit("```Please unblock me (@FiletolinkTGbot) u Nigga```")
+              return
+          await event.delete()
+          await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
+
+
+@borg.on(admin_cmd(pattern="gitdl ?(.*)"))
+@borg.on(sudo_cmd(pattern="gitdl ?(.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return 
+    if not event.reply_to_msg_id:
+       await event.reply("**Reply to a github repo url.**")
+       return
+    reply_message = await event.get_reply_message() 
+    chat = "@gitdownloadbot"
+    sender = reply_message.sender
+    await event.edit("**Downloading the repository...**")
+    async with event.client.conversation(chat) as conv:
+          try:     
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=1282593576))
+              await event.client.forward_messages(chat, reply_message)
+              response = await response 
+          except YouBlockedUserError: 
+              await a.edit("```Please unblock me (@gitdownloadbot) u Nigga```")
+              return
+          await event.delete()
+          x = await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
+          await x.edit("Downloaded by [SPARKZZZ](t.me/), via @gitdownloadbot")     
+
+ 
+@borg.on(admin_cmd(pattern="reader ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return 
+    if not event.reply_to_msg_id:
+       await event.edit("**Reply to a URL.**")
+       return
+    reply_message = await event.get_reply_message() 
+    if not reply_message.text:
+       await event.edit("**Reply to a url message.**")
+       return
+    chat = "@chotamreaderbot"
+    sender = reply_message.sender
+    await event.edit("**Making instant view...**")
+    async with event.client.conversation(chat) as conv:
+          try:     
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=272572121))
+              await event.client.forward_messages(chat, reply_message)
+              response = await response 
+          except YouBlockedUserError: 
+              await a.edit("```Please unblock me (@chotamreaderbot) u Nigga```")
+              return
+          await event.delete()
+          await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
+                  
