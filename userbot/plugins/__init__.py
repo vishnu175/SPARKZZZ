@@ -66,18 +66,17 @@ if inboxsecurity.lower() == "off":
 else:
  pm = "Enabled"
  
-	
-#credits to TELEBOT	
+		
 SPARKZZZUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 #>>>>>>>>>>>SPARKZZZ-BOT INLINESTATS>>>>>>>>>>>>>>>>>>>>>>>>>
-tele =f"SPARKZZZ Version: {sparkzzzver}\n"
-tele +=f"Log Group: {log}\n"
-tele +=f"INLINE Bot: {bots}\n"
-tele +=f"Lydia: {lyd}\n"
-tele +=f"Sudo: {sudo}\n"
-tele +=f"INBOXSecurity: {pm}\n"
-tele +=f"\nVisit[SPARKZZZ](t.me/sparkzzzbothelp) for assistance.\n"
-telestats = (f"{tele}")
+inli   =f"SPARKZZZ Version: {sparkzzzver}\n"
+inli  +=f"Log Group: {log}\n"
+inli  +=f"INLINE Bot: {bots}\n"
+inli  +=f"Lydia: {lyd}\n"
+inli  +=f"Sudo: {sudo}\n"
+inli  +=f"INBOXSecurity: {pm}\n"
+inli  +=f"\nVisit[SPARKZZZ](t.me/sparkzzzbothelp) for assistance.\n"
+inlinestats = (f"{inli}")
 
 
 
@@ -242,71 +241,3 @@ end = datetime.now()
 ms = (end - start).microseconds / 1000
 uptime = get_readable_time((time.time() - StartTime))
 pingspeed = f"🏓Ping speed: {ms}"\n🤖SPARKZZZ Uptime: {uptime}")
-
-
-def check(tele):
-    if "/start" in tele:
-        return True
-    wew = re.search(re.escape(f"\\b{tele}\\b"), "a|b|c|d")
-    if wew:
-        return True
-    return False
-
-# inspired by https://github.com/sandy1709/catuserbot/blob/master/userbot/plugins/__init__.py
-# @sn12384
-
-async def telealive():
-    start = datetime.now()
-    if Config.SUDO_USERS:
-        sudo = "Active"
-    else:
-        sudo = "Disabled"
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    try:
-        useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
-                     'AppleWebKit/537.36 (KHTML, like Gecko) '
-                     'Chrome/80.0.3987.149 Mobile Safari/537.36'
-                     )
-        user_id = Heroku.account().id
-        headers = {
-            'User-Agent': useragent,
-            'Authorization': f'Bearer {Var.HEROKU_API_KEY}',
-            'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
-        }
-        path = "/accounts/" + user_id + "/actions/get-quota"
-        r = requests.get(heroku_api + path, headers=headers)
-        result = r.json()
-        quota = result['account_quota']
-        quota_used = result['quota_used']
-
-        # Used
-        remaining_quota = quota - quota_used
-        math.floor(remaining_quota / quota * 100)
-        minutes_remaining = remaining_quota / 60
-        hours = math.floor(minutes_remaining / 60)
-        minutes = math.floor(minutes_remaining % 60)
-		
-        # Current
-        App = result['apps']
-        try:
-            App[0]['quota_used']
-        except IndexError:
-            AppQuotaUsed = 0
-        else:
-            AppQuotaUsed = App[0]['quota_used'] / 60
-            math.floor(App[0]['quota_used'] * 100 / quota)
-			
-        hrs = math.floor(AppQuotaUsed / 60)
-        mins = math.floor(AppQuotaUsed % 60)
-        dyno = f"{hrs}h {mins}m/{hours}h {minutes}m"
-    except Exception as e:
-        dyno = e
-    info = f"SPARKZZZ Stats\
-                  \n\nVersion : {sparkzzzver}\
-                  \nSudo : {sudo}\
-		  \nPing : {ms}\
-                  \nDyno : {dyno}\
-                  "
-    return info	     
-	     
