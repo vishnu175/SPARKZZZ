@@ -2,7 +2,7 @@ import io
 import math
 import re
 from telethon import Button, custom, events
-a userbot import CMD_LIST
+from userbot import CMD_LIST
 from . import inlinestats
 
 
