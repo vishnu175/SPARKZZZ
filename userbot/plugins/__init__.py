@@ -19,6 +19,7 @@ from userbot.utils import admin_cmd
 from userbot.utils import  sudo_cmd
 from userbot import sparkzzzver
 from telethon import events
+from userbot.uniborgConfig import Config
 
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
