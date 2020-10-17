@@ -7,7 +7,7 @@ from . import sparkzzzstats
 from heroku_config import Var
 from userbot.utils import admin_cmd
 from telethon.tl.functions.users import GetFullUserRequest
-from userbot.uniborgConfig import Config
+from heroku_config import Config
 
 SPARKZZZ_IMG = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
