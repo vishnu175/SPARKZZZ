@@ -1,10 +1,12 @@
 import io
-import math
+from math import ceil
 import re
-from telethon import Button, custom, events
+from telethon import Button, custom, events,functions
 from userbot import CMD_LIST
-from . import inlinestats
+from . import sparkzzzstats
 from heroku_config import Var
+from userbot.utils import admin_cmd
+from telethon.tl.functions.users import GetFullUserRequest
 
 SPARKZZZ_IMG = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
@@ -31,13 +33,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 title="Stats",
                 text=f"**SPARKZZZ Stats For {DEFAULTUSER}'s(tg://user?id={myid})** \n⚡SPARKZZZ INSIDE⚡\n(C) @[SPARKZZZ](t.me/sparkzzzbothelp)",
                 buttons=[
-                    [custom.Button.inline("Stats", data="terminator")],
+                    [custom.Button.inline("Stats", data="enquirestat")],
                     [
                         Button.url(
                             "Repo",
                             "https://github.com/vishnu175/SPARKZZZ")
                     ],
-                    [Button.url("Join Channel ❤️", "t.me/Fridayot")],
+                    [Button.url("SUPPORT", "t.me/sparkzzzbothelp")],
                 ],
             )
             await event.answer([result] if result else None)
