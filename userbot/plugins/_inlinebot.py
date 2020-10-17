@@ -7,7 +7,6 @@ from . import sparkzzzstats
 from heroku_config import Var
 from userbot.utils import admin_cmd
 from telethon.tl.functions.users import GetFullUserRequest
-from heroku_config import Config
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
