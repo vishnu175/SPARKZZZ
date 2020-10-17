@@ -6,7 +6,7 @@ from userbot import CMD_LIST
 from . import inlinestats
 from heroku_config import Var
 
-ALV_PIC = os.environ.get("ALIVE_PIC" , None)
+SPARKZZZ_IMG = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -24,7 +24,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 )
             ]
             result = builder.article(
-                # catpic,
+                # sparkzzzpic,
                 title="Alive sparkzzz",
                 # force_document = False,
                 text=query,
