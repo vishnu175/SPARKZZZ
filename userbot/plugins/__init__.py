@@ -85,6 +85,6 @@ inli  +=f"LYDIA: {lydia}\n"
 inli  +=f"SUDO: {sudo}\n"
 inli  +=f"YT SEARCH: {yts}\n"
 inli  +=f"\n[SPARKZZZ](t.me/sparkzzzbothelp).\n"
-sparkzzzstatus = (f"{inli}")
+sparkzzzstats = (f"{inli}")
 
 #>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
