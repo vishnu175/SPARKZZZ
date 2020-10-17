@@ -21,6 +21,7 @@ from userbot import sparkzzzver
 from telethon import events
 from userbot.uniborgConfig import Config
 
+SPARKZZZUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
@@ -34,20 +35,21 @@ pvtgrpid = Config.PRIVATE_GROUP_BOT_API_ID
 sudousers = Config.SUDO_USERS
 lydiaactive =  Var.LYDIA_API_KEY
 inboxsecurity = Var.INBOXSECURITY
-
+herokuappstats = Var.HEROKU_APP_NAME
+youtubesearch = Config.YOUTUBE_API_KEY
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TEST SWITCHES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 if botname: 
- bots = "Enabled"
+ inlinebot = "Enabled"
 else:
- bots = "Disabled"
+ inlinebot = "Disabled"
 
 
 if pvtgrpid:
- log = "Enabled"
+ logs = "Enabled"
 else:
- log = "Disabled"
+ logs = "Disabled"
 
 
 if sudousers:
@@ -57,27 +59,32 @@ else:
 
 
 if lydiaactive:
- lyd = "Enabled"
+ lydia = "Enabled"
 else:
- lyd = "Disabled"
+ lydia = "Disabled"
 
 
-if inboxsecurity.lower() == "off":
- pm = "Disabled" 
+if herokuappstats:
+ herokuapp = "Active"
 else:
- pm = "Enabled"
+ herokuapp = "Inactive"
+
+if youtubesearch:
+ yts = "Enabled"
+else:
+ yts = "Disabled"  
  
 		
-SPARKZZZUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 #>>>>>>>>>>>SPARKZZZ-BOT INLINESTATS>>>>>>>>>>>>>>>>>>>>>>>>>
 
-inli   =f"SPARKZZZ Version: {sparkzzzver}\n"
-inli  +=f"Log Group: {log}\n"
-inli  +=f"INLINE Bot: {bots}\n"
-inli  +=f"Lydia: {lyd}\n"
-inli  +=f"Sudo: {sudo}\n"
-inli  +=f"INBOXSecurity: {pm}\n"
+inli  =f"SPARKZZZ Version: {sparkzzzver}\n"
+inli  +=f"INLINE BOT: {inlinebot}\n"
+inli  +=f"HEROKU STATS: {herokuapp}\n"
+inli  +=f"SPARKZZZ LOGS:{logs}\n"
+inli  +=f"LYDIA: {lydia}\n"
+inli  +=f"SUDO: {sudo}\n"
+inli  +=f"YT SEARCH: {yts}\n"
 inli  +=f"\n[SPARKZZZ](t.me/sparkzzzbothelp).\n"
-inlinestats = (f"{inli}")
+sparkzzzstatus = (f"{inli}")
 
 #>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
