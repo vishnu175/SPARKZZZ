@@ -1,3 +1,8 @@
+import os
+import asyncio
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from userbot.utils import admin_cmd
 
 @sparkzzz.on(admin_cmd(outgoing=True, pattern="muz(?: |$)(.*)"))
 async def _(event):
