@@ -10,12 +10,12 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@MuzzzBot"
-    await event.edit("```Getting Your Music```")
+    await event.edit("```SPARKZZZ searching Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await event.edit("`Downloading music taking some times,  Stay Tuned.....`")
+          await event.edit("`Downloading...Stay Tuned.....`")
           try:
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=752979930))
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=306523147))
               await bot.send_message(chat, link)
               respond = await response
           except YouBlockedUserError:
