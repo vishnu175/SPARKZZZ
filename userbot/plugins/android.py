@@ -13,7 +13,7 @@ import time
 from bs4 import BeautifulSoup
 from requests import get
 from userbot import chrome
-from userbot import CMD_HELP, TMP_DOWNLOAD_DIRECTORY
+from userbot import CMD_HELP
 from userbot.events import register
 from userbot.tools import human_to_bytes, humanbytes, md5, time_formatter
 
@@ -147,7 +147,7 @@ async def download_api(dl):
     if md5_origin is None and i is None:
         await dl.edit("`There is no match version available...`")
     file_name = URL.split("/")[-2] if URL.endswith("/") else URL.split("/")[-1]
-    file_path = TMP_DOWNLOAD_DIRECTORY + file_name
+    file_path = Config.TMP_DOWNLOAD_DIRECTORY + file_name
     download = driver.find_elements_by_class_name("download__btn")[i]
     download.click()
     await dl.edit("`Starting download...`")
