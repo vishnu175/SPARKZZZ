@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot import register
+from userbot.events import register
 from userbot.utils import chrome, human_to_bytes, humanbytes, md5, time_formatter
 
 GITHUB = "https://github.com"
