@@ -5,15 +5,14 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from userbot import TMP_DOWNLOAD_DIRECTORY
 
 
 async def chrome(chrome_options=None):
     if chrome_options is None:
         chrome_options = await options()
-    if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
-        os.mkdir(TMP_DOWNLOAD_DIRECTORY)
-    prefs = {'download.default_directory': TMP_DOWNLOAD_DIRECTORY}
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.mkdir(Config.TMP_DOWNLOAD_DIRECTORY)
+    prefs = {'download.default_directory': Config.TMP_DOWNLOAD_DIRECTORY}
     chrome_options.add_experimental_option('prefs', prefs)
     return webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver",
                             options=chrome_options)
