@@ -1,81 +1,89 @@
-import io
-import math
+import html
+import os
 import re
-from telethon import Button, custom, events
-from userbot import CMD_LIST
-from . import telealive
+from math import ceil
 
+from telethon import Button, custom, events, functions
+from telethon.tl.functions.users import GetFullUserRequest
 
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+from heroku_config import Var
+from userbot import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
+from userbot.plugins import telestats
+
+PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
+TELEPIC = (
+    PMPERMIT_PIC
+    if PMPERMIT_PIC
+    else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
+)
+PM_WARNS = {}
+PREV_REPLY_MESSAGE = {}
+myid = bot.uid
+LOG_GP = Var.PRIVATE_GROUP_ID
+MESAG = (
+    str(CUSTOM_PMPERMIT)
+    if CUSTOM_PMPERMIT
+    else "`TeleBot PM security! Please wait for me to approve you. 😊"
+)
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+USER_BOT_NO_WARN = (
+    f"**PM Security ~ TeleBot**\n\nNice to see you here, but  "
+    "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
+    "{}\n"
+    "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
+)
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
-    @tgbot.on(events.InlineQuery)
+    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if query.startswith("**SPARKZZZ") and event.query.user_id == bot.uid:
-            buttons = [
-                (
-                    custom.Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ"),
-                )
-            ]
-            result = builder.article(
-                # catpic,
-                title="Alive sparkzzz",
-                # force_document = False,
-                text=query,
-                buttons=buttons,
-            )
-            await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("Userbot"):
+        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Userbot Help",
+                "© TeleBot Help",
                 text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
-            await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
-            markdown_note = query[14:]
-            prev = 0
-            note_data = ""
-            buttons = []
-            for match in BTN_URL_REGEX.finditer(markdown_note):
-                # Check if btnurl is escaped
-                n_escapes = 0
-                to_check = match.start(1) - 1
-                while to_check > 0 and markdown_note[to_check] == "\\":
-                    n_escapes += 1
-                    to_check -= 1
-                # if even, not escaped -> create button
-                if n_escapes % 2 == 0:
-                    # create a thruple with button label, url, and newline
-                    # status
-                    buttons.append(
-                        (match.group(2), match.group(3), bool(match.group(4)))
-                    )
-                    note_data += markdown_note[prev : match.start(1)]
-                    prev = match.end(1)
-                # if odd, escaped -> move along
-                else:
-                    note_data += markdown_note[prev:to_check]
-                    prev = match.start(1) - 1
-            else:
-                note_data += markdown_note[prev:]
-            message_text = note_data.strip()
-            tl_ib_buttons = ibuild_keyboard(buttons)
+        elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
-                title="Inline creator",
-                text=message_text,
-                buttons=tl_ib_buttons,
-                link_preview=False,
+                title="Stats",
+                text=f"**TeleBot Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @TeleBotSupport",
+                buttons=[
+                    [custom.Button.inline("Stats", data="statcheck")],
+                    [Button.url("Repo", "https://github.com/xditya/TeleBot")],
+                    [
+                        Button.url(
+                            "Deploy Now!",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot&template=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot",
+                        )
+                    ],
+                ],
             )
-            await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query.startswith("**PM"):
+            TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
+            result = builder.photo(
+                file=TELEPIC,
+                text=TELEBT,
+                buttons=[
+                    [
+                        custom.Button.inline("To Request Something 😁", data="req"),
+                        custom.Button.inline("To Get Help 🆘", data="plshelpme"),
+                    ],
+                    [
+                        custom.Button.inline("Random Chat 💭", data="chat"),
+                        custom.Button.inline("To spam 🚫", data="heheboi"),
+                    ],
+                    [custom.Button.inline("What is this ❓", data="pmclick")],
+                ],
+            )
+        
+        await event.answer([result] if result else None)
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -90,9 +98,103 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
+                "Please get your own Userbot from @TeleBotHelp , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
+    async def on_pm_click(event):
+        if event.query.user_id == bot.uid:
+            reply_pop_up_alert = "This ain't for you, master!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+            await event.edit(
+                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [TeleBot](t.me/TeleBotSupport)"
+            )
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
+    async def on_pm_click(event):
+        if event.query.user_id == bot.uid:
+            reply_pop_up_alert = "This ain't for you, master!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+            await event.edit(
+                f"Okay, `{DEFAULTUSER}` would get back to you soon!\nTill then please **wait patienly and don't spam here.**"
+            )
+            target = await event.client(GetFullUserRequest(event.query.user_id))
+            first_name = html.escape(target.user.first_name)
+            if first_name is not None:
+                first_name = first_name.replace("\u2060", "")
+            tosend = f"Hey {DEFAULTUSER}, {first_name} is requesting something in PM!"
+            await tgbot.send_message(LOG_GP, tosend)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
+    async def on_pm_click(event):
+        event.query.user_id
+        if event.query.user_id == bot.uid:
+            reply_pop_up_alert = "This ain't for you, master!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+            await event.edit(
+                f"Oho, you want to chat...\nPlease wait and see if {DEFAULTUSER} is in a mood to chat, if yes, he will be replying soon!\nTill then, **do not spam.**"
+            )
+            target = await event.client(GetFullUserRequest(event.query.user_id))
+            first_name = html.escape(target.user.first_name)
+            if first_name is not None:
+                first_name = first_name.replace("\u2060", "")
+            tosend = (
+                f"Hey {DEFAULTUSER}, {first_name} wants to PM you for Random Chatting!"
+            )
+            await tgbot.send_message(LOG_GP, tosend)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
+    async def on_pm_click(event):
+        if event.query.user_id == bot.uid:
+            reply_pop_up_alert = "This ain't for you, master!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+            await event.edit(
+                f"Oh!\n{DEFAULTUSER} would be glad to help you out...\nPlease leave your message here **in a single line** and wait till I respond 😊"
+            )
+            target = await event.client(GetFullUserRequest(event.query.user_id))
+            first_name = html.escape(target.user.first_name)
+            if first_name is not None:
+                first_name = first_name.replace("\u2060", "")
+            tosend = f"Hey {DEFAULTUSER}, {first_name} wants to PM you for help!"
+            await tgbot.send_message(LOG_GP, tosend)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+    async def on_pm_click(event):
+        if event.query.user_id == bot.uid:
+            reply_pop_up_alert = "This ain't for you, master!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+            await event.edit(
+                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored."
+            )
+            await borg(functions.contacts.BlockRequest(event.query.user_id))
+            target = await event.client(GetFullUserRequest(event.query.user_id))
+            first_name = html.escape(target.user.first_name)
+            if first_name is not None:
+                first_name = first_name.replace("\u2060", "")
+            first_name = html.escape(target.user.first_name)
+            await tgbot.send_message(
+                LOG_GP,
+                f"{first_name} tried to spam your inbox.\nHenceforth, **blocked**",
+            )
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    async def on_plug_in_callback_query_handler(event):
+        if event.query.user_id == bot.uid:
+            await event.edit("Help Menu Closed.")
+        else:
+            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
+    async def rip(event):
+        text = telestats
+        await event.answer(text, alert=True)
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -108,22 +210,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = (
-                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
-            )
+            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.+?)_(.+)")))
-    async def on_plug_in_callback_query_handler(event):
-        userid = event.pattern_match.group(1)
-        ids = [int(userid), bot.uid]
-        if event.query.user_id in ids:
-            encrypted_tcxt = event.pattern_match.group(2)
-            reply_pop_up_alert = encrypted_tcxt
-        else:
-            reply_pop_up_alert = "You little shit, why are you looking at this ? Go away and do your own work,idiot"
-
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -144,76 +232,35 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 reply_pop_up_alert = "{} is useless".format(plugin_name)
             else:
                 reply_pop_up_alert = help_string
-            reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin ©SPARKZZZ userbot".format(plugin_name)
+            reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
+                © Telebot".format(
+                plugin_name
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             except BaseException:
-                # https://github.com/Dark-Princ3/X-tra-Telegram/commit/275fd0ec26b284d042bf56de325472e088e6f364#diff-2b2df8998ff11b6c15893b2c8d5d6af3
-                with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
-                    out_file.name = "{}.txt".format(plugin_name)
-                    await borg.send_file(
-                        event.chat_id,
-                        out_file,
-                        force_document=True,
-                        allow_cache=False,
-                        caption=plugin_name,
-                    )
+                halps = "Do .help {} to get the list of commands.".format(plugin_name)
+                await event.answer(halps, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = (
-                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
-            )
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
-            await event.edit("menu closed")
-        else:
-            reply_pop_up_alert = (
-                "Aary bas kar Bhai !! Tab se dabate jaa rha h, Khudka bot bana!"
-            )
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
-    async def on_plug_in_callback_query_handler(event):
-        statstext = await catalive()
-        reply_pop_up_alert = statstext
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = Config.NO_OF_INLINE_ROWS
-    number_of_cols = Config.NO_OF_INLINE_COLUMNS
-    helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
+    number_of_rows = 5
+    number_of_cols = 2
+    helpable_plugins = []
+    for p in loaded_plugins:
+        if not p.startswith("_"):
+            helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [
-        custom.Button.inline(
-            "{} {} {}".format(
-                Config.INLINE_EMOJI, x, Config.INLINE_EMOJI
-            ),
-            data="us_plugin_{}".format(x),
-        )
+        custom.Button.inline("{} {}".format("⚡", x, "⚡"), data="us_plugin_{}".format(x))
         for x in helpable_plugins
     ]
-    if number_of_cols == 1:
-        pairs = list(zip(modules[::number_of_cols]))
-    elif number_of_cols == 2:
-        pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
-    else:
-        pairs = list(
-            zip(
-                modules[::number_of_cols],
-                modules[1::number_of_cols],
-                modules[2::number_of_cols],
-            )
-        )
+    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
-    elif len(modules) % number_of_cols == 2:
-        pairs.append((modules[-2], modules[-1]))
-    max_num_pages = math.ceil(len(pairs) / number_of_rows)
+    max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
@@ -221,22 +268,20 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "👈Previous", data="{}_prev({})".format(prefix, modulo_page)
+                    "⏮️ Previous", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("⚡Close⚡", data="close"),
+                custom.Button.inline("Close", data="close"),
                 custom.Button.inline(
-                    "Next👉", data="{}_next({})".format(prefix, modulo_page)
+                    "Next ⏭️", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
     return pairs
 
 
-def ibuild_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
+async def userinfo(event):
+    target = await event.client(GetFullUserRequest(event.query.user_id))
+    first_name = html.escape(target.user.first_name)
+    if first_name is not None:
+        first_name = first_name.replace("\u2060", "")
+    return first_name
