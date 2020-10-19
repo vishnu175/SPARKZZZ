@@ -12,7 +12,7 @@ import time
 
 from bs4 import BeautifulSoup
 from requests import get
-
+from userbot import chrome
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.tools import human_to_bytes, humanbytes, md5, time_formatter
@@ -312,10 +312,5 @@ CMD_HELP.update({
 \n\n`.spec <brand> <device>`\
 \nUsage: Get device specifications info.\
 \n\n`.twrp <codename>`\
-\nUsage: Get latest twrp download for android device.\
-\n\n`.gpsetup` <Try this in botlog group only>\
-\nUsage: Setup auth for Google Photos.\
-\n\n`.gp` Reply to photo or video.\
-\nUsage: Upload photo or video to Google.\
-\n\nYou need G_PHOTOS_CLIENT_ID and G_PHOTOS_CLIENT_SECRET.\nGet it from [here](https://j.mp/39lWQQm)"
+\nUsage: Get latest twrp download for android device."
 })
