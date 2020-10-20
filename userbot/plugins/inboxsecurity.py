@@ -198,7 +198,7 @@ async def do_pm_permit_action(chat_id, event):
         return
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == Config.MAX_SPAM:
+    if PM_WARNS[chat_id] == Config.INBOX_SECURITY_SPAM_LIMIT:
         r = await event.reply(USER_BOT_WARN_ZERO)
         await asyncio.sleep(3)
         await event.client(functions.contacts.BlockRequest(chat_id))
@@ -226,7 +226,7 @@ async def do_pm_permit_action(chat_id, event):
     # inline pmpermit menu
     mybot = Var.TG_BOT_USER_NAME_BF_HER
     MSG = USER_BOT_NO_WARN.format(
-        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
+        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.INBOX_SECURITY_SPAM_LIMIT
     )
     tele = await bot.inline_query(mybot, MSG)
     r = await tele[0].click(event.chat_id, hide_via=True)
