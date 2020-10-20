@@ -1,4 +1,4 @@
-
+# (C) SPARKZZZ 2020
 import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -17,7 +17,7 @@ async def _(event):
    if not reply_message.text:
       await event.edit("```reply to a 10 digits mobile number```")
       return
-   chat = "@SangMataInfo_bot"
+   chat = "@knowhobot"
    sender = reply_message.sender
    if reply_message.sender.bot:
       await event.edit("```Reply to actual users message.```")
@@ -25,11 +25,11 @@ async def _(event):
    await event.edit("```Processing```")
    async with borg.conversation(chat) as conv:
          try:     
-            response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
+            response = conv.wait_event(events.NewMessage(incoming=True,from_users=1115604796))
             await borg.forward_messages(chat, reply_message)
             response = await response 
          except YouBlockedUserError: 
-            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+            await event.reply("```Please unblock @knowhobot and try again```")
             return
          if response.text.startswith("Forward"):
             await event.edit("The user have enabled privacy settings you cant get name history")
