@@ -8,7 +8,7 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from userbot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-PMPIC = (
+TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
