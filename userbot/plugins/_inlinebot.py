@@ -14,7 +14,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
+    else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -23,14 +23,16 @@ LOG_GP = Var.PRIVATE_GROUP_ID
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "Don't spam here else you will be blocked automatically!!!"
+    else "`TeleBot PM security! Please wait for me to approve you. 😊"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
-USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
-USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
-                    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
-                    f"{MESAG}"
-                    "\n\n\n - Thank You 🙏")
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+USER_BOT_NO_WARN = (
+    f"**PM Security ~ TeleBot**\n\nNice to see you here, but  "
+    "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
+    "{}\n"
+    "\nPlease choose why you are here, from the available options\n\n            ~ Thank You."
+)
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
@@ -191,7 +193,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
     async def rip(event):
-        text = sparkzzzstats
+        text = telestats
         await event.answer(text, alert=True)
 
     @tgbot.on(
