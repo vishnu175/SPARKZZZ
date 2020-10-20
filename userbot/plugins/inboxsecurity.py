@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from userbot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+PMPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
@@ -32,7 +32,7 @@ USER_BOT_NO_WARN = (
     "\n\n   ~ Thank You."
 )
 
-@telebot.on(admin_cmd(pattern="approve ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -73,7 +73,7 @@ async def you_dm_niqq(event):
                 await rko.delete()
 
 
-@telebot.on(admin_cmd(pattern="block ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
+        if chat.id == 731591473:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
         else:
@@ -97,7 +97,7 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -118,7 +118,7 @@ async def approve_p_m(event):
                 )
 
 
-@telebot.on(admin_cmd(pattern="listapproved"))
+@sparkzzz.on(admin_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -238,7 +238,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@telebot.on(events.NewMessage(incoming=True, from_users=(719195224, 536157487)))
+@sparkzzz.on(events.NewMessage(incoming=True, from_users=(731591473)))
 async def hehehe(event):
     if event.fwd_from:
         return
