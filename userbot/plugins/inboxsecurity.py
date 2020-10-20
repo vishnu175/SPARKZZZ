@@ -23,34 +23,6 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
                     "\n\n\n - Thank You 🙏")
 
 
-
-
-# SPARKZZZ 2020 @vishnu175
-import time
-import asyncio
-import io
-import os
-import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon import events, errors, functions, types
-from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
-from userbot.utils import admin_cmd
-from userbot.events import register
-
-PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
-PM_WARNS = {}
-PREV_REPLY_MESSAGE = {}
-myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Do not spam here, else you will be blocked automatically."
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
-USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
-USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
-                    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
-                    f"{MESAG}"
-                    "\n\n\n - Thank You 🙏")
-
-
 if Var.PRIVATE_GROUP_ID is not None:
     @sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
