@@ -19,7 +19,7 @@ TELEPIC = (
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-LOG_GP = Var.PRIVATE_GROUP_ID
+LOG_ID = Var.PRIVATE_GROUP_ID
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
@@ -72,14 +72,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text=TELEBT,
                 buttons=[
                     [
-                        custom.Button.inline("To Request Something 😁", data="req"),
-                        custom.Button.inline("To Get Help 🆘", data="plshelpme"),
+                        custom.Button.inline("To ASK 🗣️something", data="ask"),
+                        custom.Button.inline("To get HELP 🙏", data="wanthelp"),
+                        custom.Button.inline("To SPAM inbox 📬 ", data="spaminbox"),
                     ],
-                    [
-                        custom.Button.inline("Random Chat 💭", data="chat"),
-                        custom.Button.inline("To spam 🚫", data="heheboi"),
-                    ],
-                    [custom.Button.inline("What is this ❓", data="pmclick")],
+                    [custom.Button.inline("⚡SPARKZZZ USERBOT⚡", data="sparkzzzinfo")],
                 ],
             )
         
@@ -98,79 +95,61 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Please get your own Userbot from @TeleBotHelp , and don't use mine!"
+                "Please get your own Userbot from @sparkzzzbothelp , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"sparkzzzinfo")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "This ain't for you, master!"
+            reply_pop_up_alert = "You are my master!! Majesty!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [TeleBot](t.me/TeleBotSupport)"
+                f"SPARKZZZ userbot is a Telegram Userbot programmed created with python,You can deploy userbot at https://github.com/vishnu175/SPARKZZZ.\n\n visit [SPARKZZZ](t.me/sparkzzzbothelp)"
             )
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ask")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "This ain't for you, master!"
+            reply_pop_up_alert = "You are my master!! Majesty!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Okay, `{DEFAULTUSER}` would get back to you soon!\nTill then please **wait patienly and don't spam here.**"
+                f"Request accepted, `{DEFAULTUSER}` will contact you soon!\n Kindly wait for my **master** to approve you"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
             first_name = html.escape(target.user.first_name)
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
-            tosend = f"Hey {DEFAULTUSER}, {first_name} is requesting something in PM!"
-            await tgbot.send_message(LOG_GP, tosend)
+            sendtobot = f"Hi...{DEFAULTUSER}, {first_name} want to ask you something in PM!"
+            await tgbot.send_message(LOG_ID, sendtobot)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wanthelp")))
     async def on_pm_click(event):
-        event.query.user_id
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "This ain't for you, master!"
+            reply_pop_up_alert = "You are my master!! Majesty!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oho, you want to chat...\nPlease wait and see if {DEFAULTUSER} is in a mood to chat, if yes, he will be replying soon!\nTill then, **do not spam.**"
+                f"Okay..Okay..👍.cool..{DEFAULTUSER} will help you...\nType your message in **singleline**...about what help you want"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
             first_name = html.escape(target.user.first_name)
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
-            tosend = (
-                f"Hey {DEFAULTUSER}, {first_name} wants to PM you for Random Chatting!"
-            )
-            await tgbot.send_message(LOG_GP, tosend)
+            sendtobot = f"Hey {DEFAULTUSER}, {first_name} want a help from you..in PM!"
+            await tgbot.send_message(LOG_ID, sendtobot)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"spaminbox")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "This ain't for you, master!"
+            reply_pop_up_alert = "You are my master!! Majesty!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oh!\n{DEFAULTUSER} would be glad to help you out...\nPlease leave your message here **in a single line** and wait till I respond 😊"
-            )
-            target = await event.client(GetFullUserRequest(event.query.user_id))
-            first_name = html.escape(target.user.first_name)
-            if first_name is not None:
-                first_name = first_name.replace("\u2060", "")
-            tosend = f"Hey {DEFAULTUSER}, {first_name} wants to PM you for help!"
-            await tgbot.send_message(LOG_GP, tosend)
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
-    async def on_pm_click(event):
-        if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "This ain't for you, master!"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        else:
-            await event.edit(
-                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored."
+                f"So you are here to spam my inbox..⚡SPARKZZZ⚡ SECURITY identified you as a spammer🧟...\nGoodbye...🙋\n."
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
@@ -179,8 +158,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 first_name = first_name.replace("\u2060", "")
             first_name = html.escape(target.user.first_name)
             await tgbot.send_message(
-                LOG_GP,
-                f"{first_name} tried to spam your inbox.\nHenceforth, **blocked**",
+                LOG_ID,
+                f"Hey Master,{first_name} tried to spam your inbox.\n So,I **kicked off** the spammer at the very moment",
             )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
