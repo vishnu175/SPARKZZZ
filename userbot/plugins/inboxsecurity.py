@@ -10,11 +10,19 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from userbot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = PMPERMIT_PIC if PMPERMIT_PIC else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
+TELEPIC = (
+    PMPERMIT_PIC
+    if PMPERMIT_PIC
+    else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
+)
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Do not spam here, else you will be blocked automatically."
+MESAG = (
+    str(CUSTOM_PMPERMIT)
+    if CUSTOM_PMPERMIT
+    else "Don't spam here else you will be blocked automatically!!!"
+)
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!** "
 USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately  "
@@ -23,7 +31,7 @@ USER_BOT_NO_WARN = ("**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to 
                     "\n\n\n - Thank You 🙏")
 
 
-@sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
+@telebot.on(admin_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -64,7 +72,7 @@ async def you_dm_niqq(event):
                 await rko.delete()
 
 
-@sparkzzz.on(admin_cmd(pattern="block ?(.*)"))
+@telebot.on(admin_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -73,7 +81,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 731591473:
+        if chat.id == 719195224:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
         else:
@@ -88,7 +96,7 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
+@telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -109,7 +117,7 @@ async def approve_p_m(event):
                 )
 
 
-@sparkzzz.on(admin_cmd(pattern="la"))
+@telebot.on(admin_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -184,11 +192,11 @@ async def on_new_private_message(event):
 
 
 async def do_pm_permit_action(chat_id, event):
-    if Var.INBOXSECURITY.lower() == "off":
+    if Var.PMSECURITY.lower() == "off":
         return
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == Config.INBOX_SECURITY_SPAM_LIMIT:
+    if PM_WARNS[chat_id] == Config.MAX_SPAM:
         r = await event.reply(USER_BOT_WARN_ZERO)
         await asyncio.sleep(3)
         await event.client(functions.contacts.BlockRequest(chat_id))
@@ -216,7 +224,7 @@ async def do_pm_permit_action(chat_id, event):
     # inline pmpermit menu
     mybot = Var.TG_BOT_USER_NAME_BF_HER
     MSG = USER_BOT_NO_WARN.format(
-        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.INBOX_SECURITY_SPAM_LIMIT
+        DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
     )
     tele = await bot.inline_query(mybot, MSG)
     r = await tele[0].click(event.chat_id, hide_via=True)
@@ -229,7 +237,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@sparkzzz.on(events.NewMessage(incoming=True, from_users=(731591473)))
+@telebot.on(events.NewMessage(incoming=True, from_users=(719195224, 536157487)))
 async def hehehe(event):
     if event.fwd_from:
         return
