@@ -34,7 +34,7 @@ if Config.SUDO_USERS:
 else:
     sudo = "Enabled"
 
-if Var.PMSECURITY.lower() == "off":
+if Var.INBOXSECURITY.lower() == "off":
     pm = "Disabled"
 else:
     pm = "Enabled"
