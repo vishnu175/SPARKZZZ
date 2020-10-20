@@ -2,16 +2,14 @@ import html
 import os
 import re
 from math import ceil
-
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
-
 from heroku_config import Var
 from userbot import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
 from userbot.plugins import sparkzzzstats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+PMPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
@@ -55,21 +53,21 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 title="Stats",
                 text=f"**SPARKZZZ Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n(c) @sparkzzzbothelp",
                 buttons=[
-                    [custom.Button.inline("Stats", data="statcheck")],
-                    [Button.url("Repo", "https://github.com/vishnu175/SPARKZZZ")],
+                    [custom.Button.inline("Stats📲", data="enquirestat")],
+                    [Button.url("Repo⚙️", "https://github.com/vishnu175/SPARKZZZ")],
                     [
                         Button.url(
-                            "Deploy Now!",
-                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot&template=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot",
+                            "Deploy🌀",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ&template=https%3A%2F%2Fgithub.com%2Fvishnu175%2FSPARKZZZ",
                         )
                     ],
                 ],
             )
         elif event.query.user_id == bot.uid and query.startswith("**PM"):
-            TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
+            WARNTXT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
             result = builder.photo(
-                file=TELEPIC,
-                text=TELEBT,
+                file=PMPIC,
+                text=WARNTXT,
                 buttons=[
                     
                         [custom.Button.inline("To ASK 🗣️something", data="ask")],
@@ -148,7 +146,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"So you are here to spam my inbox..⚡SPARKZZZ⚡ SECURITY identified you as a spammer🧟...\nGoodbye...🙋\n."
+                f"So you are here to spam my inbox..⚡SPARKZZZ⚡ SECURITY identified you as a spammer🧟\n\nGoodbye...🙋\n."
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
@@ -166,10 +164,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("Help Menu Closed.")
         else:
-            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
+            reply_pop_up_alert = "Please get your own userbot from @sparkzzzbothelp "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"enquirestat")))
     async def rip(event):
         text = sparkzzzstats
         await event.answer(text, alert=True)
@@ -211,7 +209,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                © Telebot".format(
+                © SPARKZZZ".format(
                 plugin_name
             )
             try:
