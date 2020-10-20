@@ -71,12 +71,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 file=TELEPIC,
                 text=TELEBT,
                 buttons=[
-                    [
+                    
                         [custom.Button.inline("To ASK 🗣️something", data="ask")],
                         [custom.Button.inline("To get HELP 🙏", data="wanthelp")],
                         [custom.Button.inline("To SPAM inbox 📬 ", data="spaminbox")],
-                    ],
-                    [custom.Button.inline("⚡SPARKZZZ USERBOT⚡", data="sparkzzzinfo")],
+                        [custom.Button.inline("⚡SPARKZZZ USERBOT⚡", data="sparkzzzinfo")],
                 ],
             )
         
