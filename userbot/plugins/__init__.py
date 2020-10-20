@@ -8,7 +8,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from heroku_config import Var
-from userbot import ALIVE_NAME, telever
+from userbot import ALIVE_NAME, sparkzzzver
 from userbot.__init__ import StartTime
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd, sudo_cmd
@@ -41,7 +41,7 @@ else:
 
 TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
 
-tele = f"TeleBot Version: {telever}\n"
+tele = f"TeleBot Version: {sparkzzzver}\n"
 tele += f"Log Group: {log}\n"
 tele += f"Assistant Bot: {bots}\n"
 tele += f"Lydia: {lyd}\n"
