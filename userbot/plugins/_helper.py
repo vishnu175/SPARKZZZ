@@ -1,57 +1,48 @@
-#(C) SPARKZZZ 2020
-# @vishnu175
-import requests
-from telethon import functions
-from userbot import ALIVE_NAME
-from .. import CMD_HELP, CMD_LIST
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, CMD_LIST
+from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
 
 
-@sparkzzz.on(admin_cmd(pattern="help ?(.*)"))
+@telebot.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
-    input_str = event.pattern_match.group(1)
-    tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
-    if input_str == "text":
-        string = ""
-        for i in sorted(CMD_LIST):
-            string += "⚚" + i + "\n"
-            for iter_list in CMD_LIST[i]:
-                string += "    " + str(iter_list)
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+        tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
+        input_str = event.pattern_match.group(1)
+        if tgbotusername is None or input_str == "text":
+            string = ""
+            for i in CMD_LIST:
+                string += "⚡ " + i + "\n"
+                for iter_list in CMD_LIST[i]:
+                    string += "    `" + str(iter_list) + "`"
+                    string += "\n"
                 string += "\n"
-            string += "\n"
-        if len(string) > 4095:
-            data = string
-            key = (
-                requests.post(
-                    "https://nekobin.com/api/documents", json={"content": data}
-                )
-                .json()
-                .get("result")
-                .get("key")
-            )
-            url = f"https://nekobin.com/{key}"
-            reply_text = f"All commands of the sparkzzzuserbot are [here]({url})"
-            await event.edit(reply_text)
-            return
-        await event.edit(string)
-        return
-    if Config.HELP_INLINETYPE is None:
-        if input_str:
+            if len(string) > 4095:
+                with io.BytesIO(str.encode(string)) as out_file:
+                    out_file.name = "cmd.txt"
+                    await tgbot.send_file(
+                        event.sender_id,
+                        out_file,
+                        force_document=True,
+                        allow_cache=False,
+                        caption="**COMMANDS**",
+                        reply_to=reply_to_id,
+                    )
+                    await event.delete()
+            else:
+                await event.edit(string)
+        elif input_str:
             if input_str in CMD_LIST:
-                string = "Commands found in {}:\n".format(input_str)
+                string = "**Commands available in {}** \n\n".format(input_str)
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
+                string += "\n**© @TeleBotSupport**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"Userbot Helper.. Provided by {DEFAULTUSER}\
-                          \n`All modules of `**[𝕊ℙ𝔸ℝ𝕂ℤℤℤ]**(https://github.com/vishnu175/SPARKZZZ/) are listed here\
-                          \n__**Type__ `.𝖍𝖊𝖑𝖕`<module name>** to know usage of modules.\
-                          \nDo `.info` plugin_name for usage"
+            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[TeleBot](https://xditya.gitbook.io/telebot/)**\n\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
             )
@@ -59,31 +50,3 @@ async def cmd_list(event):
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
-    else:
-        if input_str:
-            if input_str in CMD_LIST:
-                string = "Commands found in {}:\n".format(input_str)
-                for i in CMD_LIST[input_str]:
-                    string += "    " + i
-                    string += "\n"
-                await event.edit(string)
-            else:
-                await event.edit(input_str + " is not a valid plugin!")
-        else:
-            string = f"**Userbot Helper.. Provided by [{DEFAULTUSER}]\nUserbot Helper to reveal all the plugin names\n\n**Do `.help` for commands\nDo `.help` plugin_name for usage\n\n"
-            for i in sorted(CMD_LIST):
-                string += "◆`" + str(i)
-                string += "`   "
-            await event.edit(string)
-
-
-
-
-@sparkzzz.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(result.stringify())
-
-
