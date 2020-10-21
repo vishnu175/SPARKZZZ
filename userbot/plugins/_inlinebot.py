@@ -9,7 +9,7 @@ from userbot import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
 from userbot.plugins import sparkzzzstats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+SECPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
@@ -64,10 +64,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 ],
             )
         elif event.query.user_id == bot.uid and query.startswith("**PM"):
-            TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
+            SPARKZ = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
             result = builder.photo(
-                file=TELEPIC,
-                text=TELEBT,
+                file=SECPIC,
+                text=SPARKZ,
                 buttons=[
                     
                         [custom.Button.inline("To ASK 🗣️something", data="ask")],
