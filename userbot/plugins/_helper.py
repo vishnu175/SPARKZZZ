@@ -1,3 +1,4 @@
+from telethon import functions
 from userbot import ALIVE_NAME, CMD_LIST
 from userbot.utils import admin_cmd
 
