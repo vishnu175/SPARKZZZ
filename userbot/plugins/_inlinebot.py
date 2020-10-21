@@ -92,24 +92,24 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Please get your own Userbot from @sparkzzzbothelp , and don't use mine!"
+                "Hey stop ❌ Why are you clicking my bot..Go and make your own ⚡SPARKZZZ⚡ from @sparkzzzbothelp!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"sparkzzzinfo")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "You are my master!! Majesty!"
+            reply_pop_up_alert = "You are my master🧑‍⚖️!! Majesty!This option is not for you.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"SPARKZZZ userbot is a Telegram Userbot programmed created with python,You can deploy userbot at https://github.com/vishnu175/SPARKZZZ.\n\n visit [SPARKZZZ](t.me/sparkzzzbothelp)"
+                f"SPARKZZZ userbot is a Telegram Userbot created by [CSV1990](t.me/CSV1990).programmed with Telethon..based on python,You can deploy userbot at https://github.com/vishnu175/SPARKZZZ.\n\n © [SPARKZZZ](t.me/sparkzzzbothelp)"
             )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ask")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "You are my master!! Majesty!"
+            reply_pop_up_alert = "You are my master🧑‍⚖️!! Majesty!This option is not for you.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
@@ -126,7 +126,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wanthelp")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "You are my master!! Majesty!"
+            reply_pop_up_alert = "You are my master🧑‍⚖️!! Majesty!This option is not for you.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
@@ -142,7 +142,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"spaminbox")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
-            reply_pop_up_alert = "You are my master!! Majesty!"
+            reply_pop_up_alert = "You are my master🧑‍⚖️!! Majesty!This option is not for you.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
@@ -164,7 +164,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("Help Menu Closed.")
         else:
-            reply_pop_up_alert = "Please get your own userbot from @sparkzzzbothelp "
+            reply_pop_up_alert = "Hey stop ❌ Why are you clicking my bot ?? Go and make your own ⚡SPARKZZZ⚡ from @sparkzzzbothelp!"
+            ) "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"enquirestat")))
@@ -186,7 +187,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Hey stop ❌ why are you clicking my bot ?? Go and make your own ⚡SPARKZZZ⚡,from @sparkzzzbothelp!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -218,11 +219,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 halps = "Do .help {} to get the list of commands.".format(plugin_name)
                 await event.answer(halps, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Hey stop ❌ Why are you clicking my bot ?? Go and make your own ⚡SPARKZZZ⚡ from @sparkzzzbothelp!"
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 10
+    number_of_rows = 8
     number_of_cols = 3
     helpable_plugins = []
     for p in loaded_plugins:
