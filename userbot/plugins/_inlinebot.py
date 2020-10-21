@@ -8,6 +8,9 @@ from heroku_config import Var
 from userbot import ALIVE_NAME, CMD_LIST, CUSTOM_PMPERMIT, bot
 from userbot.plugins import sparkzzzstats
 
+BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+
+
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 SECPIC = (
     PMPERMIT_PIC
@@ -76,8 +79,42 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         [custom.Button.inline("⚡SPARKZZZ USERBOT⚡", data="sparkzzzinfo")],
                 ],
             )
-        
-        await event.answer([result] if result else None)
+        elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
+            markdown_note = query[14:]
+            prev = 0
+            note_data = ""
+            buttons = []
+            for match in BTN_URL_REGEX.finditer(markdown_note):
+                # Check if btnurl is escaped
+                n_escapes = 0
+                to_check = match.start(1) - 1
+                while to_check > 0 and markdown_note[to_check] == "\\":
+                    n_escapes += 1
+                    to_check -= 1
+                # if even, not escaped -> create button
+                if n_escapes % 2 == 0:
+                    # create a thruple with button label, url, and newline
+                    # status
+                    buttons.append(
+                        (match.group(2), match.group(3), bool(match.group(4)))
+                    )
+                    note_data += markdown_note[prev : match.start(1)]
+                    prev = match.end(1)
+                # if odd, escaped -> move along
+                else:
+                    note_data += markdown_note[prev:to_check]
+                    prev = match.start(1) - 1
+            else:
+                note_data += markdown_note[prev:]
+            message_text = note_data.strip()
+            tl_ib_buttons = ibuild_keyboard(buttons)
+            result = builder.article(
+                title="Inline creator",
+                text=message_text,
+                buttons=tl_ib_buttons,
+                link_preview=False,
+            )
+            await event.answer([result] if result else None)
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -222,8 +259,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 8
-    number_of_cols = 3
+    number_of_rows = Config.NO_OF_INLINE_ROWS
+    number_of_cols = Config.NO_OF_INLINE_COLUMNS
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
