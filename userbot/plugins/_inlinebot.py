@@ -1,5 +1,5 @@
 #    SPARKZZZ - UserBot
-#    Copyright (C) 2020 SPARKZZZ
+#    Copyright (C) SPARKZZZ 2020
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
