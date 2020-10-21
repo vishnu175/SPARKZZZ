@@ -38,6 +38,8 @@ from heroku_config import Var as Config
 # -- Constants -- #
 UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
+REPO_REMOTE_NAME = "temponame"
+IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DELETE_TIMEOUT = 3
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 # -- Constants End -- #
@@ -52,14 +54,14 @@ async def updater(upd):
         repo = git.Repo()
     except git.exc.InvalidGitRepositoryError as e:
         repo = git.Repo.init()
-        origin = repo.create_remote('updater', UPSTREAM_REPO_URL)
+        origin = repo.create_remote(REPO_REMOTE_NAME, UPSTREAM_REPO_URL)
         origin.fetch()
-        repo.create_head('master', origin.refs.master)
+        repo.create_head(IFFUCI_ACTIVE_BRANCH_NAME, origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
 
     active_branch_name = repo.active_branch.name
-    if active_branch_name != 'master':
+    if active_branch_name != IFFUCI_ACTIVE_BRANCH_NAME:
         await upd.edit(
             f'**[UPDATER]:Oops!!..Looks like you are in a custom branch ** {active_branch_name}.'
             '**is being used:**'
@@ -69,15 +71,15 @@ async def updater(upd):
         return
 
     try:
-        repo.create_remote('updater', UPSTREAM_REPO_URL)
+        repo.create_remote(REPO_REMOTE_NAME, UPSTREAM_REPO_URL)
     except BaseException as e:
         print(e)
         pass
 
-    upd_rem = repo.remote('updater')
+    upd_rem = repo.remote(REPO_REMOTE_NAME)
     upd_rem.fetch(active_branch_name)
 
-    changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
+    changelog = await gen_chlog(repo, f'HEAD..REPO_REMOTE_NAME/{active_branch_name}')
 
     if not changelog:
         await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is 𝐮𝐩-𝐭𝐨-𝐝𝐚𝐭𝐞..**\n')
