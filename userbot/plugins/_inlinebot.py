@@ -146,7 +146,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"So you are here to spam my inbox..⚡SPARKZZZ⚡ SECURITY identified you as a spammer🧟\n\nGoodbye...🙋\n."
+                f"So you are here to spam my inbox..⚡SPARKZZZ⚡ SECURITY identified you as a spammer🧟\n\nGoodbye...🙋\n"
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
