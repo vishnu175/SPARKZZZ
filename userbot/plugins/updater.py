@@ -79,7 +79,7 @@ async def updater(upd):
     upd_rem = repo.remote(REPO_REMOTE_NAME)
     upd_rem.fetch(active_branch_name)
 
-    changelog = await gen_chlog(repo, f'HEAD..REPO_REMOTE_NAME/{active_branch_name}')
+    changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
 
     if not changelog:
         await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is 𝐮𝐩-𝐭𝐨-𝐝𝐚𝐭𝐞..**\n')
