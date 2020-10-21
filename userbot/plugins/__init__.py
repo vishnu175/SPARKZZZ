@@ -1,84 +1,112 @@
-# inspired by https://github.com/sandy1709/catuserbot/blob/master/userbot/plugins/__init__.py
-# SPARKZZZ 2020
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+from telethon.utils import get_input_location
+from datetime import datetime
+import asyncio
+import time
 import os
 import re
 import time
 import math
 import heroku3
 import requests
+import html
+from telethon.tl.types import MessageEntityMentionName
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from userbot.__init__ import StartTime
+from userbot import ALIVE_NAME
 from heroku_config import Var
+from userbot.utils import admin_cmd
+from userbot.utils import  sudo_cmd
 from userbot import sparkzzzver
-from userbot.uniborgConfig import Config
 from telethon import events
-from datetime import datetime
+from userbot.uniborgConfig import Config
+
+SPARKZZZUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 
-def check(tele):
-    if "/start" in tele:
-        return True
-    wew = re.search(re.escape(f"\\b{tele}\\b"), "a|b|c|d")
-    if wew:
-        return True
-    return False
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SPARKZZZ-BOT STATS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-# inspired by https://github.com/sandy1709/catuserbot/blob/master/userbot/plugins/__init__.py
-# @sn12384
+botname = Config.TG_BOT_USER_NAME_BF_HER
+pvtgrpid = Config.PRIVATE_GROUP_BOT_API_ID	
+sudousers = Config.SUDO_USERS
+lydiaactive =  Var.LYDIA_API_KEY
+inboxsecurity = Var.INBOXSECURITY
+herokuappstats = Var.HEROKU_APP_NAME
+youtubesearch = Config.YOUTUBE_API_KEY
+inboxsecurity = Var.INBOXSECURITY
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TEST SWITCHES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-async def telealive():
-    start = datetime.now()
-    if Config.SUDO_USERS:
-        sudo = "Active"
-    else:
-        sudo = "Disabled"
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    try:
-        useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
-                     'AppleWebKit/537.36 (KHTML, like Gecko) '
-                     'Chrome/80.0.3987.149 Mobile Safari/537.36'
-                     )
-        user_id = Heroku.account().id
-        headers = {
-            'User-Agent': useragent,
-            'Authorization': f'Bearer {Var.HEROKU_API_KEY}',
-            'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
-        }
-        path = "/accounts/" + user_id + "/actions/get-quota"
-        r = requests.get(heroku_api + path, headers=headers)
-        result = r.json()
-        quota = result['account_quota']
-        quota_used = result['quota_used']
 
-        # Used
-        remaining_quota = quota - quota_used
-        math.floor(remaining_quota / quota * 100)
-        minutes_remaining = remaining_quota / 60
-        hours = math.floor(minutes_remaining / 60)
-        minutes = math.floor(minutes_remaining % 60)
+if botname: 
+ inlinebot = "Enabled  ☑️"
+else:
+ inlinebot = "Disabled ❎"
+
+
+if pvtgrpid:
+ logs = "Enabled  ☑️"
+else:
+ logs = "Disabled ❎"
+
+
+if sudousers:
+ sudo = "Disabled ❎"
+else:
+ sudo = "Enabled  ☑️"
+
+
+if lydiaactive:
+ lydia = "Enabled  ☑️"
+else:
+ lydia = "Disabled ❎"
+
+
+if herokuappstats:
+ herokuapp = "Active  📲"
+else:
+ herokuapp = "Inactive 📴"
+
+if youtubesearch:
+ yts = "Enabled  ☑️"
+else:
+ yts = "Disabled ❎"  
+
+if inboxsecurity:
+ pm = "Enabled  📺"
+else:
+ pm = "Disabled 👎"
+ 
 		
-        # Current
-        App = result['apps']
-        try:
-            App[0]['quota_used']
-        except IndexError:
-            AppQuotaUsed = 0
-        else:
-            AppQuotaUsed = App[0]['quota_used'] / 60
-            math.floor(App[0]['quota_used'] * 100 / quota)
-			
-        hrs = math.floor(AppQuotaUsed / 60)
-        mins = math.floor(AppQuotaUsed % 60)
-        dyno = f"{hrs}h {mins}m/{hours}h {minutes}m"
-    except Exception as e:
-        dyno = e
-    info = f"SPARKZZZ Stats\
-                  \n\nVersion : {sparkzzzver}\
-                  \nSudo : {sudo}\
-		  \nPing : {ms}\
-                  \nDyno : {dyno}\
-                  "
-    return info
+#>>>>>>>>>>>SPARKZZZ-BOT INLINESTATS>>>>>>>>>>>>>>>>>>>>>>>>>
+inli  =">>>>>>>>>>>⚡SPARKZZZ STATS⚡<<<<<<<<<<<<"
+inli  =f"⚡SPARKZZZ⚡ Version: {sparkzzzver}\n"
+inli  +=f"INLINE BOT👾: {inlinebot}\n"
+inli  +=f"HEROKU STATS🌀: {herokuapp}\n"
+inli  +=f"SPARKZZZ LOGS📝:{logs}\n"
+inli  +=f"LYDIA 🧚: {lydia}\n"
+inli  +=f"YT SEARCH 🎬: {yts}\n"
+inli  +=f"INBOX SECURITY📬: {pm}\n"
+inli  +=f"\n Join @sparkzzzbothelp.\n"
+sparkzzzstats = (f"{inli}")
+
+#>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
