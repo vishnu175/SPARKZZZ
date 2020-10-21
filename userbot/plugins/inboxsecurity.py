@@ -8,7 +8,7 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, bot
 from userbot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-TELEPIC = (
+SECPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
@@ -21,16 +21,16 @@ MESAG = (
     if CUSTOM_PMPERMIT
     else "`Dont spam Here,else you will be blocked Automatically"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
-    "**PM Security ~ TeleBot**\n\nNice to see you here, but  "
+    "**INBOXSECURITY ~ SPARKZZZ**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
-@sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -95,7 +95,7 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -116,7 +116,7 @@ async def approve_p_m(event):
                 )
 
 
-@sparkzzz.on(admin_cmd(pattern="listapproved"))
+@sparkzzz.on(admin_cmd(pattern="la"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
