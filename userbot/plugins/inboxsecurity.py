@@ -11,7 +11,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/572a121f67b75f97c7a6a.jpg"
+    else "https://telegra.ph/file/f6a50188e7c0a822e6056.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -19,15 +19,15 @@ myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`TeleBot PM security! Please wait for me to approve you. 😊"
+    else "`Dont spam Here,else you will be blocked Automatically"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
-USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+USER_BOT_WARN_ZERO = "`Hey you,..I have already warned you not to spam inbox ✉️. Now you have been blocked and reported until further notice.`\n\n**GoodBye🙋!**" 
 USER_BOT_NO_WARN = (
-    "**PM Security ~ TeleBot**\n\nNice to see you here, but  "
-    "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
-    "{}\n\n**You have** `{}/{}` **warnings...**"
-    "\n\n   ~ Thank You."
+    f"**Welcome to ⚡SPARKZZZ inbox security 🔐.**\n\nNice to see you here.unfortunately"
+    f"[{DEFAULTUSER}](tg://user?id={myid}) is not available right now.This is an automated message from SPARKZZZ-BOT inbox security.kindly wait till my master approves  you..or tag him in group\n\n"
+    f"{MESAG}"
+    "\n\n Please select Help menu for further appointment..Thank You."
 )
 
 
@@ -248,23 +248,3 @@ async def hehehe(event):
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
 
 
-# instant block
-NEEDIT = os.environ.get("INSTANT_BLOCK", None)
-if NEEDIT == "on":
-
-    @telebot.on(events.NewMessage(incoming=True))
-    async def on_new_private_message(event):
-        event.message.message
-        event.message.media
-        event.message.id
-        event.message.to_id
-        chat_id = event.chat_id
-        sender = await borg.get_entity(chat_id)
-        if chat_id == borg.uid:
-            return
-        if sender.bot:
-            return
-        if sender.verified:
-            return
-        if not pmpermit_sql.is_approved(chat_id):
-            await borg(functions.contacts.BlockRequest(chat_id))
