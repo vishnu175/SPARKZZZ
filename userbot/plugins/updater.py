@@ -1,5 +1,19 @@
-# (C) SPARKZZZ 2020 @vishnu175
-# Kangers plz keep credits
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import requests
 import asyncio
 import random
@@ -132,7 +146,7 @@ async def gen_chlog(repo, diff_marker):
     return ch_log
 
 async def deploy_start(bot, upd, refspec, remote):
-    await upd.edit('**U͢p͢d͢a͢t͢i͢n͢g͢⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`𝟙.𝟟` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `𝟙.𝟙𝟞.𝟜` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.𝐚𝐥𝐢𝐯𝐞` __To check 𝐒𝐏𝐀𝐑𝐊𝐙𝐙𝐙 after 6-8 mins !__**\n[**𝕤𝕡𝕒𝕣𝕜𝕫𝕫𝕫𝕓𝕠𝕥𝕙𝕖𝕝𝕡](t.me/sparkzzzbothelp)')
+    await upd.edit('**U͢p͢d͢a͢t͢i͢n͢g͢⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`𝟙.𝟟` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `𝟙.𝟙𝟟` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.𝐚𝐥𝐢𝐯𝐞` __To check 𝐒𝐏𝐀𝐑𝐊𝐙𝐙𝐙 after 6-8 mins !__**\n[**𝕊ℙ𝔸ℝ𝕂ℤℤℤ](t.me/sparkzzzbothelp)')
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
