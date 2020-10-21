@@ -30,7 +30,7 @@ USER_BOT_NO_WARN = (
     "\n\n   ~ Thank You."
 )
 
-@sparkzzz.on(admin_cmd(pattern="approve ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="a ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -95,7 +95,7 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@sparkzzz.on(admin_cmd(pattern="disapprove ?(.*)"))
+@sparkzzz.on(admin_cmd(pattern="da ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -116,7 +116,7 @@ async def approve_p_m(event):
                 )
 
 
-@sparkzzz.on(admin_cmd(pattern="listapproved"))
+@sparkzzz.on(admin_cmd(pattern="la"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
