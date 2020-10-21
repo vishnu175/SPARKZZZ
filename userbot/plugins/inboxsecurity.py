@@ -21,7 +21,6 @@ MESAG = (
     if CUSTOM_PMPERMIT
     else "`Dont spam Here,else you will be blocked Automatically"
 )
-)
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
