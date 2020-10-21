@@ -3,7 +3,7 @@ from telethon import functions
 from userbot import ALIVE_NAME, CMD_LIST
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
 
 @sparkzzz.on(admin_cmd(pattern="help ?(.*)"))
