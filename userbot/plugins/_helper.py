@@ -1,3 +1,4 @@
+import requests
 from telethon import functions
 from userbot import ALIVE_NAME, CMD_LIST
 from userbot.utils import admin_cmd
@@ -38,7 +39,7 @@ async def cmd_list(event):
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
                     string += "\n"
-                string += "\n**© @TeleBotSupport**"
+                string += "\n**© @sparkzzzbothelp**"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
