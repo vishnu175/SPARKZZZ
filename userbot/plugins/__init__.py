@@ -98,13 +98,13 @@ else:
  
 		
 #>>>>>>>>>>>SPARKZZZ-BOT INLINESTATS>>>>>>>>>>>>>>>>>>>>>>>>>
-inli  =f"SPARKZZZ⚡: {sparkzzzver}\n"
-inli  +=f"BOT👾    : {inlinebot}\n"
-inli  +=f"HEROKUv🌀: {herokuapp}\n"
-inli  +=f"LOGS📝   : {logs}\n"
-inli  +=f"LYDIA🧚  : {lydia}\n"
-inli  +=f"YT  🎬   : {yts}\n"
-inli  +=f"PM 📬    : {pm}\n"
+inli  =f"SPARKZZZ⚡:{sparkzzzver}\n"
+inli  +=f"BOT👾    :{inlinebot}\n"
+inli  +=f"HEROKU🌀 :{herokuapp}\n"
+inli  +=f"LOGS📝   :{logs}\n"
+inli  +=f"LYDIA🧚  :{lydia}\n"
+inli  +=f"YT  🎬   :{yts}\n"
+inli  +=f"PM 📬    :{pm}\n"
 inli  +=f"\n Join @sparkzzzbothelp\n"
 sparkzzzstats = (f"{inli}")
 
