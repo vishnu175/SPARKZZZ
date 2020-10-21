@@ -98,8 +98,8 @@ else:
  
 		
 #>>>>>>>>>>>SPARKZZZ-BOT INLINESTATS>>>>>>>>>>>>>>>>>>>>>>>>>
-inli  =">>>>>>>>>>>⚡SPARKZZZ STATS⚡<<<<<<<<<<<<"
-inli  =f"⚡SPARKZZZ⚡ Version: {sparkzzzver}\n"
+inli  =f">>>>>>>>>>>⚡SPARKZZZ STATS⚡<<<<<<<<<<<<"
+inli  =f"⚡SPARKZZZ⚡: Version {sparkzzzver}\n"
 inli  +=f"INLINE BOT👾: {inlinebot}\n"
 inli  +=f"HEROKU STATS🌀: {herokuapp}\n"
 inli  +=f"SPARKZZZ LOGS📝:{logs}\n"
