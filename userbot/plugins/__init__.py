@@ -35,7 +35,7 @@ from userbot.utils import admin_cmd
 from userbot.utils import  sudo_cmd
 from userbot import sparkzzzver
 from telethon import events
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 SPARKZZZUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
 
