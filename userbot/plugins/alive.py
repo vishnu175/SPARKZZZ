@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, sparkzzzver
 from userbot.utils import admin_cmd, sudo_cmd
 from userbot.__init__ import StartTime
 from datetime import datetime
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 ALV_PIC = os.environ.get("ALIVE_PIC" , None)
 
@@ -70,11 +70,11 @@ async def amireallyalive(alive):
         tele += "` 🖥️ Database Status:` **FUNCTIONAL 🔌!**\n"
         tele += f"` 🙋 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
         tele += f"=======================================\n\n"
-        tele += "    [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)"
+        tele += "   [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)"
         chat = await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
-        await borg.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
+        await spa.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
         await alive.delete()
         return
     req = requests.get("https://telegra.ph/file/f05bb1b963445ff544027.png")
@@ -86,7 +86,7 @@ async def amireallyalive(alive):
         img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
-        await borg.send_message(alive.chat_id, f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
+        await sparkzzz.send_message(alive.chat_id, f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
                 f"======================================\n"
                 "`🌐 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 🌐`\n\n"
                 "` 👉 Telethon version:` **1.16.4**\n` 🐍 Python:` **3.8.6**\n"
@@ -99,7 +99,7 @@ async def amireallyalive(alive):
                 f"` 🙋 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
                 f"=======================================\n\n"       
                 "    [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
-        await borg.send_file(alive.chat_id, file=sticker) 
+        await sparkzzz.send_file(alive.chat_id, file=sticker) 
         await alive.delete()     
         
 
