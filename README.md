@@ -107,10 +107,10 @@ class Development(Var):
 ```
 
 
-### UniBorg Configuration
+### Sparkzzz Configuration
 
 
-The UniBorg Config is situated in `userbot/uniborgConfig.py`.
+The Sparkzzz Config is situated in `userbot/SparkzzzConfig.py`.
 
 **Heroku Configuration**
 Simply just leave the Config as it is.
