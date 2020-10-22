@@ -1,6 +1,20 @@
-# credits to Telebot
-# @csv1990
-"""Check if your userbot is working."""
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+"""Check  your SPARKZZZ is working and alive."""
 import os
 import requests
 import time
@@ -74,7 +88,7 @@ async def amireallyalive(alive):
         chat = await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
-        await borg.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
+        await sparkzzz.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
         await alive.delete()
         return
     req = requests.get("https://telegra.ph/file/f05bb1b963445ff544027.png")
@@ -86,7 +100,7 @@ async def amireallyalive(alive):
         img.save(sticker, "webp")
         sticker.name = "sticker.webp"
         sticker.seek(0)
-        await borg.send_message(alive.chat_id, f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
+        await sparkzzz.send_message(alive.chat_id, f"**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ INSIDE⚡**\n\n"
                 f"======================================\n"
                 "`🌐 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐒 𝐎𝐍𝐋𝐈𝐍𝐄 🌐`\n\n"
                 "` 👉 Telethon version:` **1.17**\n` 🐍 Python:` **3.8.6**\n"
@@ -99,7 +113,7 @@ async def amireallyalive(alive):
                 f"` 🙋 My Master` : **[{DEFAULTUSER}](tg://user?id={myid})**\n\n"
                 f"=======================================\n\n"       
                 "    [⚙️  𝐅𝐎𝐑𝐊 𝐑𝐄𝐏𝐎 ⚙️](https://github.com/vishnu175/SPARKZZZ)", link_preview = False)
-        await borg.send_file(alive.chat_id, file=sticker) 
+        await sparkzzz.send_file(alive.chat_id, file=sticker) 
         await alive.delete()     
         
 
