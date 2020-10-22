@@ -1,4 +1,19 @@
-# Thanks to @AvinashReddy3108 for this plugin
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 
 """
 Audio and video downloader using Youtube-dl
@@ -20,7 +35,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
 from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -226,7 +241,7 @@ async def yt_search(video_q):
 
     if not Config.YOUTUBE_API_KEY:
         await video_q.edit(
-            "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`"
+            "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/SparkzzzConfig.py in github fork.`"
         )
         return
 
