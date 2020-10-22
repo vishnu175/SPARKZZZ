@@ -21,10 +21,10 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_display_name
 from userbot.utils import admin_cmd, sudo_cmd
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 
-@borg.on(events.NewMessage(
+@sparkzzz.on(events.NewMessage(
     incoming=True,
     blacklist_chats=Config.UB_BLACK_LIST_CHAT,
     func=lambda e: (
