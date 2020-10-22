@@ -3,7 +3,7 @@
 to know how many users have seen your message
 Syntax: .frwd as reply to any message"""
 from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 
 @sparkzzz.on(admin_cmd(pattern="frwd"))
