@@ -116,7 +116,7 @@ The Sparkzzz Config is situated in `userbot/SparkzzzConfig.py`.
 Simply just leave the Config as it is.
 
 **Local Configuration**
-Fortunately there are no Mandatory vars for the UniBorg Support Config.
+Fortunately there are no Mandatory vars for the Sparkzzz Support Config.
 
 ## Mandatory Vars
 
