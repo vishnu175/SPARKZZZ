@@ -1,5 +1,19 @@
-# credits Telebot
-# ported for SPARKZZZ
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 
 from asyncio import sleep
 from userbot import CMD_HELP
@@ -17,7 +31,7 @@ import os
 import sys
 from telethon.tl import functions, types
 from telethon.tl.types import Channel, Chat, User
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.WARN)
@@ -28,7 +42,7 @@ BOTLOG = True
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 
 
-@borg.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
 async def log(log_text):
     """ For .log command, forwards a message or the command argument to the bot logs group """
     if BOTLOG:
@@ -48,7 +62,7 @@ async def log(log_text):
     await sleep(2)
     await log_text.delete()
     
-@borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@sparkzzz.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
     if Config.NC_LOG_P_M_S and not sender.bot:
