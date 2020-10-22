@@ -7,7 +7,7 @@ import requests
 import PIL.ImageOps                        
 from os.path import basename                            
 from selenium import webdriver                                    
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 from typing import Optional, Tuple
 from bs4 import BeautifulSoup
 from asyncio import sleep
