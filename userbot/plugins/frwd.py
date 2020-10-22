@@ -1,9 +1,24 @@
-# ported for SPARKZZZ @csv1990
+#    SPARKZZZ - UserBot
+#    Copyright (C) SPARKZZZ 2020
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 """Enable Seen Counter in any message,
 to know how many users have seen your message
 Syntax: .frwd as reply to any message"""
 from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 
 @sparkzzz.on(admin_cmd(pattern="frwd"))
