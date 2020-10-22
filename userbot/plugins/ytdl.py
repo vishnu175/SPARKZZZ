@@ -20,7 +20,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
 from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from userbot.SparkzzzConfig import Config
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -226,7 +226,7 @@ async def yt_search(video_q):
 
     if not Config.YOUTUBE_API_KEY:
         await video_q.edit(
-            "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`"
+            "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/SparkzzzConfig.py in github fork.`"
         )
         return
 
