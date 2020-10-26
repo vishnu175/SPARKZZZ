@@ -68,4 +68,4 @@ justwatch
 deezloader
 youtube-search-python
 youtube-search
-git+https://github.com/Starkgangs/pydl.git
+git+https://github.com/vishnu175/pytube.git
