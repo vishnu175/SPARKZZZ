@@ -6,7 +6,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 import asyncio
 telegraph = Telegraph()
-mysp = telegraph.create_account(short_name="sparkzzz")
+mee = telegraph.create_account(short_name="sparkzzz")
 
 
 @borg.on(admin_cmd(pattern=("sang ?(.*)")))
