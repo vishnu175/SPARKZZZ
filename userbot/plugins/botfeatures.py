@@ -39,6 +39,18 @@ async def _(event):
          else: 
             await event.edit(f"{response.message.message}")
 
+@sparkzzz.on(admin_cmd(pattern="imusic ?(.*)"))
+async def spz(event):
+    if event.fwd_from:
+        return
+    bot = "@vkmusic_bot"
+    inli = event.pattern_match.group(1)
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    tap = await bot.inline_query(bot, inli)
+    await tap[0].click(event.chat_id)
+    await event.delete()
+
 @borg.on(admin_cmd(pattern=("fakemail ?(.*)")))
 async def _(event):
    if event.fwd_from:
