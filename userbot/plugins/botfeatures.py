@@ -211,3 +211,31 @@ async def _(event):
           await event.delete()
           await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
                   
+
+@sparkzzz.on(admin_cmd(pattern="font ?(.*)"))
+async def _(event):
+    bot = "@fontsgenbot"
+    if event.fwd_from:
+        return
+    sysarg = event.pattern_match.group(1)
+    if sysarg == "":
+        await event.edit("Give me a text to stylize")
+    else:
+        async with borg.conversation(bot) as conv:
+            try:
+                x = await eor(event, "`Making the text stylish..`")
+                await conv.send_message("/start")
+                await conv.get_response()
+                await conv.send_message(sysarg)
+                audio = await conv.get_response()
+                title = "Stylish Fonts"
+                topaste = audio.text
+                topaste = topaste.replace("\n", "<br>")
+                response = telegraph.create_page(title, html_content=topaste)
+                link = response["path"]
+                await x.edit(
+                    f"**Normal Text** - {sysarg}\n**Stylised text** - [here](https://telegra.ph/{link})",
+                    link_preview=False,
+                )
+            except YouBlockedUserError:
+                await x.edit("**Error:** `unblock` @fontsgenbot `and retry!")
