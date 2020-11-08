@@ -4,7 +4,7 @@ from telegraph import Telegraph
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
-from userbot.SparkzzzConfig import Var
+from heroku_config import Var
 import asyncio
 telegraph = Telegraph()
 mee = telegraph.create_account(short_name="sparkzzz")
