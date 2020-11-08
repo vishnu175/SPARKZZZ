@@ -1,9 +1,13 @@
 import datetime
 from telethon import events
+from telegraph import Telegraph
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 import asyncio
+telegraph = Telegraph()
+mee = telegraph.create_account(short_name="sparkzzz")
+
 
 @borg.on(admin_cmd(pattern=("sang ?(.*)")))
 async def _(event):
