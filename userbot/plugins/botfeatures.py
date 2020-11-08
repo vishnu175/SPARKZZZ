@@ -4,6 +4,7 @@ from telegraph import Telegraph
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
+from userbot.SparkzzzConfig import Var
 import asyncio
 telegraph = Telegraph()
 mee = telegraph.create_account(short_name="sparkzzz")
@@ -227,7 +228,7 @@ async def _(event):
           await event.delete()
           await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
                   
-
+#credits telebot
 @sparkzzz.on(admin_cmd(pattern="font ?(.*)"))
 async def _(event):
     bot = "@fontsgenbot"
