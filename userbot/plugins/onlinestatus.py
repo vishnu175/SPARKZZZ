@@ -11,6 +11,7 @@ import urllib
 
 from telethon.tl import functions
 from userbot.utils import admin_cmd
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
 OFFLINE_TAG = "『OFFLINE』"
 ONLINE_TAG =  "『ONLINE』"
@@ -47,8 +48,8 @@ async def _(event):
         os.system("rm -fr donottouch.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
-    last_name = ""
-    first_name = OFFLINE_TAG
+    last_name = OFFLINE_TAG
+    first_name = DEFAULTUSER
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
@@ -88,8 +89,8 @@ async def _(event):
         os.system("rm -fr donottouch.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
-    first_name = ONLINE_TAG
-    last_name = ""
+    first_name = DEFAULTUSER
+    last_name = ONLINE_TAG
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
