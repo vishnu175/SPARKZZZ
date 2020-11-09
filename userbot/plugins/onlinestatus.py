@@ -61,7 +61,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@sparkzzz.on(admin_cmd(pattern="on"))  # pylint:disable=E0602
+@sparkzzz.on(admin_cmd(pattern="online"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
