@@ -1,3 +1,5 @@
+# SPARKZZZ 2020
+# ported for SPARKZZZ by vishnu175
 """
 Commands - .offline .online
 Offline = Add an offline tag in your name and change profile pic to black.
@@ -12,8 +14,8 @@ from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
-OFFLINE_TAG = "『OFFLINE』"
-ONLINE_TAG =  "『ONLINE』"
+OFFLINE_TAG = "『𝐎𝐅𝐅𝐋𝐈𝐍𝐄』"
+ONLINE_TAG =  "『𝐎𝐍𝐋𝐈𝐍𝐄』"
 PROFILE_IMAGE = os.environ.get(
     "PROFILE_IMAGE", "https://telegra.ph/file/d51cc6f49768f962df667.png"
 )
@@ -52,7 +54,7 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name, first_name=first_name
+                last_name=last_name,first_name=first_name
             )
         )
         result = "**`{} {}`\nI am Offline now.**".format(first_name, last_name)
@@ -93,7 +95,7 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name, first_name=first_name
+                last_name=last_name,first_name=first_name
             )
         )
         result = "**`{} {}`\nI am Online !**".format(first_name, last_name)
