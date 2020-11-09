@@ -8,9 +8,9 @@ Note - If you have a last name remove it unless it automatically removed.
 
 import os
 import urllib
-
 from telethon.tl import functions
 from userbot.utils import admin_cmd
+from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
 OFFLINE_TAG = "『OFFLINE』"
