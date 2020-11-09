@@ -54,10 +54,10 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name, first_name=first_name
+                last_name=last_name,first_name=first_name
             )
         )
-        result = "**`{} {}`\nI am Offline now.**".format(first_name, last_name)
+        result = "**`{} {}`\nI am Offline now.**".format(first_name,last_name)
         await event.edit(result)
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
@@ -95,10 +95,10 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name, first_name=first_name
+                last_name=last_name,first_name=first_name
             )
         )
-        result = "**`{} {}`\nI am Online !**".format(first_name, last_name)
+        result = "**`{} {}`\nI am Online !**".format(first_name,last_name)
         await event.edit(result)
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
