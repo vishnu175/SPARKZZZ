@@ -16,7 +16,7 @@ ONLINESTR = [
 ]
 
 @sparkzzz.on(admin_cmd(outgoing=True, pattern="myinfo"))
-async def online(event):
+async def myinfo(event):
     """ Greet everyone! """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(random.choice(ONLINESTR))
