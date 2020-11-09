@@ -12,8 +12,8 @@ import urllib
 from telethon.tl import functions
 from userbot.utils import admin_cmd
 
-OFFLINE_TAG = "[OFFLINE]"
-ONLINE_TAG = "[ONLINE]"
+OFFLINE_TAG = "『OFFLINE』"
+ONLINE_TAG =  "『ONLINE』"
 PROFILE_IMAGE = os.environ.get(
     "PROFILE_IMAGE", "https://telegra.ph/file/d51cc6f49768f962df667.png"
 )
