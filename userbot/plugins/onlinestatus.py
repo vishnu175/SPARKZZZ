@@ -68,7 +68,7 @@ async def _(event):
         return
     user_it = "me"
     user = await event.client.get_entity(user_it)
-    if user.first_name.startswith(OFFLINE_TAG):
+    if user.last_name.startswith(OFFLINE_TAG):
         await event.edit("**Changing Profile to Online...**")
     else:
         await event.edit("**Already Online.**")
