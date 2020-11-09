@@ -2,7 +2,6 @@
 Commands - .offline .online
 Offline = Add an offline tag in your name and change profile pic to black.
 Online = Remove Offline Tag from your name and change profile pic to vars PROFILE_IMAGE.
-Note - If you have a last name remove it unless it automatically removed.
 """
 
 
@@ -35,7 +34,7 @@ async def _(event):
     urllib.request.urlretrieve(
         "https://telegra.ph/file/710085b85d99599d33b0d.png", "donottouch.jpg"
     )
-    photo = "donottouch.jpg"
+    photo = "status.jpg"
     if photo:
         file = await event.client.upload_file(photo)
         try:
@@ -43,9 +42,9 @@ async def _(event):
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
         else:
-            await event.edit("**Changed profile to OffLine.**")
+            await event.edit("**Changed status to Offline.**")
     try:
-        os.system("rm -fr donottouch.jpg")
+        os.system("rm -fr status.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
     last_name = DEFAULTUSER
@@ -62,21 +61,21 @@ async def _(event):
         await event.edit(str(e))
 
 
-@sparkzzz.on(admin_cmd(pattern="online"))  # pylint:disable=E0602
+@sparkzzz.on(admin_cmd(pattern="on"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     user_it = "me"
     user = await event.client.get_entity(user_it)
     if user.first_name.startswith(OFFLINE_TAG):
-        await event.edit("**Changing Profile to Online...**")
+        await event.edit("**Changing status to Online...**")
     else:
         await event.edit("**Already Online.**")
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     urllib.request.urlretrieve(PROFILE_IMAGE, "donottouch.jpg")
-    photo = "donottouch.jpg"
+    photo = "status.jpg"
     if photo:
         file = await event.client.upload_file(photo)
         try:
@@ -84,9 +83,9 @@ async def _(event):
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
         else:
-            await event.edit("**Changed profile to Online.**")
+            await event.edit("**Changed status to Online.**")
     try:
-        os.system("rm -fr donottouch.jpg")
+        os.system("rm -fr status.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
     first_name = ONLINE_TAG
