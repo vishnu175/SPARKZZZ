@@ -91,7 +91,7 @@ async def _(event):
     first_name = ONLINE_TAG
     last_name = ""
     try:
-        await sparkzz(
+        await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 last_name=last_name, first_name=first_name
             )
