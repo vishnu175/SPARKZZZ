@@ -34,7 +34,7 @@ async def _(event):
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     urllib.request.urlretrieve(
-        "https://telegra.ph/file/710085b85d99599d33b0d.png", "donottouch.jpg"
+        "https://telegra.ph/file/710085b85d99599d33b0d.png", "status.jpg"
     )
     photo = "status.jpg"
     if photo:
