@@ -1,5 +1,4 @@
 
-# credits @TeleBot
 # SPARKZZZ
 
 import sys
@@ -16,7 +15,7 @@ ONLINESTR = [
 	f"╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗\n║║║╠─║─║─║║║║║╠─\n╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝\n              **Welcome to ⚡SPARKZZZ⚡**\n\n**Hey master! I'm alive🙋. All systems online and functioning normally ✅**\n\n**✔️ Telethon version:** `{version.__version__}` \n\n**✔️ Python:** `{sys.version}` \n\n✔️ More info: @sparkzzzbothelp \n\n✔️ Created by: [csv1990](tg://user?id=731591473) \n\n**✔️ Database status:** All ok 👌 \n\n**✔️ My master:** {DEFAULTUSER} \n\n        [⚙️ REPO ⚙️](https://github.com/vishnu175/SPARKZZZ)"
 ]
 
-@sparkzzz.on(admin_cmd(outgoing=True, pattern="online"))
+@sparkzzz.on(admin_cmd(outgoing=True, pattern="myinfo"))
 async def online(event):
     """ Greet everyone! """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
