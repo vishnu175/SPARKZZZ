@@ -14,8 +14,8 @@ from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
 
-OFFLINE_TAG = "『𝐎𝐅𝐅𝐋𝐈𝐍𝐄』"
-ONLINE_TAG =  "『𝐎𝐍𝐋𝐈𝐍𝐄』"
+OFFLINE_TAG = "『OFFLINE』"
+ONLINE_TAG =  "『ONLINE』"
 PROFILE_IMAGE = os.environ.get(
     "PROFILE_IMAGE", "https://telegra.ph/file/d51cc6f49768f962df667.png"
 )
