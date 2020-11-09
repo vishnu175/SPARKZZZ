@@ -48,8 +48,8 @@ async def _(event):
         os.system("rm -fr donottouch.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
-    last_name = OFFLINE_TAG
-    first_name = DEFAULTUSER
+    last_name = DEFAULTUSER
+    first_name = OFFLINE_TAG
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
@@ -68,7 +68,7 @@ async def _(event):
         return
     user_it = "me"
     user = await event.client.get_entity(user_it)
-    if user.last_name.startswith(OFFLINE_TAG):
+    if user.first_name.startswith(OFFLINE_TAG):
         await event.edit("**Changing Profile to Online...**")
     else:
         await event.edit("**Already Online.**")
@@ -89,8 +89,8 @@ async def _(event):
         os.system("rm -fr donottouch.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
-    first_name = DEFAULTUSER
-    last_name = ONLINE_TAG
+    first_name = ONLINE_TAG
+    last_name = DEFAULTUSER
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
