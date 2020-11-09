@@ -74,7 +74,7 @@ async def _(event):
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
-    urllib.request.urlretrieve(PROFILE_IMAGE, "donottouch.jpg")
+    urllib.request.urlretrieve(PROFILE_IMAGE, "status.jpg")
     photo = "status.jpg"
     if photo:
         file = await event.client.upload_file(photo)
