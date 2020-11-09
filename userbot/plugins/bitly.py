@@ -1,3 +1,4 @@
+# SPARKZZZ
 import os
 from re import match
 from bitlyshortener import Shortener
