@@ -54,7 +54,7 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name,first_name=first_name
+                last_name=last_name, first_name=first_name
             )
         )
         result = "**`{} {}`\nI am Offline now.**".format(first_name, last_name)
@@ -95,7 +95,7 @@ async def _(event):
     try:
         await sparkzzz(
             functions.account.UpdateProfileRequest(  # pylint:disable=E0602
-                last_name=last_name,first_name=first_name
+                last_name=last_name, first_name=first_name
             )
         )
         result = "**`{} {}`\nI am Online !**".format(first_name, last_name)
