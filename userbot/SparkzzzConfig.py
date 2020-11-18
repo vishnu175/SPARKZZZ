@@ -137,6 +137,7 @@ if ENV:
         CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
         NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", False))
+        HELP_INLINETYPE = os.environ.get("HELP_INLINETYPE", None)
         
         
 else:
