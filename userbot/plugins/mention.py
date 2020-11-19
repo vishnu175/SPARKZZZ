@@ -3,10 +3,10 @@
 # (c) @INF1N17Y
 
 from telethon import events
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern=r"mention (.*)"))
+@sparkzzz.on(admin_cmd(pattern=r"mention (.*)"))
 async def _(event):
 	if event.fwd_from:
 		return	
