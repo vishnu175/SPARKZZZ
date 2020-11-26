@@ -2,7 +2,9 @@ Pillow>=5.3.0
 PyGithub
 pyshorteners
 aiofiles
+numpy
 aiohttp
+opencv-contrib-python
 async_generator
 beautifulsoup4
 bs4
