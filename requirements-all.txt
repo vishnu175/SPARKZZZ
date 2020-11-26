@@ -71,4 +71,3 @@ justwatch
 deezloader
 youtube-search-python
 youtube-search
-wget
