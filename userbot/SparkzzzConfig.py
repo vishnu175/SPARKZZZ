@@ -30,6 +30,7 @@ if ENV:
         SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", "\.")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
+        DEEP_API_KEY = os.environ.get("DEEP_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
         G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP",-1001369346613 ))
         # TG API limit. An album can have atmost 10 media!
