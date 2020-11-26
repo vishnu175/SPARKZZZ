@@ -8,6 +8,7 @@ from telethon import TelegramClient
 from var import Var
 from logging import DEBUG, INFO, basicConfig, getLogger
 import pylast
+import wget
 from requests import get
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
@@ -16,7 +17,8 @@ from userbot.fonts import fonts as fonts
 
 Lastupdate = time.time()
  
-os.system("pip install --upgrade pip")
+from var import Var
+
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
@@ -93,8 +95,11 @@ if bool(ENV):
     GENIUS_ACCESS_TOKEN = os.environ.get("GENIUS_ACCESS_TOKEN", None)
     
     # Chrome For Carbon
-    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver")
-    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
+        REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
+
+    # Chrome For Carbon
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
+    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", "/usr/bin/google-chrome")
     
     
     # Heroku Credentials for updater
@@ -231,3 +236,11 @@ SUDO_LIST = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
+# credits to Friday
+link = "https://people.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel"
+km = "./resources/imgcolour/colorization_release_v2.caffemodel"
+if os.path.exists(km):
+    pass
+else:
+    pathz = "./resources/imgcolour/"
+    sedlyf = wget.download(link, out=pathz)
