@@ -11,6 +11,7 @@
   ],
   "repository": "https://github.com/vishnu175/SPARKZZZ",
   "success_url": "t.me/sparkzzzbothelp",
+  "stack": "container",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -111,26 +112,6 @@
       "options": {
         "version": "12"
       }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "heroku/python"
-    },
-    {	
-      "url": "https://github.com/amivin/aria2-heroku.git"	
-    },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-    },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
-    },
-    {
-      "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
     }
   ]
 }
