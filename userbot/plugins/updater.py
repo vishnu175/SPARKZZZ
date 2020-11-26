@@ -34,7 +34,7 @@ async def gen_chlog(repo, diff):
     ch_log = ""
     d_form = "On " + "%d/%m/%y" + " at " + "%H:%M:%S"
     for c in repo.iter_commits(diff):
-        ch_log += f"**#{c.count()}** : {c.committed_datetime.strftime(d_form)} : [{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}) by **{c.author}**\n"
+        ch_log += f"🔨 **#{c.count()}** : {c.committed_datetime.strftime(d_form)} : [{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}) by 🕵️ **{c.author}**\n"
     return ch_log
 
 
