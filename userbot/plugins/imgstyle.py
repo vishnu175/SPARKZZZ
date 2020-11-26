@@ -7,7 +7,7 @@ import requests
 from PIL import Image
 from telethon.tl.types import MessageMediaPhoto
 
-from userbot.utils import admin_cmd,
+from userbot.utils import admin_cmd
 
 sedpath = "./sparkzzzdir/"
 if not os.path.isdir(sedpath):
