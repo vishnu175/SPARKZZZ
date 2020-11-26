@@ -1,156 +1,226 @@
-#    SPARKZZZ - UserBot
-#    Copyright (C) SPARKZZZ 2020
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+# credits to @AvinashReddy3108
+#
+"""
+This module updates the userbot based on upstream revision
+"""
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-import requests
 import asyncio
-import random
-import re
-import time
 import sys
-import os
-from os import remove, execl
-from datetime import datetime
-from collections import deque
-from contextlib import suppress
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon import events
-import git
+from os import environ, execle, path, remove
+
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from userbot import bot, ALIVE_NAME, UPSTREAM_REPO_URL
+
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
-from heroku_config import Var as Config
+from var import Var
 
-# -- Constants -- #
-UPSTREAM_REPO_URL = "https://github.com/vishnu175/SPARKZZZ"
-HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
-DELETE_TIMEOUT = 3
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ user"
-# -- Constants End -- #
+UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
+UPSTREAM_REPO_BRANCH = "master"
+HEROKU_APP_NAME = Var.HEROKU_APP_NAME
+HEROKU_API_KEY = Var.HEROKU_API_KEY
+requirements_path = path.join(
+    path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
+)
 
 
-@sparkzzz.on(admin_cmd("update ?(.*)", outgoing=True))
-async def updater(upd):
-    "For .update command, check if the bot is up to date, update if specified"
-    await upd.edit('**Updation 📲 in progress.....**')
+async def gen_chlog(repo, diff):
+    ch_log = "**Update(s)** \n\n"
+    for c in repo.iter_commits(diff):
+        ch_log += f"🔨 **#{c.count()}** : [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c}) 👷 __{c.author}__\n"
+    return ch_log
 
+
+async def print_changelogs(event, ac_br, changelog):
+    changelog_str = (
+        f"**Updates available in {ac_br} branch!\n\nChangelog:**\n{changelog}"
+    )
+    if len(changelog_str) > 4096:
+        await event.edit("**Changelog is too big, sending as a file.**")
+        file = open("output.txt", "w+")
+        file.write(changelog_str)
+        file.close()
+        await event.client.send_file(event.chat_id, "output.txt")
+        remove("output.txt")
+    else:
+        await event.client.send_message(event.chat_id, changelog_str)
+    return True
+
+
+async def update_requirements():
+    reqs = str(requirements_path)
     try:
-        repo = git.Repo()
-    except git.exc.InvalidGitRepositoryError as e:
-        repo = git.Repo.init()
-        origin = repo.create_remote('updater', UPSTREAM_REPO_URL)
+        process = await asyncio.create_subprocess_shell(
+            " ".join([sys.executable, "-m", "pip", "install", "-r", reqs]),
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+        await process.communicate()
+        return process.returncode
+    except Exception as e:
+        return repr(e)
+
+
+async def deploy(event, repo, ups_rem, ac_br, txt):
+    if HEROKU_API_KEY is not None:
+        import heroku3
+
+        heroku = heroku3.from_key(HEROKU_API_KEY)
+        heroku_app = None
+        heroku_applications = heroku.apps()
+        if HEROKU_APP_NAME is None:
+            await event.edit(
+                "**Please set up the** `HEROKU_APP_NAME` **variable"
+                " to be able to deploy your userbot.**"
+            )
+            repo.__del__()
+            return
+        for app in heroku_applications:
+            if app.name == HEROKU_APP_NAME:
+                heroku_app = app
+                break
+        if heroku_app is None:
+            await event.edit(
+                f"{txt}\n" "**Invalid Heroku credentials for deploying userbot dyno.**"
+            )
+            return repo.__del__()
+        ups_rem.fetch(ac_br)
+        repo.git.reset("--hard", "FETCH_HEAD")
+        heroku_git_url = heroku_app.git_url.replace(
+            "https://", "https://api:" + HEROKU_API_KEY + "@"
+        )
+        if "heroku" in repo.remotes:
+            remote = repo.remote("heroku")
+            remote.set_url(heroku_git_url)
+        else:
+            remote = repo.create_remote("heroku", heroku_git_url)
+        try:
+            remote.push(refspec="HEAD:refs/heads/master", force=True)
+        except Exception as error:
+            await event.edit(f"{txt}\nHere is the error log:\n`{error}`")
+            return repo.__del__()
+        build = app.builds(order_by="created_at", sort="desc")[0]
+        if build.status == "failed":
+            await event.edit("**Build failed!**\nCancelled or there were some errors.`")
+            await asyncio.sleep(5)
+            return await event.delete()
+        else:
+            await event.edit(
+                "**Successfully updated!**\nBot is restarting, will be back up in a few seconds."
+            )
+    else:
+        await event.edit("**Please set up** `HEROKU_API_KEY` **variable.**")
+    return
+
+
+async def update(event, repo, ups_rem, ac_br):
+    try:
+        ups_rem.pull(ac_br)
+    except GitCommandError:
+        repo.git.reset("--hard", "FETCH_HEAD")
+    await update_requirements()
+    await event.edit(
+        "**Soft Update Sucessfull, Please Wait For Some Time To Get This Process Completed.**"
+    )
+    # Spin a new instance of bot
+    args = [sys.executable, "-m", "userbot"]
+    execle(sys.executable, *args, environ)
+    return
+
+
+@sparkzzz.on(admin_cmd(pattern=r"update( now| deploy|$)"))
+async def upstream(event):
+    "For .update command, check if the bot is up to date, update if specified"
+    await event.edit("**Checking for updates, please wait...**")
+    conf = event.pattern_match.group(1).strip()
+    off_repo = UPSTREAM_REPO_URL
+    force_update = False
+    try:
+        txt = "**Oops.. Updater cannot continue due to "
+        txt += "some problems**\n`LOGTRACE:`\n"
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f"{txt}\n**Directory** `{error}` **was not found.**")
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f"{txt}\n**Early failure!** `{error}`")
+        return repo.__del__()
+    except InvalidGitRepositoryError as error:
+        if conf is None:
+            return await event.edit(
+                f"**Unfortunately, the directory {error} "
+                "does not seem to be a git repository.\n"
+                "But we can fix that by force updating the userbot using **"
+                "`.update now.`"
+            )
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head('master', origin.refs.master)
+        force_update = True
+        repo.create_head("master", origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
 
-    active_branch_name = repo.active_branch.name
-    if active_branch_name != 'master':
-        await upd.edit(
-            f'**[UPDATER]:Oops!!..Looks like you are in a custom branch ** {active_branch_name}.'
-            '**is being used:**'
-            '**So,updater is not able to identify which branch to be updated.**'
-            '**Please check out the official branch and restart updater**')
-        repo.__del__()
-        return
-
+    ac_br = repo.active_branch.name
+    if ac_br != UPSTREAM_REPO_BRANCH:
+        await event.edit(
+            f"**Looks like you are using your own custom branch: ({ac_br}). \n"
+            "Please switch to** `master` **branch.**"
+        )
+        return repo.__del__()
     try:
-        repo.create_remote('updater', UPSTREAM_REPO_URL)
-    except BaseException as e:
-        print(e)
+        repo.create_remote("upstream", off_repo)
+    except BaseException:
         pass
 
-    upd_rem = repo.remote('updater')
-    upd_rem.fetch(active_branch_name)
+    ups_rem = repo.remote("upstream")
+    ups_rem.fetch(ac_br)
 
-    changelog = await gen_chlog(repo, f'HEAD..updater/{active_branch_name}')
-
-    if not changelog:
-        await upd.edit('**⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ is 𝐮𝐩-𝐭𝐨-𝐝𝐚𝐭𝐞..**\n')
-        repo.__del__()
-        await asyncio.sleep(DELETE_TIMEOUT)
-        await upd.delete()
+    changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
+    """ - Special case for deploy - """
+    if conf == "deploy":
+        await event.edit(
+            "**Perfoming a Power Update, Please Wait. It Usually Takes 5 min.**"
+        )
+        await deploy(event, repo, ups_rem, ac_br, txt)
         return
 
-    changelog_str = f'**New 𝐔𝐏𝐃𝐀𝐓𝐄 available for ** {DEFAULTUSER}\n\n**𝑪𝑯𝑨𝑵𝑮𝑬𝑳𝑶𝑮:**\n {changelog}'
-    if len(changelog_str) > 4095:
-        await upd.edit('**Changelog is too big, view the file to see it.**')
-        file = open("change.txt", "w+")
-        file.write(changelog_str)
-        file.close()
-        await bot.client.send_file(
-            upd.chat_id,
-            "change.txt",
-            reply_to=upd.id,
+    if changelog == "" and not force_update:
+        await event.edit(
+            f"**Your userbot is up-to-date with `{UPSTREAM_REPO_BRANCH}`!**"
         )
-        os.remove("change.txt")
-    else:
-        await upd.edit(changelog_str)
-        await asyncio.sleep(10)
+        return repo.__del__()
 
-    upd_rem.fetch(active_branch_name)
-    repo.git.reset("--hard", "FETCH_HEAD")
+    if conf == "" and force_update is False:
+        await print_changelogs(event, ac_br, changelog)
+        await event.delete()
+        return await event.respond(
+            "**Do** `.update now` **or** `.update deploy` **to update.**"
+        )
 
-    if Var.HEROKU_API_KEY is not None:
-        import heroku3
-        heroku = heroku3.from_key(Var.HEROKU_API_KEY)
-        heroku_applications = heroku.apps()
-        if len(heroku_applications) >= 1:
-            if Var.HEROKU_APP_NAME is not None:
-                heroku_app = None
-                for app in heroku_applications:
-                    if app.name == Var.HEROKU_APP_NAME:
-                        heroku_app = app
-                if heroku_app is None:
-                    await upd.edit('**Invalid APP Name.change the value in var `HEROKU_APP_NAME.**')
-                    return
-                heroku_git_url = heroku_app.git_url.replace(
-                    "https://",
-                    "https://api:" + Var.HEROKU_API_KEY + "@"
-                )
-                if "heroku" in repo.remotes:
-                    remote = repo.remote("heroku")
-                    remote.set_url(heroku_git_url)
-                else:
-                    remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(deploy_start(bot, upd, HEROKU_GIT_REF_SPEC, remote))
+    if force_update:
+        await event.edit(
+            "**Force-syncing to latest stable userbot code, please wait...**"
+        )
 
-            else:
-                await upd.edit('**please create the Var `HEROKU_APP_NAME` as the key and the name of your bot in heroku as your value.**')
-                return
-        else:
-            await upd.edit('**No heroku app found**')
-    else:
-        await upd.edit('**No Heroku api key found in Var `HEROKU_API_KEY**')
-        
+    if conf == "now":
+        await event.edit("**Perfoming a quick update, please wait...**")
+        await update(event, repo, ups_rem, ac_br)
+    return
 
-async def gen_chlog(repo, diff_marker):
-    ch_log = ''
-    d_form = "%d/%m/%y"
-    for c in repo.iter_commits(diff_marker):
-        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} by **{c.author}**\n'
-    return ch_log
 
-async def deploy_start(bot, upd, refspec, remote):
-    await upd.edit('**U͢p͢d͢a͢t͢i͢n͢g͢⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡** \n🔷**𝐕𝐞𝐫𝐬𝐢𝐨𝐧** :`𝟙.𝟟` \n🔶**𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧** : `𝟙.𝟙𝟟` \n🔷**𝐁𝐫𝐚𝐧𝐜𝐡** :`𝕄𝕒𝕤𝕥𝕖𝕣` \n🔶**𝐒𝐭𝐚𝐭𝐮𝐬**:`𝕌𝕡𝕕𝕒𝕥𝕚𝕟𝕘 & ℝ𝕖𝕤𝕥𝕒𝕣𝕥𝕚𝕟𝕘` \n__Type__ `.𝐚𝐥𝐢𝐯𝐞` __To check 𝐒𝐏𝐀𝐑𝐊𝐙𝐙𝐙 after 6-8 mins !__**\n[**𝕊ℙ𝔸ℝ𝕂ℤℤℤ](t.me/sparkzzzbothelp)')
-    await remote.push(refspec=refspec)
-    await bot.disconnect()
-    os.execl(sys.executable, sys.executable, *sys.argv)
-    
-   
-    
-# (C) SPARKZZZ 2020 @vishnu175
+CMD_HELP.update(
+    {
+        "update": ">`.update`"
+        "\nUsage: Checks if the main userbot repository has any updates "
+        "and shows a changelog if so."
+        "\n\n>`.update now`"
+        "\nUsage: Performs a quick update."
+        "\n\n>`.update deploy`"
+        "\nUsage: Performs a full update (recommended)."
+    }
+)
