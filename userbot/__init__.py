@@ -231,4 +231,10 @@ SUDO_LIST = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
-
+link = "https://people.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel"
+km = "./resources/imgcolour/colorization_release_v2.caffemodel"
+if os.path.exists(km):
+    pass
+else:
+    pathz = "./resources/imgcolour/"
+    sedlyf = wget.download(link, out=pathz)
