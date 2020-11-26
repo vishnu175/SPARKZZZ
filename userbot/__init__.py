@@ -94,8 +94,6 @@ if bool(ENV):
     GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
     GENIUS_ACCESS_TOKEN = os.environ.get("GENIUS_ACCESS_TOKEN", None)
     
-    # Chrome For Carbon
-        REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
     # Chrome For Carbon
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/usr/bin/chromedriver")
