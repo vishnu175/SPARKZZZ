@@ -4,7 +4,7 @@ import os
 import wget
 from userbot.SparkzzzConfig import Config
 import asyncio
-from userbot.utils import, admin_cmd, edit_or_reply
+from userbot.utils import admin_cmd, edit_or_reply
 
 @sparkzzz.on(admin_cmd(pattern="ytmusic ?(.*)"))
 async def _(event):
