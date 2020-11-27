@@ -48,6 +48,9 @@ USER_BOT_NO_WARN = (
     f"{MESAG}"
     "\n\n Please select Help menu for further appointment..Thank You."
 )
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", " ")
+NO_OF_INLINE_ROWS = int( os.environ.get("NO_OF_INLINE_ROWS", 7))
+NO_OF_INLINE_COLUMNS = int( os.environ.get("NO_OF_INLINE_COLUMNS", 3))
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
@@ -121,6 +124,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.edit(
                 f"SPARKZZZ userbot is a Telegram Userbot created by [CSV1990](t.me/CSV1990).programmed with Telethon..based on python,You can deploy userbot at https://github.com/vishnu175/SPARKZZZ.\n\n © [SPARKZZZ](t.me/sparkzzzbothelp)"
             )
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
+    async def megic(event):
+        if event.query.user_id == bot.uid:
+            buttons = paginate_help(0, CMD_LIST, "helpme")
+            await event.edit("Menu Re-opened", buttons=buttons)
+        else:
+            reply_pop_up_alert = "Dont touch my bot...!!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ask")))
     async def on_pm_click(event):
@@ -178,7 +189,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await event.edit("Help Menu Closed.")
+            await event.edit(
+                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
+            )
         else:
             reply_pop_up_alert = "Hey stop ❌ Why are you clicking my bot ?? Go and make your own ⚡SPARKZZZ⚡ from @sparkzzzbothelp!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -214,39 +227,54 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             plugin_name = event.data_match.group(1).decode("UTF-8")
             help_string = ""
+            help_string += f"Commands Available in {plugin_name} - \n"
             try:
-                for i in CMD_LIST[plugin_name]:
-                    help_string += i
+                if plugin_name in CMD_HELP:
+                    for i in CMD_HELP[plugin_name]:
+                        help_string += i
                     help_string += "\n"
+                else:
+                    for i in CMD_LIST[plugin_name]:
+                        help_string += i
+                        help_string += "\n"
             except BaseException:
                 pass
             if help_string == "":
-                reply_pop_up_alert = "{} is useless".format(plugin_name)
+                reply_pop_up_alert = "{} has no detailed info.\nUse .help {}".format(
+                    plugin_name, plugin_name
+                )
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
                 © SPARKZZZ".format(
                 plugin_name
             )
-            try:
+            if len(help_string) >= 140:
+                oops = "List too long!\nCheck your saved messages!"
+                await event.answer(oops, cache_time=0, alert=True)
+                help_string += "\n\nThis will be auto-deleted in 1 minute!"
+                if bot is not None and event.query.user_id == bot.uid:
+                    ok = await bot.send_message("me", help_string)
+                    await asyncio.sleep(60)
+                    await ok.delete()
+            else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            except BaseException:
-                halps = "Do .help {} to get the list of commands.".format(plugin_name)
-                await event.answer(halps, cache_time=0, alert=True)
         else:
             reply_pop_up_alert = "Hey stop ❌ Why are you clicking my bot ?? Go and make your own ⚡SPARKZZZ⚡ from @sparkzzzbothelp!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 8
-    number_of_cols = 3
+    number_of_rows = NO_OF_INLINE_ROWS
+    number_of_cols = NO_OF_INLINE_COLUMNS
+    emoji = INLINE_EMOJI
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {} {}".format(Config.INLINE_EMOJI, x, Config.INLINE_EMOJI),
+        "{} {} {}".format(emoji, x, emoji),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols], modules[2::number_of_cols]))
