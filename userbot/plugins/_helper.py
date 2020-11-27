@@ -14,24 +14,29 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import requests
-from telethon import functions
-from userbot import ALIVE_NAME, CMD_LIST
-from userbot.utils import admin_cmd
+import os
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZZ User"
+from userbot import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
+from userbot.SparkzzzConfig import Config
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "SPARKZZ User"
+CMD_HNDLR = Config.CMD_HNDLR
+INLINE_EMOJI = os.environ.get("INLINE_EMOJI", "⚡")
+
+if CMD_HNDLR is None:
+    CMD_HNDLR = "."
 
 
-@sparkzzz.on(admin_cmd(pattern="help ?(.*)"))
+@sarkzzz.on(admin_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
         if tgbotusername is None or input_str == "text":
             string = ""
-            for i in CMD_LIST:
-                string += "🌀 " + i + "\n"
-                for iter_list in CMD_LIST[i]:
+            for i in CMD_HELP:
+                string += INLINE_EMOJI + " " + i + " " + INLINE_EMOJI + "\n"
+                for iter_list in CMD_HELP[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
                 string += "\n"
@@ -39,7 +44,7 @@ async def cmd_list(event):
                 with io.BytesIO(str.encode(string)) as out_file:
                     out_file.name = "cmd.txt"
                     await tgbot.send_file(
-                        event.sender_id,
+                        event.chat_id,
                         out_file,
                         force_document=True,
                         allow_cache=False,
@@ -52,19 +57,29 @@ async def cmd_list(event):
         elif input_str:
             if input_str in CMD_LIST:
                 string = "**Commands available in {}** \n\n".format(input_str)
-                for i in CMD_LIST[input_str]:
-                    string += "    " + i
-                    string += "\n"
-                string += "\n**© @sparkzzzbothelp**"
-                await event.edit(string)
+                if input_str in CMD_HELP:
+                    for i in CMD_HELP[input_str]:
+                        string += i
+                    string += "\n\n**© @SPARKZZZ**"
+                    await event.edit(string)
+                else:
+                    for i in CMD_LIST[input_str]:
+                        string += "    " + i
+                        string += "\n"
+                    string += "\n**© @SPARKZZZ**"
+                            await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
-        else:
             help_string = f"""`Userbot Helper for {DEFAULTUSER} showing all the commands of `**[𝕊ℙ𝔸ℝ𝕂ℤℤℤ](https://github.com/vishnu175/SPARKZZZ/)**\n__**Type__ `.𝖍𝖊𝖑𝖕`<module name>** to know usage of modules.\n\n"""
-            results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername, help_string
-            )
-            await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-            )
-            await event.delete()
+            try:
+                results = await bot.inline_query(  # pylint:disable=E0602
+                    tgbotusername, help_string
+                )
+                await results[0].click(
+                    event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                )
+                await event.delete()
+            except BaseException:
+                await event.edit(
+                    f"This bot has inline disabled. Please enable it to use `{CMD_HNDLR}help`.\njoin [here](t.me/sparkzzzbothelp)"
+                )
