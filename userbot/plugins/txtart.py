@@ -69,7 +69,7 @@ async def _(event):
         )
     try:
         await event.edit("`Processing...`")
-        text = open("userbot/helpers/resources/alice.txt", encoding="utf-8").read()
+        text = open("userbot/helpers/alice.txt", encoding="utf-8").read()
         image_color = np.array(Image.open("wc.png"))
         image_color = image_color[::1, ::1]
         image_mask = image_color.copy()
