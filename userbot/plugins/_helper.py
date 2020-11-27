@@ -67,7 +67,7 @@ async def cmd_list(event):
                         string += "    " + i
                         string += "\n"
                     string += "\n**© @SPARKZZZ**"
-                            await event.edit(string)
+                    await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
             help_string = f"""`Userbot Helper for {DEFAULTUSER} showing all the commands of `**[𝕊ℙ𝔸ℝ𝕂ℤℤℤ](https://github.com/vishnu175/SPARKZZZ/)**\n__**Type__ `.𝖍𝖊𝖑𝖕`<module name>** to know usage of modules.\n\n"""
