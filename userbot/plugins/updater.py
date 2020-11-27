@@ -94,7 +94,7 @@ async def upstream(ups):
             f"**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
             "which branch is to be merged. "
-            "Please checkout the official branch of TeleBot`"
+            "Please checkout the official branch of SPARKZZ`"
         )
         repo.__del__()
         return
@@ -135,7 +135,7 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond(f"Do `{xxxx}update now` to update")
+        await ups.respond(f"Type `{xxxx}update now` to update")
         return
 
     if force_updateme:
@@ -166,7 +166,7 @@ async def upstream(ups):
             repo.__del__()
             return
         await ups.edit(
-            "`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ dyno build in progress, please wait for it to complete.`"
+            "`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡ dyno 🛠️ build in progress, please wait for it to complete.`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -184,7 +184,7 @@ async def upstream(ups):
             await ups.edit(f"{txt}\n`Here is the error log:\n{error}`")
             repo.__del__()
             return
-        await ups.edit("`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡Successfully Updated!\n" "Restarting 📲, please wait...`")
+        await ups.edit("`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡Updated Successfully!\n" "Restarting 📲, please wait...`")
     else:
         # Classic Updater, pretty straightforward.
         try:
@@ -193,7 +193,7 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await ups.edit(
-            "`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡Successfully Updated!\n" "Bot is restarting 📲... Wait for a second!`"
+            "`⚡𝕊ℙ𝔸ℝ𝕂ℤℤℤ⚡Updated Succesfully!\n" "Bot is restarting 📲... Wait for a second!`"
         )
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
