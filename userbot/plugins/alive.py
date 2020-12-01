@@ -91,7 +91,7 @@ async def amireallyalive(alive):
         await sparkzzz.send_file(alive.chat_id, ALV_PIC,caption=tele, link_preview = False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/f05bb1b963445ff544027.png")
+    req = requests.get("https://telegra.ph/file/0588b85ff23f762db68db.jpg")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
