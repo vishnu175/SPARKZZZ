@@ -1,3 +1,4 @@
+# SPARKZZZ 2020 moved to kali linux
 FROM kalilinux/kali-rolling
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM xterm-256color
