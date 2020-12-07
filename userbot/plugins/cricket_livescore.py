@@ -6,7 +6,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 from userbot import CMD_HELP
-from userbotbot.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @sparkzzz.on(admin_cmd(pattern="cric"))
